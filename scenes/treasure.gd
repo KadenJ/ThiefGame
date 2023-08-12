@@ -14,3 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	queue_free()
+	var treasures = get_tree().get_nodes_in_group("Treasures")
+	if treasures.size() == 1:
+		Events.TreasureGathered.emit()
+		print("all treasures collected")

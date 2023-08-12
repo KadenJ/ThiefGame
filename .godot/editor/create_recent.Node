@@ -1,8 +1,12 @@
+CanvasLayer
+Node
+Label
+ColorRect
+CenterContainer
 Sprite2D
 CollisionShape2D
 Area2D
 Camera2D
-ColorRect
 CharacterBody2D
 Node2D
 TileMap

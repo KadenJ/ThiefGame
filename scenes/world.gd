@@ -6,11 +6,14 @@ const Treasure = preload("res://scenes/treasure.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 @onready var tileMap = $TileMap
+@onready var treasure_prompt = $CanvasLayer/treasurePrompt
+
 @export var size = 250
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#randomize()
+	Events.TreasureGathered.connect(showTreasurePrompt)
 	generateLevel()
 
 func generateLevel():
@@ -28,7 +31,7 @@ func generateLevel():
 	exit.leavingLevel.connect(reloadLevel)
 	
 	for room in walker.rooms:
-		print(room)
+		#print(room)
 		var roomEval = randi()% 10
 		if roomEval == 1:
 			var treasure = Treasure.instantiate()
@@ -49,5 +52,6 @@ func reloadLevel():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		reloadLevel()
-		
-		
+
+func showTreasurePrompt():
+	treasure_prompt.show()
