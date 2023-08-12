@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2rrjr61vxthf"]
+
+[ext_resource type="Script" path="res://scenes/Player.gd" id="1_a5fjl"]
+[ext_resource type="Texture2D" uid="uid://dfylm5k3i3mwj" path="res://tileSet/crook.png" id="2_8ms5o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_leitt"]
+radius = 15.1327
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 6
+script = ExtResource("1_a5fjl")
+maxSpeed = 250
+friction = 500
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-6.55651e-07, 4.76837e-07)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("2_8ms5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_leitt")
+
+[node name="Camera2D" type="Camera2D" parent="."]

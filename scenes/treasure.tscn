@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3bnajsqitpw8"]
+
+[ext_resource type="Script" path="res://scenes/treasure.gd" id="1_cmg33"]
+[ext_resource type="Texture2D" uid="uid://beyy112n5t8r1" path="res://icon.svg" id="2_6w568"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g16ms"]
+
+[node name="treasure" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_cmg33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g16ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_6w568")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
