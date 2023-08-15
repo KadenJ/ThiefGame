@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://coijmoeduemce"]
+
+[ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet/cop.png" id="1_rnw7a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmjta"]
+radius = 14.0
+
+[node name="guard" type="StaticBody2D"]
+position = Vector2(182, 59)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rnw7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nmjta")

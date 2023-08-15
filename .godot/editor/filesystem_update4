@@ -1,8 +1,8 @@
-res://scenes/treasure.tscn
-res://scenes/treasure.gd
 res://scenes/world.tscn
 res://scenes/Exit.tscn
 res://scenes/Player.tscn
-res://scenes/world.gd
+res://scenes/treasure.tscn
 res://scenes/treasure_prompt.tscn
-res://Events.gd
+res://scenes/world.gd
+res://scenes/guard.tscn
+res://Walker.gd

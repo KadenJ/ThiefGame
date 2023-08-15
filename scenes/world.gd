@@ -3,6 +3,7 @@ extends Node2D
 const Player = preload("res://scenes/Player.tscn")
 const Exit = preload("res://scenes/Exit.tscn")
 const Treasure = preload("res://scenes/treasure.tscn")
+const Guard = preload("res://scenes/guard.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 @onready var tileMap = $TileMap
@@ -30,21 +31,29 @@ func generateLevel():
 	exit.position = walker.getEndRoom().position*32
 	exit.leavingLevel.connect(reloadLevel)
 	
+	#spawns treasures
 	for room in walker.rooms:
-		#print(room)
 		var roomEval = randi()% 10
 		if roomEval == 1:
 			var treasure = Treasure.instantiate()
 			add_child(treasure)
 			treasure.position = room.position*32
+			room.hasTreasure = true
+			if treasure.position == exit.position:
+				treasure.queue_free()
 		elif roomEval == 3:
-			pass#spawn guard
+				var guard = Guard.instantiate()
+				add_child(guard)
+				guard.position = room.position*32
+				if guard.position == exit.position:
+					guard.queue_free()
+				if guard.position.distance_to(player.position) < abs(10):
+					guard.queue_free()
 	
+	#changes floor tiles
 	walker.queue_free()
 	for location in map:
-		tileMap.erase_cell(0, location)
-		#tileMap.set_cellv(location,-1)
-	#tileMap.update_bitmask_region(borders.position, borders.end)
+		tileMap.set_cell(0, location, 1, Vector2i(4,4))
 
 func reloadLevel():
 	get_tree().reload_current_scene()
