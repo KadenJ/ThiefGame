@@ -11,6 +11,9 @@ var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 
 @export var size = 250
 
+var treasureList = []
+var guardList = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#randomize()
@@ -31,7 +34,7 @@ func generateLevel():
 	exit.position = walker.getEndRoom().position*32
 	exit.leavingLevel.connect(reloadLevel)
 	
-	#spawns treasures
+	#spawns treasures and guards
 	for room in walker.rooms:
 		var roomEval = randi()% 10
 		if roomEval == 1:
@@ -39,17 +42,23 @@ func generateLevel():
 			add_child(treasure)
 			treasure.position = room.position*32
 			room.hasTreasure = true
+			treasureList.append(treasure.position)
 			if treasure.position == exit.position:
 				treasure.queue_free()
-		elif roomEval == 3:
-				var guard = Guard.instantiate()
-				add_child(guard)
-				guard.position = room.position*32
-				if guard.position == exit.position:
+	for room in walker.rooms:
+		var roomEval = randi()% 10
+		if roomEval == 3 || roomEval == 4:
+			var guard = Guard.instantiate()
+			add_child(guard)
+			guard.position = room.position*32
+			for i in treasureList:
+				if guard.position == i:
+					#change to move 
 					guard.queue_free()
-				if guard.position.distance_to(player.position) < abs(10):
-					guard.queue_free()
-	
+			if guard.position == exit.position || guard.position.distance_to(player.position) < abs(10):
+				guard.queue_free()
+				
+	print(treasureList)
 	#changes floor tiles
 	walker.queue_free()
 	for location in map:
@@ -64,3 +73,4 @@ func _input(event):
 
 func showTreasurePrompt():
 	treasure_prompt.show()
+

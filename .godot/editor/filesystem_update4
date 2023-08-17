@@ -3,6 +3,6 @@ res://scenes/Exit.tscn
 res://scenes/Player.tscn
 res://scenes/treasure.tscn
 res://scenes/treasure_prompt.tscn
-res://scenes/world.gd
 res://scenes/guard.tscn
-res://Walker.gd
+res://scenes/world.gd
+res://scenes/treasure.gd
