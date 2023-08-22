@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc0sn45ncmr7q"]
+
+[ext_resource type="PackedScene" uid="uid://coijmoeduemce" path="res://scenes/guard.tscn" id="1_6a642"]
+[ext_resource type="PackedScene" uid="uid://d2rrjr61vxthf" path="res://scenes/Player.tscn" id="4_rp1dx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Guard" parent="." instance=ExtResource("1_6a642")]
+position = Vector2(94, 2)
+
+[node name="Player2" parent="." instance=ExtResource("4_rp1dx")]
+position = Vector2(-114, -15)

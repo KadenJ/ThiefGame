@@ -1,15 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://coijmoeduemce"]
+[gd_scene load_steps=7 format=3 uid="uid://coijmoeduemce"]
 
+[ext_resource type="Script" path="res://scenes/guard.gd" id="1_0m2xc"]
 [ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet/cop.png" id="1_rnw7a"]
+[ext_resource type="Script" path="res://Guard/StateMachine.gd" id="3_i8e1q"]
+[ext_resource type="Script" path="res://Guard/GuardWander.gd" id="4_lfnbi"]
+[ext_resource type="Script" path="res://Guard/GuardChase.gd" id="5_ph6m7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nmjta"]
-radius = 14.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]
+radius = 16.0312
 
-[node name="guard" type="StaticBody2D"]
-position = Vector2(182, 59)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_rnw7a")
+[node name="Guard" type="CharacterBody2D"]
+collision_mask = 9
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_0m2xc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_nmjta")
+shape = SubResource("CircleShape2D_ibkmc")
+
+[node name="Cop" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+texture = ExtResource("1_rnw7a")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-39, 0)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(23, 5, -126, 28, -126, -41, 24, -6)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("3_i8e1q")
+initialState = NodePath("GWander")
+
+[node name="GWander" type="Node" parent="StateMachine" node_paths=PackedStringArray("guard")]
+script = ExtResource("4_lfnbi")
+guard = NodePath("../..")
+
+[node name="GChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("Guard")]
+script = ExtResource("5_ph6m7")
+Guard = NodePath("../..")
+
+[connection signal="body_entered" from="Area2D" to="StateMachine/GWander" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="StateMachine/GChase" method="_on_area_2d_body_exited"]

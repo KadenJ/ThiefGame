@@ -34,7 +34,7 @@ func generateLevel():
 	exit.position = walker.getEndRoom().position*32
 	exit.leavingLevel.connect(reloadLevel)
 	
-	#spawns treasures and guards
+	#spawns treasures
 	for room in walker.rooms:
 		var roomEval = randi()% 10
 		if roomEval == 1:
@@ -45,20 +45,25 @@ func generateLevel():
 			treasureList.append(treasure.position)
 			if treasure.position == exit.position:
 				treasure.queue_free()
+	#spawns guards
 	for room in walker.rooms:
 		var roomEval = randi()% 10
-		if roomEval == 3 || roomEval == 4:
+		if roomEval == 3:
 			var guard = Guard.instantiate()
 			add_child(guard)
-			guard.position = room.position*32
+			#checks for other guards
+			if guardList.count(room.position*32) == 1:
+				guard.queue_free()
+			else:
+				guard.position = room.position*32
+				guardList.append(guard.position)
+			#checks for treasure on pos
 			for i in treasureList:
 				if guard.position == i:
 					#change to move 
 					guard.queue_free()
 			if guard.position == exit.position || guard.position.distance_to(player.position) < abs(10):
 				guard.queue_free()
-				
-	print(treasureList)
 	#changes floor tiles
 	walker.queue_free()
 	for location in map:
