@@ -20,16 +20,20 @@ shape = SubResource("CircleShape2D_ibkmc")
 
 [node name="Cop" type="Sprite2D" parent="."]
 position = Vector2(-1, -1)
+scale = Vector2(-1, -1)
 texture = ExtResource("1_rnw7a")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-39, 0)
+rotation = 3.14159
 collision_layer = 0
 collision_mask = 8
 monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(23, 5, -126, 28, -126, -41, 24, -6)
+position = Vector2(-81, 7.50339e-06)
+scale = Vector2(1.063, 1)
+polygon = PackedVector2Array(25.3999, 6, -142.051, 40, -142.051, -44, 25.3999, -6)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("3_i8e1q")
@@ -42,6 +46,9 @@ guard = NodePath("../..")
 [node name="GChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("Guard")]
 script = ExtResource("5_ph6m7")
 Guard = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="body_entered" from="Area2D" to="StateMachine/GWander" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="StateMachine/GChase" method="_on_area_2d_body_exited"]
