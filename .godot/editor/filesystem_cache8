@@ -1,26 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1692818891
+::res://::1692844021
 Events.gd::GDScript::-1::1691873578::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::2718226170758946744::1691595698::1691595713::1::::<><>::
 Walker.gd::GDScript::-1::1692139570::0::1::::Walker<>Node<>::
-::res://Guard/::1692745470
-GuardChase.gd::GDScript::-1::1692745470::0::1::::GChase<>State<>::
-GuardWander.gd::GDScript::-1::1692745389::0::1::::GWander<>State<>::
+::res://Guard/::1692828975
+GuardChase.gd::GDScript::-1::1692828828::0::1::::GChase<>State<>::
+GuardWander.gd::GDScript::-1::1692828975::0::1::::GWander<>State<>::
 StateMachine.gd::GDScript::-1::1692738421::0::1::::<>Node<>::
 States.gd::GDScript::-1::1692583512::0::1::::State<>Node<>::
-::res://scenes/::1692745573
+::res://scenes/::1692828980
 Exit.gd::GDScript::-1::1691789647::0::1::::<>Area2D<>::
-Exit.tscn::PackedScene::596796655747529981::1692745475::0::1::::<><>::res://scenes/Exit.gd
-guard.gd::GDScript::-1::1692729677::0::1::::guardEnemy<>CharacterBody2D<>::
-guard.tscn::PackedScene::5772568824482214456::1692745573::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd
+Exit.tscn::PackedScene::596796655747529981::1692828904::0::1::::<><>::res://scenes/Exit.gd
+guard.gd::GDScript::-1::1692823064::0::1::::guardEnemy<>CharacterBody2D<>::
+guard.tscn::PackedScene::5772568824482214456::1692828905::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd
 Player.gd::GDScript::-1::1692569375::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::9090504454143567303::1692745475::0::1::::<><>::res://scenes/Player.gd<>uid://dfylm5k3i3mwj::::res://tileSet/crook.png
-test.tscn::PackedScene::7352366873512534580::1692745476::0::1::::<><>::uid://coijmoeduemce::::res://scenes/guard.tscn<>uid://d2rrjr61vxthf::::res://scenes/Player.tscn
+Player.tscn::PackedScene::9090504454143567303::1692828904::0::1::::<><>::res://scenes/Player.gd<>uid://dfylm5k3i3mwj::::res://tileSet/crook.png
+test.tscn::PackedScene::7352366873512534580::1692828980::0::1::::<><>::uid://coijmoeduemce::::res://scenes/guard.tscn<>uid://d2rrjr61vxthf::::res://scenes/Player.tscn
 treasure.gd::GDScript::-1::1692254962::0::1::::<>Area2D<>::
-treasure.tscn::PackedScene::1968141821779983713::1692745475::0::1::::<><>::res://scenes/treasure.gd<>uid://beyy112n5t8r1::::res://icon.svg
+treasure.tscn::PackedScene::1968141821779983713::1692828905::0::1::::<><>::res://scenes/treasure.gd<>uid://beyy112n5t8r1::::res://icon.svg
 treasure_prompt.tscn::PackedScene::2344246486114080436::1692254711::0::1::::<><>::
 world.gd::GDScript::-1::1692745146::0::1::::<>Node2D<>::
-world.tscn::PackedScene::8302476812903023831::1692745475::0::1::::<><>::res://scenes/world.gd<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://njlmawtm5tf1::::res://tileSet/tilemap(floor design) (1).png
+world.tscn::PackedScene::8302476812903023831::1692828904::0::1::::<><>::res://scenes/world.gd<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://njlmawtm5tf1::::res://tileSet/tilemap(floor design) (1).png
 ::res://Seperate Scripts/::1692728515
 CharacterBody2D.gd::GDScript::-1::1692577881::0::1::::<>CharacterBody2D<>::
 ::res://tileSet/::1692136697

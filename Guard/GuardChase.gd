@@ -1,16 +1,20 @@
 extends State
 class_name GChase
 
-@onready var timer = $"../../Timer"
 @export var Guard: CharacterBody2D
 @export var ChaseSpeed:= 150
 
 var Player: CharacterBody2D
 
+func _ready():
+	timer.connect("timeout", changeState)
+	
+
 func Enter():
 	Player = get_tree().get_first_node_in_group("Player")
 	
-func Physics_Update(delta: float):
+
+func Physics_Update(_delta: float):
 	var direction = Player.global_position - Guard.global_position
 	
 	#change to if in cone chase
@@ -25,14 +29,17 @@ func Physics_Update(delta: float):
 	if direction.length() > 350:
 		print(direction.length())
 		Transitioned.emit(self,"GWander")
+		
+	
+
+
+func changeState():
+	print("giveUp")
+	Transitioned.emit(self, "GWander")
+@onready var timer = $"../../Timer"
 
 func _on_area_2d_body_exited(_body):
-	print("player lost ", timer.time_left)
-	
-	#timer doesn't work
+	print("player lost")
 	timer.start()
-	if timer.timeout:
-		print("give up")
-		Transitioned.emit(self,"GWander")
+	#timer.connect("timeout", changeState)
 	
-

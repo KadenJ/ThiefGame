@@ -3,7 +3,6 @@ class_name GWander
  
 @export var guard:CharacterBody2D
 @export var moveSpeed:=100.0
-@onready var timer = $"../../Timer"
 
 #var Player: CharacterBody2D
 
@@ -34,9 +33,6 @@ func Physics_Update(_delta:float):
 
 func _on_area_2d_body_entered(_body):
 	print("found player1")
-	#timer doesn't work
-	timer.stop()
-	timer.set_wait_time(5)
 	Transitioned.emit(self, "GChase")
 	
 	

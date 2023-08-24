@@ -31,8 +31,8 @@ func applyFriction(amount):
 		velocity= Vector2.ZERO
 		
 
-func applyMovement(accel):
-	velocity+=accel
+func applyMovement(_accel):
+	velocity+=_accel
 	velocity = velocity.limit_length(maxSpeed)
 
 #add sneak
