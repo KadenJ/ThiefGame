@@ -12,6 +12,7 @@ var wanderTime: float
 func randomizeWander():
 	moveDirection=Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
 	wanderTime = randfn(1,2)
+	guard.rotation = moveDirection.angle()
 	
 func Enter():
 	#Player = get_tree().get_first_node_in_group("Player")
@@ -26,8 +27,7 @@ func Update(delta: float):
 func Physics_Update(_delta:float):
 	if guard:
 		guard.velocity = moveDirection* moveSpeed
-	
-	#guard.look_at(Player.position)
+	#guard.rotate(guard.velocity.angle())
 	#var direction = guard.global_position - Player.global_position 
 	
 

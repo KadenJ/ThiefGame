@@ -1,5 +1,7 @@
 extends Node2D
 
+#soft swing music or classic heist music(diamond jack type)
+
 const Player = preload("res://scenes/Player.tscn")
 const Exit = preload("res://scenes/Exit.tscn")
 const Treasure = preload("res://scenes/treasure.tscn")
@@ -73,7 +75,7 @@ func reloadLevel():
 	get_tree().reload_current_scene()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("levelControl"):
 		reloadLevel()
 
 func showTreasurePrompt():

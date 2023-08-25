@@ -4,6 +4,8 @@ class_name GChase
 @export var Guard: CharacterBody2D
 @export var ChaseSpeed:= 150
 
+@onready var timer = $"../../Timer"
+
 var Player: CharacterBody2D
 
 func _ready():
@@ -36,7 +38,7 @@ func Physics_Update(_delta: float):
 func changeState():
 	print("giveUp")
 	Transitioned.emit(self, "GWander")
-@onready var timer = $"../../Timer"
+
 
 func _on_area_2d_body_exited(_body):
 	print("player lost")

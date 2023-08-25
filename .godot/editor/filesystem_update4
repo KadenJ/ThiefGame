@@ -1,9 +1,11 @@
 res://scenes/guard.tscn
-res://Guard/GuardChase.gd
+res://scenes/guard.gd
 res://scenes/world.tscn
+res://Guard/GuardWander.gd
 res://scenes/Exit.tscn
 res://scenes/Player.tscn
 res://scenes/treasure.tscn
 res://scenes/test.tscn
-res://scenes/guard.gd
-res://scenes/Player.gd
+res://scenes/CameraDevControl.gd
+res://scenes/world.gd
+res://Guard/GuardChase.gd
