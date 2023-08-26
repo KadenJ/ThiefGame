@@ -16,3 +16,4 @@ res://scenes/treasure.gd
 res://scenes/Exit.gd
 res://Walker.gd
 res://scenes/loading_screen.tscn
+res://scenes/loading_screen.gd

@@ -11,6 +11,8 @@ var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 
 @onready var tileMap = $TileMap
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
+@onready var loading_screen = $CanvasLayer/loadingScreen
+@onready var loading_timer = $CanvasLayer/loadingScreen/loadingTimer
 
 @export var size = 250
 
@@ -22,10 +24,11 @@ var guardList = []
 func _ready():
 	#randomize()
 	Events.TreasureGathered.connect(showTreasurePrompt)
+	loading_timer.connect("timeout", hideLoadScreen)
 	generateLevel()
 
 func generateLevel():
-	@warning_ignore("integer_division")
+	#@warning_ignore("integer_division")
 	var walker = Walker.new(Vector2(17,9), borders) #Vector2(36/2, 20/2)
 	var map = walker.walk(size)#size of room, amount of total steps taken
 	
@@ -73,11 +76,15 @@ func generateLevel():
 	walker.queue_free()
 	for location in map:
 		tileMap.set_cell(0, location, 1, Vector2i(4,4))
+		
+
 
 func reloadLevel():
 	var children = get_children()
 	#score + 100
-	#place black screen
+	#place black screen with small animation
+	loading_screen.show()
+	loading_timer.start()
 	#queue_free all nodes thats not tilemap and treasurePrompt
 	var count = 0
 	for child in children:
@@ -99,3 +106,5 @@ func _input(event):
 func showTreasurePrompt():
 	treasure_prompt.show()
 
+func hideLoadScreen():
+	loading_screen.hide()

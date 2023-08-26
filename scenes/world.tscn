@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqj1tyukqibn0"]
+[gd_scene load_steps=7 format=3 uid="uid://dqj1tyukqibn0"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_pqt21"]
 [ext_resource type="PackedScene" uid="uid://8ntnrcx56uqm" path="res://scenes/treasure_prompt.tscn" id="3_yb2lm"]
+[ext_resource type="PackedScene" uid="uid://k3kpawgbfjby" path="res://scenes/loading_screen.tscn" id="4_28gdm"]
 [ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet/tilemap(floor design) (1).png" id="4_bg507"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii0im"]
@@ -344,3 +345,8 @@ layer_0/tile_data = PackedInt32Array(65535, 1, 0, 131071, 1, 0, 196607, 1, 0, 26
 
 [node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_yb2lm")]
 visible = false
+
+[node name="loadingScreen" parent="CanvasLayer" instance=ExtResource("4_28gdm")]
+visible = false
+
+[node name="loadingTimer" type="Timer" parent="CanvasLayer/loadingScreen"]
