@@ -9,3 +9,9 @@ res://scenes/test.tscn
 res://scenes/CameraDevControl.gd
 res://scenes/world.gd
 res://Guard/GuardChase.gd
+res://scenes/Score.tscn
+res://Assets/info.txt
+res://scenes/treasure_prompt.tscn
+res://scenes/treasure.gd
+res://scenes/Exit.gd
+res://Walker.gd

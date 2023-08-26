@@ -24,7 +24,7 @@ func _init(startingPosition, newBorders):
 #will walk certain amount of steps then return step history
 func walk(steps):
 	placeRoom(position)
-	for step in steps:
+	for _step in steps:
 		if stepsSinceTurn >= forceChange: # if gone for more than forceChange steps
 			changeDirection()
 		

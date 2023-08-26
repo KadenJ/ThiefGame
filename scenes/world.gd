@@ -1,6 +1,6 @@
 extends Node2D
 
-#soft swing music or classic heist music(diamond jack type)
+#soft swing music or classic heist music(diamond jack type as example)
 
 const Player = preload("res://scenes/Player.tscn")
 const Exit = preload("res://scenes/Exit.tscn")
@@ -8,12 +8,14 @@ const Treasure = preload("res://scenes/treasure.tscn")
 const Guard = preload("res://scenes/guard.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
+
 @onready var tileMap = $TileMap
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
 
 @export var size = 250
 
 var treasureList = []
+var TList = []
 var guardList = []
 
 # Called when the node enters the scene tree for the first time.
@@ -45,6 +47,7 @@ func generateLevel():
 			treasure.position = room.position*32
 			room.hasTreasure = true
 			treasureList.append(treasure.position)
+			TList.append(Area2D)
 			if treasure.position == exit.position:
 				treasure.queue_free()
 	#spawns guards
@@ -72,7 +75,22 @@ func generateLevel():
 		tileMap.set_cell(0, location, 1, Vector2i(4,4))
 
 func reloadLevel():
-	get_tree().reload_current_scene()
+	var children = get_children()
+	#score + 100
+	#place black screen
+	#queue_free all nodes thats not tilemap and treasurePrompt
+	var count = 0
+	for child in children:
+		count += 1
+		if count > 2:
+			child.queue_free()
+	treasure_prompt.hide()
+	#repavement
+	for row in 20:
+		for i in 36:
+			tileMap.set_cell(0,Vector2i(i,row), 1, Vector2i(0,0))
+		
+	generateLevel()
 
 func _input(event):
 	if event.is_action_pressed("levelControl"):
