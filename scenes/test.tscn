@@ -1,8 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://dc0sn45ncmr7q"]
 
-[ext_resource type="PackedScene" uid="uid://coijmoeduemce" path="res://scenes/guard.tscn" id="1_6a642"]
+[ext_resource type="PackedScene" uid="uid://d2rrjr61vxthf" path="res://scenes/Player.tscn" id="2_ico7i"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Guard" parent="." instance=ExtResource("1_6a642")]
-position = Vector2(281, 290)
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1175.0
+offset_bottom = 661.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_ico7i")]
+position = Vector2(534, 412)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.352941, 0.352941, 0.352941, 1)

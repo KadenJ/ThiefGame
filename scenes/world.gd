@@ -17,7 +17,7 @@ var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 @export var size = 250
 
 var treasureList = []
-var TList = []
+#var TList = []
 var guardList = []
 
 # Called when the node enters the scene tree for the first time.
@@ -33,11 +33,13 @@ func generateLevel():
 	var map = walker.walk(size)#size of room, amount of total steps taken
 	
 	var player = Player.instantiate()
-	add_child(player)
+	#add_child(player)
+	call_deferred("add_child",player)
 	player.position = map.front()*32
 	
 	var exit = Exit.instantiate()
-	add_child(exit)
+	#add_child(exit)
+	call_deferred("add_child",exit)
 	exit.position = walker.getEndRoom().position*32
 	exit.leavingLevel.connect(reloadLevel)
 	
@@ -46,11 +48,12 @@ func generateLevel():
 		var roomEval = randi()% 10
 		if roomEval == 1:
 			var treasure = Treasure.instantiate()
-			add_child(treasure)
+			#add_child(treasure)
+			call_deferred("add_child",treasure)
 			treasure.position = room.position*32
 			room.hasTreasure = true
 			treasureList.append(treasure.position)
-			TList.append(Area2D)
+			#TList.append(Area2D)
 			if treasure.position == exit.position:
 				treasure.queue_free()
 	#spawns guards
@@ -58,7 +61,8 @@ func generateLevel():
 		var roomEval = randi()% 10
 		if roomEval == 3:
 			var guard = Guard.instantiate()
-			add_child(guard)
+			#add_child(guard)
+			call_deferred("add_child",guard)
 			#checks for other guards
 			if guardList.count(room.position*32) == 1:
 				guard.queue_free()
@@ -86,10 +90,12 @@ func reloadLevel():
 	loading_screen.show()
 	loading_timer.start()
 	#queue_free all nodes thats not tilemap and treasurePrompt
+	treasureList.clear()
+	guardList.clear()
 	var count = 0
 	for child in children:
 		count += 1
-		if count > 2:
+		if count > 3:
 			child.queue_free()
 	treasure_prompt.hide()
 	#repavement

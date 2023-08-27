@@ -1,5 +1,9 @@
-Timer
+CanvasModulate
+PointLight2D
+LightOccluder2D
 ColorRect
+DirectionalLight2D
+Timer
 GChase
 GWander
 Node

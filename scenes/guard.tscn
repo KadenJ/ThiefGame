@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Guard/GuardChase.gd" id="5_ph6m7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]
-radius = 16.0312
+radius = 14.0
 
 [node name="Guard" type="CharacterBody2D"]
 collision_mask = 9

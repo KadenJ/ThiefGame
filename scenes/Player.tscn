@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2rrjr61vxthf"]
+[gd_scene load_steps=6 format=3 uid="uid://d2rrjr61vxthf"]
 
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_a5fjl"]
 [ext_resource type="Texture2D" uid="uid://dfylm5k3i3mwj" path="res://tileSet/crook.png" id="2_8ms5o"]
 [ext_resource type="Script" path="res://scenes/CameraDevControl.gd" id="3_kx537"]
+[ext_resource type="Texture2D" uid="uid://cdts2jlbaa7tc" path="res://Assets/light.png" id="4_ngeu0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_leitt"]
 radius = 15.1327
@@ -23,3 +24,8 @@ shape = SubResource("CircleShape2D_leitt")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("3_kx537")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.7
+texture = ExtResource("4_ngeu0")
+texture_scale = 0.8
