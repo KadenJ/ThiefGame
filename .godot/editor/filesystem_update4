@@ -1,9 +1,11 @@
-res://scenes/Player.tscn
+res://Score.tscn
 res://scenes/world.tscn
-res://scenes/Exit.tscn
-res://scenes/treasure.tscn
+res://scenes/Player.tscn
 res://scenes/guard.tscn
 res://scenes/test.tscn
 res://scenes/treasure_prompt.tscn
-res://scenes/loading_screen.tscn
 res://scenes/world.gd
+res://Events.gd
+res://scenes/treasure.gd
+res://scenes/Score.tscn
+res://Guard/GuardChase.gd

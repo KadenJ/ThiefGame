@@ -8,11 +8,13 @@ const Treasure = preload("res://scenes/treasure.tscn")
 const Guard = preload("res://scenes/guard.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
+var score = 0
 
 @onready var tileMap = $TileMap
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
 @onready var loading_screen = $CanvasLayer/loadingScreen
 @onready var loading_timer = $CanvasLayer/loadingScreen/loadingTimer
+@onready var _score = $CanvasLayer/Score/Label
 
 @export var size = 250
 
@@ -24,6 +26,7 @@ var guardList = []
 func _ready():
 	#randomize()
 	Events.TreasureGathered.connect(showTreasurePrompt)
+	Events.treasureStolen.connect(giveScore.bind(100))
 	loading_timer.connect("timeout", hideLoadScreen)
 	generateLevel()
 
@@ -85,7 +88,7 @@ func generateLevel():
 
 func reloadLevel():
 	var children = get_children()
-	#score + 100
+	giveScore(200)
 	#place black screen with small animation
 	loading_screen.show()
 	loading_timer.start()
@@ -110,7 +113,14 @@ func _input(event):
 		reloadLevel()
 
 func showTreasurePrompt():
+	giveScore(500)
 	treasure_prompt.show()
 
 func hideLoadScreen():
 	loading_screen.hide()
+
+func giveScore(points):
+	score += points
+	#show score on label
+	_score.set_text(str(score))
+	print(score)

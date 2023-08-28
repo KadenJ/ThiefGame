@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf4bk21kjmucx"]
+
+[ext_resource type="FontFile" uid="uid://dah8llpnex5du" path="res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf" id="1_quy4a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkhvr"]
+font = ExtResource("1_quy4a")
+font_size = 49
+outline_size = 2
+
+[node name="Score" type="CenterContainer"]
+offset_right = 43.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Score"
+label_settings = SubResource("LabelSettings_kkhvr")

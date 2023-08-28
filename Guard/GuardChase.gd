@@ -19,7 +19,6 @@ func Enter():
 func Physics_Update(_delta: float):
 	var direction = Player.global_position - Guard.global_position
 	
-	#change to if in cone chase
 	#on area enter
 	if direction.length() < 300:
 		Guard.velocity= direction.normalized()*ChaseSpeed
@@ -43,5 +42,8 @@ func changeState():
 func _on_area_2d_body_exited(_body):
 	print("player lost")
 	timer.start()
-	#timer.connect("timeout", changeState)
 	
+
+
+func _on_catcher_body_entered(body):
+	print("player caught")

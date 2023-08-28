@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://coijmoeduemce"]
+[gd_scene load_steps=8 format=3 uid="uid://coijmoeduemce"]
 
 [ext_resource type="Script" path="res://scenes/guard.gd" id="1_0m2xc"]
 [ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet/cop.png" id="1_rnw7a"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]
 radius = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v554d"]
+size = Vector2(21, 32)
 
 [node name="Guard" type="CharacterBody2D"]
 collision_mask = 9
@@ -33,7 +36,7 @@ monitorable = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-77.3792, 7.50339e-06)
 scale = Vector2(0.901136, 1)
-polygon = PackedVector2Array(27.0538, 12.9999, -142.051, 40, -142.051, -44, 27.0538, -11.0001)
+polygon = PackedVector2Array(32.6024, 18.9999, -91.6852, 33.9996, -91.6851, -36.0004, 32.6025, -19.0001, 52.5772, -15.0001, 52.5772, 14.9999)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("3_i8e1q")
@@ -51,5 +54,15 @@ Guard = NodePath("../..")
 wait_time = 2.0
 one_shot = true
 
+[node name="Catcher" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Catcher"]
+position = Vector2(8.5, 0)
+shape = SubResource("RectangleShape2D_v554d")
+
 [connection signal="body_entered" from="Area2D" to="StateMachine/GWander" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="StateMachine/GChase" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Catcher" to="StateMachine/GChase" method="_on_catcher_body_entered"]

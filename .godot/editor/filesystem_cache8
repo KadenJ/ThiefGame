@@ -1,9 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1693163662
-Events.gd::GDScript::-1::1691873578::0::1::::<>Node<>::
+::res://::1693248563
+Events.gd::GDScript::-1::1693248493::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::2718226170758946744::1691595698::1691595713::1::::<><>::
+Score.tscn::PackedScene::2797311890445056731::1693248563::0::1::::<><>::uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf
 Walker.gd::GDScript::-1::1693031038::0::1::::Walker<>Node<>::
-::res://Assets/::1693165430
+::res://Assets/::1693165431
 info.txt::TextFile::-1::1693011768::0::1::::<><>::
 light.png::CompressedTexture2D::5023772687681136488::1693165041::1693165044::1::::<><>::
 video-png-effects-5.png::CompressedTexture2D::8434380673735009111::1693165430::1693165431::1::::<><>::
@@ -32,21 +33,21 @@ GuardChase.gd::GDScript::-1::1693005355::0::1::::GChase<>State<>::
 GuardWander.gd::GDScript::-1::1693003897::0::1::::GWander<>State<>::
 StateMachine.gd::GDScript::-1::1692738421::0::1::::<>Node<>::
 States.gd::GDScript::-1::1692583512::0::1::::State<>Node<>::
-::res://scenes/::1693165329
+::res://scenes/::1693248563
 CameraDevControl.gd::GDScript::-1::1693005443::0::1::::<>Camera2D<>::
 Exit.gd::GDScript::-1::1693030790::0::1::::<>Area2D<>::
-Exit.tscn::PackedScene::596796655747529981::1693165245::0::1::::<><>::res://scenes/Exit.gd
+Exit.tscn::PackedScene::596796655747529981::1693169017::0::1::::<><>::res://scenes/Exit.gd
 guard.gd::GDScript::-1::1693002812::0::1::::guardEnemy<>CharacterBody2D<>::
-guard.tscn::PackedScene::5772568824482214456::1693165245::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd
+guard.tscn::PackedScene::5772568824482214456::1693248563::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd
 loading_screen.tscn::PackedScene::760325004590088662::1693163741::0::1::::<><>::
 Player.gd::GDScript::-1::1692845349::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::9090504454143567303::1693165329::0::1::::<><>::res://scenes/Player.gd<>uid://dfylm5k3i3mwj::::res://tileSet/crook.png<>res://scenes/CameraDevControl.gd<>uid://cdts2jlbaa7tc::::res://Assets/light.png
-test.tscn::PackedScene::7352366873512534580::1693165245::0::1::::<><>::uid://d2rrjr61vxthf::::res://scenes/Player.tscn
-treasure.gd::GDScript::-1::1693012116::0::1::::<>Area2D<>::
-treasure.tscn::PackedScene::1968141821779983713::1693165245::0::1::::<><>::res://scenes/treasure.gd<>uid://beyy112n5t8r1::::res://icon.svg
-treasure_prompt.tscn::PackedScene::2344246486114080436::1693163741::0::1::::<><>::
-world.gd::GDScript::-1::1693033717::0::1::::<>Node2D<>::
-world.tscn::PackedScene::8302476812903023831::1693165245::0::1::::<><>::res://scenes/world.gd<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn<>uid://njlmawtm5tf1::::res://tileSet/tilemap(floor design) (1).png
+Player.tscn::PackedScene::9090504454143567303::1693248563::0::1::::<><>::res://scenes/Player.gd<>uid://dfylm5k3i3mwj::::res://tileSet/crook.png<>res://scenes/CameraDevControl.gd<>uid://cdts2jlbaa7tc::::res://Assets/light.png
+test.tscn::PackedScene::7352366873512534580::1693248563::0::1::::<><>::uid://d2rrjr61vxthf::::res://scenes/Player.tscn
+treasure.gd::GDScript::-1::1693248463::0::1::::<>Area2D<>::
+treasure.tscn::PackedScene::1968141821779983713::1693169017::0::1::::<><>::res://scenes/treasure.gd<>uid://beyy112n5t8r1::::res://icon.svg
+treasure_prompt.tscn::PackedScene::2344246486114080436::1693248563::0::1::::<><>::
+world.gd::GDScript::-1::1693248557::0::1::::<>Node2D<>::
+world.tscn::PackedScene::8302476812903023831::1693248563::0::1::::<><>::res://scenes/world.gd<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn<>uid://njlmawtm5tf1::::res://tileSet/tilemap(floor design) (1).png
 ::res://Seperate Scripts/::1692728515
 CharacterBody2D.gd::GDScript::-1::1692577881::0::1::::<>CharacterBody2D<>::
 ::res://tileSet/::1692136697
