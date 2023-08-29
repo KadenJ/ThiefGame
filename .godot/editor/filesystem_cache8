@@ -1,9 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1693248563
-Events.gd::GDScript::-1::1693248493::0::1::::<>Node<>::
+::res://::1693333956
 icon.svg::CompressedTexture2D::2718226170758946744::1691595698::1691595713::1::::<><>::
-Score.tscn::PackedScene::2797311890445056731::1693248563::0::1::::<><>::uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf
-Walker.gd::GDScript::-1::1693031038::0::1::::Walker<>Node<>::
 ::res://Assets/::1693165431
 info.txt::TextFile::-1::1693011768::0::1::::<><>::
 light.png::CompressedTexture2D::5023772687681136488::1693165041::1693165044::1::::<><>::
@@ -28,32 +25,39 @@ BarcadeNoBarItalic-dzdR.otf::FontFile::6698086110524970229::1644449512::16930114
 BarcadeOutline-PgdB.otf::FontFile::1161572178590485250::1644449512::1693011428::1::::<><>::
 BarcadeOutlineItalic-Ldvn.otf::FontFile::9046568731994826206::1644449512::1693011428::1::::<><>::
 BarcadeSemiItalic-XORg.otf::FontFile::1933375948046842333::1644449512::1693011428::1::::<><>::
-::res://Guard/::1693005355
-GuardChase.gd::GDScript::-1::1693005355::0::1::::GChase<>State<>::
+::res://Guard/::1693251870
+GuardChase.gd::GDScript::-1::1693251870::0::1::::GChase<>State<>::
 GuardWander.gd::GDScript::-1::1693003897::0::1::::GWander<>State<>::
 StateMachine.gd::GDScript::-1::1692738421::0::1::::<>Node<>::
 States.gd::GDScript::-1::1692583512::0::1::::State<>Node<>::
-::res://scenes/::1693248563
+::res://scenes/::1693343136
 CameraDevControl.gd::GDScript::-1::1693005443::0::1::::<>Camera2D<>::
 Exit.gd::GDScript::-1::1693030790::0::1::::<>Area2D<>::
 Exit.tscn::PackedScene::596796655747529981::1693169017::0::1::::<><>::res://scenes/Exit.gd
 guard.gd::GDScript::-1::1693002812::0::1::::guardEnemy<>CharacterBody2D<>::
-guard.tscn::PackedScene::5772568824482214456::1693248563::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd
+guard.tscn::PackedScene::5772568824482214456::1693333956::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet&sprites/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd
 loading_screen.tscn::PackedScene::760325004590088662::1693163741::0::1::::<><>::
 Player.gd::GDScript::-1::1692845349::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::9090504454143567303::1693248563::0::1::::<><>::res://scenes/Player.gd<>uid://dfylm5k3i3mwj::::res://tileSet/crook.png<>res://scenes/CameraDevControl.gd<>uid://cdts2jlbaa7tc::::res://Assets/light.png
-test.tscn::PackedScene::7352366873512534580::1693248563::0::1::::<><>::uid://d2rrjr61vxthf::::res://scenes/Player.tscn
-treasure.gd::GDScript::-1::1693248463::0::1::::<>Area2D<>::
-treasure.tscn::PackedScene::1968141821779983713::1693169017::0::1::::<><>::res://scenes/treasure.gd<>uid://beyy112n5t8r1::::res://icon.svg
-treasure_prompt.tscn::PackedScene::2344246486114080436::1693248563::0::1::::<><>::
-world.gd::GDScript::-1::1693248557::0::1::::<>Node2D<>::
-world.tscn::PackedScene::8302476812903023831::1693248563::0::1::::<><>::res://scenes/world.gd<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn<>uid://njlmawtm5tf1::::res://tileSet/tilemap(floor design) (1).png
-::res://Seperate Scripts/::1692728515
+Player.tscn::PackedScene::9090504454143567303::1693343136::0::1::::<><>::res://scenes/Player.gd<>uid://dfylm5k3i3mwj::::res://tileSet&sprites/crook.png<>res://scenes/CameraDevControl.gd<>uid://cdts2jlbaa7tc::::res://Assets/light.png
+Score.tscn::PackedScene::2797311890445056731::1693343013::0::1::::<><>::uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf
+test.tscn::PackedScene::7352366873512534580::1693251873::0::1::::<><>::uid://d2rrjr61vxthf
+treasure.gd::GDScript::-1::1693249916::0::1::::<>Area2D<>::
+treasure.tscn::PackedScene::1968141821779983713::1693169017::0::1::::<><>::res://scenes/treasure.gd<>uid://beyy112n5t8r1
+treasure_prompt.tscn::PackedScene::2344246486114080436::1693251874::0::1::::<><>::
+::res://scenes/Playable/::1693343137
+Menu.gd::GDScript::-1::1693334221::0::1::::<>Control<>::
+menu.tscn::PackedScene::1394632985375033094::1693343137::0::1::::<><>::res://scenes/Playable/Menu.gd<>uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf
+world.gd::GDScript::-1::1693343011::0::1::::<>Node2D<>::
+world.tscn::PackedScene::6728773128237763682::1693343136::0::1::::<><>::res://scenes/Playable/world.gd<>uid://njlmawtm5tf1::::res://tileSet&sprites/tilemap(floor design) (1).png<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://bf4bk21kjmucx::::res://scenes/Score.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn
+::res://Seperate Scripts/::1693333927
 CharacterBody2D.gd::GDScript::-1::1692577881::0::1::::<>CharacterBody2D<>::
-::res://tileSet/::1692136697
-cop.png::CompressedTexture2D::3614832767567856078::1692136695::1692136697::1::::<><>::
-crook.png::CompressedTexture2D::7560442244246735749::1691609193::1691609194::1::::<><>::
-Full.png::CompressedTexture2D::1988851278328837936::1691596153::1691596250::1::::<><>::
-tilemap (2).png::CompressedTexture2D::7876305842402554345::1692129125::1692129125::1::::<><>::
-tilemap(floor design) (1).png::CompressedTexture2D::931723718394456352::1692134153::1692134154::1::::<><>::
-tilemap(floor design).png::CompressedTexture2D::3811761257883680021::1692133628::1692133629::1::::<><>::
+Events.gd::GDScript::-1::1693251031::0::1::::<>Node<>::
+Walker.gd::GDScript::-1::1693031038::0::1::::Walker<>Node<>::
+::res://tileSet&sprites/::1693347167
+cloud.png::CompressedTexture2D::6445932286481125600::1693347167::1693347169::1::::<><>::
+cop.png::CompressedTexture2D::3614832767567856078::1692136695::1693333956::1::::<><>::
+crook.png::CompressedTexture2D::7560442244246735749::1691609193::1693333956::1::::<><>::
+Full.png::CompressedTexture2D::1988851278328837936::1691596153::1693333956::1::::<><>::
+tilemap (2).png::CompressedTexture2D::7876305842402554345::1692129125::1693333956::1::::<><>::
+tilemap(floor design) (1).png::CompressedTexture2D::931723718394456352::1692134153::1693333956::1::::<><>::
+tilemap(floor design).png::CompressedTexture2D::3811761257883680021::1692133628::1693333956::1::::<><>::

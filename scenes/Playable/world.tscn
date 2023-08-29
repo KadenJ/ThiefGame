@@ -1,17 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqj1tyukqibn0"]
+[gd_scene load_steps=10 format=3 uid="uid://c24p57l318t6q"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_pqt21"]
-[ext_resource type="PackedScene" uid="uid://8ntnrcx56uqm" path="res://scenes/treasure_prompt.tscn" id="3_yb2lm"]
-[ext_resource type="PackedScene" uid="uid://k3kpawgbfjby" path="res://scenes/loading_screen.tscn" id="4_28gdm"]
-[ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet/tilemap(floor design) (1).png" id="4_bg507"]
-[ext_resource type="PackedScene" uid="uid://bf4bk21kjmucx" path="res://scenes/Score.tscn" id="5_lhfqa"]
+[ext_resource type="Script" path="res://scenes/Playable/world.gd" id="1_j4w5f"]
+[ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet&sprites/tilemap(floor design) (1).png" id="2_t0r5h"]
+[ext_resource type="PackedScene" uid="uid://8ntnrcx56uqm" path="res://scenes/treasure_prompt.tscn" id="3_anvvu"]
+[ext_resource type="PackedScene" uid="uid://bf4bk21kjmucx" path="res://scenes/Score.tscn" id="4_3ssa1"]
+[ext_resource type="PackedScene" uid="uid://k3kpawgbfjby" path="res://scenes/loading_screen.tscn" id="5_3qnuo"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rrmd8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ljn3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii0im"]
-texture = ExtResource("4_bg507")
+texture = ExtResource("2_t0r5h")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/material = SubResource("CanvasItemMaterial_rrmd8")
@@ -361,7 +361,7 @@ terrain_set_0/terrain_1/color = Color(0.0352941, 0.996078, 0.996078, 1)
 sources/1 = SubResource("TileSetAtlasSource_ii0im")
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_pqt21")
+script = ExtResource("1_j4w5f")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7ae4w")
@@ -371,14 +371,14 @@ layer_0/tile_data = PackedInt32Array(65535, 1, 0, 131071, 1, 0, 196607, 1, 0, 26
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_yb2lm")]
+[node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_anvvu")]
 visible = false
 
-[node name="Score" parent="CanvasLayer" instance=ExtResource("5_lhfqa")]
+[node name="Score" parent="CanvasLayer" instance=ExtResource("4_3ssa1")]
 offset_right = 179.0
 offset_bottom = 64.0
 
-[node name="loadingScreen" parent="CanvasLayer" instance=ExtResource("4_28gdm")]
+[node name="loadingScreen" parent="CanvasLayer" instance=ExtResource("5_3qnuo")]
 visible = false
 
 [node name="loadingTimer" type="Timer" parent="CanvasLayer/loadingScreen"]

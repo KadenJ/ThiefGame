@@ -28,6 +28,9 @@ func _ready():
 	Events.TreasureGathered.connect(showTreasurePrompt)
 	Events.treasureStolen.connect(giveScore.bind(100))
 	loading_timer.connect("timeout", hideLoadScreen)
+	_score.set_text(str(score).pad_zeros(5))
+	
+	
 	generateLevel()
 
 func generateLevel():
@@ -106,7 +109,7 @@ func reloadLevel():
 		for i in 36:
 			tileMap.set_cell(0,Vector2i(i,row), 1, Vector2i(0,0))
 		
-	generateLevel()
+	#generateLevel()
 
 func _input(event):
 	if event.is_action_pressed("levelControl"):
@@ -118,9 +121,11 @@ func showTreasurePrompt():
 
 func hideLoadScreen():
 	loading_screen.hide()
+	loading_timer.stop()
+	generateLevel()
 
 func giveScore(points):
 	score += points
 	#show score on label
-	_score.set_text(str(score))
+	_score.set_text(str(score).pad_zeros(5))
 	print(score)

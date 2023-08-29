@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfylm5k3i3mwj"
-path="res://.godot/imported/crook.png-9d3818b72f199f5a5137b71e0877fc84.ctex"
+path="res://.godot/imported/crook.png-0b04d7ea4ac142cda0330aa87a440ddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tileSet/crook.png"
-dest_files=["res://.godot/imported/crook.png-9d3818b72f199f5a5137b71e0877fc84.ctex"]
+source_file="res://tileSet&sprites/crook.png"
+dest_files=["res://.godot/imported/crook.png-0b04d7ea4ac142cda0330aa87a440ddc.ctex"]
 
 [params]
 

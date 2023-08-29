@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://coijmoeduemce"]
 
 [ext_resource type="Script" path="res://scenes/guard.gd" id="1_0m2xc"]
-[ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet/cop.png" id="1_rnw7a"]
+[ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet&sprites/cop.png" id="1_rnw7a"]
 [ext_resource type="Script" path="res://Guard/StateMachine.gd" id="3_i8e1q"]
 [ext_resource type="Script" path="res://Guard/GuardWander.gd" id="4_lfnbi"]
 [ext_resource type="Script" path="res://Guard/GuardChase.gd" id="5_ph6m7"]

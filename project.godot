@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="ThiefGame"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/Playable/world.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://tileSet/crook.png"
+config/icon="res://tileSet&sprites/crook.png"
 
 [autoload]
 
-Events="*res://Events.gd"
+Events="*res://Seperate Scripts/Events.gd"
 
 [display]
 

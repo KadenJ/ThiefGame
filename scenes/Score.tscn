@@ -15,5 +15,5 @@ size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-text = "Score"
+text = "00000"
 label_settings = SubResource("LabelSettings_kkhvr")
