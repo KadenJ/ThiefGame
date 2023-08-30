@@ -3,3 +3,5 @@ res://scenes/Playable/world.tscn
 res://scenes/Player.tscn
 res://scenes/Playable/world.gd
 res://scenes/Playable/Menu.gd
+res://Guard/GuardChase.gd
+res://scenes/guard.tscn

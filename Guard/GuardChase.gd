@@ -45,5 +45,6 @@ func _on_area_2d_body_exited(_body):
 	
 
 
-func _on_catcher_body_entered(body):
+func _on_catcher_body_entered(_body):
 	print("player caught")
+	Events.guardCaught.emit()

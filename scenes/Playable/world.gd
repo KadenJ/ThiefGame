@@ -8,6 +8,7 @@ const Treasure = preload("res://scenes/treasure.tscn")
 const Guard = preload("res://scenes/guard.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
+
 var score = 0
 var floorNumber = 0
 
@@ -28,6 +29,7 @@ func _ready():
 	#randomize()
 	Events.TreasureGathered.connect(showTreasurePrompt)
 	Events.treasureStolen.connect(giveScore.bind(100))
+	Events.guardCaught.connect(caught)
 	loading_timer.connect("timeout", hideLoadScreen)
 	_score.set_text(str(score).pad_zeros(5))
 	
@@ -63,7 +65,9 @@ func generateLevel():
 			#TList.append(Area2D)
 			if treasure.position == exit.position:
 				treasure.queue_free()
+				
 	#spawns guards
+	
 	for room in walker.rooms:
 		var roomEval = randi()% 10
 		if roomEval == 3:
@@ -113,6 +117,7 @@ func reloadLevel():
 		
 	#generateLevel()
 
+#dev control
 func _input(event):
 	if event.is_action_pressed("levelControl"):
 		reloadLevel()
@@ -131,3 +136,6 @@ func giveScore(points):
 	#show score on label
 	_score.set_text(str(score).pad_zeros(5))
 	print(score)
+
+func caught():
+	get_tree().change_scene_to_file("res://scenes/Playable/menu.tscn")
