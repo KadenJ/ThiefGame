@@ -1,7 +1,5 @@
-res://Menu.gd
 res://scenes/Playable/menu.tscn
 res://scenes/Playable/world.tscn
-res://scenes/Playable/Menu.gd
-res://scenes/Playable/world.gd
 res://scenes/Player.tscn
-res://scenes/Score.tscn
+res://scenes/Playable/world.gd
+res://scenes/Playable/Menu.gd

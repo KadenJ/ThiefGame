@@ -9,6 +9,7 @@ const Guard = preload("res://scenes/guard.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 var score = 0
+var floorNumber = 0
 
 @onready var tileMap = $TileMap
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
@@ -92,6 +93,7 @@ func generateLevel():
 func reloadLevel():
 	var children = get_children()
 	giveScore(200)
+	floorNumber += 1
 	#place black screen with small animation
 	loading_screen.show()
 	loading_timer.start()
