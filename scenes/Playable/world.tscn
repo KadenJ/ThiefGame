@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c24p57l318t6q"]
+[gd_scene load_steps=12 format=3 uid="uid://c24p57l318t6q"]
 
 [ext_resource type="Script" path="res://scenes/Playable/world.gd" id="1_j4w5f"]
 [ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet&sprites/tilemap(floor design) (1).png" id="2_t0r5h"]
 [ext_resource type="PackedScene" uid="uid://8ntnrcx56uqm" path="res://scenes/treasure_prompt.tscn" id="3_anvvu"]
 [ext_resource type="PackedScene" uid="uid://bf4bk21kjmucx" path="res://scenes/Score.tscn" id="4_3ssa1"]
 [ext_resource type="PackedScene" uid="uid://k3kpawgbfjby" path="res://scenes/loading_screen.tscn" id="5_3qnuo"]
+[ext_resource type="Script" path="res://scenes/Playable/GO_buttonControl.gd" id="6_jj60r"]
+[ext_resource type="FontFile" uid="uid://bgrv4dc4yuvbe" path="res://Assets/fonts/barcode/Barcade-R4LM.otf" id="6_kv4e6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rrmd8"]
 
@@ -383,5 +385,104 @@ visible = false
 
 [node name="loadingTimer" type="Timer" parent="CanvasLayer/loadingScreen"]
 
+[node name="GameOverScreen" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_jj60r")
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -223.0
+offset_right = 223.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_kv4e6")
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
+
+[node name="retry" type="Button" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = 134.0
+offset_right = 4.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_kv4e6")
+theme_override_font_sizes/font_size = 25
+text = "Keep Stealin'"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 179.0
+offset_right = 71.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_kv4e6")
+theme_override_font_sizes/font_size = 25
+text = "Main Menu"
+
+[node name="score" type="Label" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.5
+offset_top = -2.0
+offset_right = 77.5
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_kv4e6")
+theme_override_font_sizes/font_size = 50
+text = "99999"
+
+[node name="HS" type="Label" parent="CanvasLayer/GameOverScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -49.0
+offset_right = 91.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_kv4e6")
+theme_override_font_sizes/font_size = 25
+text = "NEW HIGHSCORE"
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/retry" to="CanvasLayer/GameOverScreen" method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]

@@ -17,6 +17,7 @@ var floorNumber = 0
 @onready var loading_screen = $CanvasLayer/loadingScreen
 @onready var loading_timer = $CanvasLayer/loadingScreen/loadingTimer
 @onready var _score = $CanvasLayer/Score/Label
+@onready var game_over_screen = $CanvasLayer/GameOverScreen
 
 @export var size = 250
 
@@ -29,10 +30,11 @@ func _ready():
 	#randomize()
 	Events.TreasureGathered.connect(showTreasurePrompt)
 	Events.treasureStolen.connect(giveScore.bind(100))
-	Events.guardCaught.connect(caught)
+	Events.guardCaught.connect(GameOver)
+	#Events.GameOver.connect(GameOver)
 	loading_timer.connect("timeout", hideLoadScreen)
 	_score.set_text(str(score).pad_zeros(5))
-	
+	game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
 	
 	generateLevel()
 
@@ -137,5 +139,10 @@ func giveScore(points):
 	_score.set_text(str(score).pad_zeros(5))
 	print(score)
 
-func caught():
-	get_tree().change_scene_to_file("res://scenes/Playable/menu.tscn")
+func GameOver():
+	if score > SaveLoad.highestRecord:
+		SaveLoad.highestRecord = score
+		game_over_screen.get_child(4).show()
+		SaveLoad.saveScore()
+	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
+	game_over_screen.show()

@@ -18,6 +18,8 @@ config/icon="res://tileSet&sprites/crook.png"
 [autoload]
 
 Events="*res://Seperate Scripts/Events.gd"
+SaveLoad="*res://Seperate Scripts/SaveLoad.gd"
+BgMusic="*res://scenes/BG music.tscn"
 
 [display]
 
