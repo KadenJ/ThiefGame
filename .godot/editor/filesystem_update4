@@ -9,3 +9,5 @@ res://Guard/GuardChase.gd
 res://scenes/treasure.gd
 res://scenes/Playable/scoreboard.gd
 res://scenes/Playable/Menu.gd
+res://scenes/treasure_prompt.tscn
+res://scenes/treasure.tscn

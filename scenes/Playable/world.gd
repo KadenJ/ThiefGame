@@ -95,7 +95,6 @@ func generateLevel():
 		tileMap.set_cell(0, location, 1, Vector2i(4,4))
 		
 
-
 func reloadLevel():
 	var children = get_children()
 	giveScore(200)
@@ -118,11 +117,6 @@ func reloadLevel():
 			tileMap.set_cell(0,Vector2i(i,row), 1, Vector2i(0,0))
 		
 	#generateLevel()
-
-#dev control
-func _input(event):
-	if event.is_action_pressed("levelControl"):
-		reloadLevel()
 
 func showTreasurePrompt():
 	giveScore(500)

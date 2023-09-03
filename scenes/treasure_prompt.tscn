@@ -1,23 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ntnrcx56uqm"]
-
-[sub_resource type="FontFile" id="FontFile_on7a8"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/100/0 = Vector2(0, 0)
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-cache/0/100/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/100/0/kerning_overrides/100/0 = Vector2(0, 0)
+[gd_scene format=3 uid="uid://8ntnrcx56uqm"]
 
 [node name="treasurePrompt" type="ColorRect"]
 anchors_preset = 15
@@ -32,13 +13,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -408.0
-offset_right = 408.0
-offset_bottom = 137.0
+offset_left = -452.5
+offset_top = 64.0
+offset_right = 452.5
+offset_bottom = 204.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_on7a8")
+theme_override_colors/font_color = Color(1, 1, 1, 0.619608)
 theme_override_font_sizes/font_size = 100
 text = "All Treasure Found"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://3bnajsqitpw8"]
 
 [ext_resource type="Script" path="res://scenes/treasure.gd" id="1_cmg33"]
-[ext_resource type="Texture2D" uid="uid://beyy112n5t8r1" path="res://icon.svg" id="2_6w568"]
+[ext_resource type="Texture2D" uid="uid://hm4ijkkjm3pc" path="res://tileSet&sprites/gold.png" id="2_cv8qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g16ms"]
 
@@ -14,7 +14,7 @@ script = ExtResource("1_cmg33")
 shape = SubResource("RectangleShape2D_g16ms")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_6w568")
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("2_cv8qq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
