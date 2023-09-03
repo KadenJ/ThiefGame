@@ -1,12 +1,5 @@
 res://scenes/Playable/world.tscn
-res://Seperate Scripts/Events.gd
-res://scenes/Player.tscn
 res://scenes/Playable/menu.tscn
-res://scenes/guard.tscn
-res://scenes/Score.tscn
-res://scenes/Playable/world.gd
-res://scenes/Playable/GO_buttonControl.gd
-res://Guard/GuardChase.gd
-res://Seperate Scripts/SaveLoad.gd
-res://Seperate Scripts/credits.gd
 res://scenes/BG music.tscn
+res://scenes/CameraDevControl.gd
+res://scenes/Player.tscn
