@@ -1,11 +1,11 @@
-res://scenes/Playable/menu.tscn::e5a46f418f2a47b5cf71ad9fb9c8c7d2::1693768948::res://.godot/exported/133200997/export-49e84692445e5b8e9b3e5c58ff2cb6af-menu.scn
-res://scenes/Playable/scoreboard.tscn::5cad770a8e4502daad4fa860b429f29c::1693768949::res://.godot/exported/133200997/export-6970e517ed58c6154ac6bed061e7401c-scoreboard.scn
-res://scenes/Playable/world.tscn::b7ad208e98c643454694d417913c0669::1693768948::res://.godot/exported/133200997/export-5a2a62ae111ca342727fa23da8bab981-world.scn
-res://scenes/BG music.tscn::936f45ba51ea15e1d663ee81c7412191::1693768949::res://.godot/exported/133200997/export-4bdc3c018f64f4e8a8038c04e565228c-BG music.scn
+res://scenes/Playable/menu.tscn::e5a46f418f2a47b5cf71ad9fb9c8c7d2::1693769343::res://.godot/exported/133200997/export-49e84692445e5b8e9b3e5c58ff2cb6af-menu.scn
+res://scenes/Playable/scoreboard.tscn::5cad770a8e4502daad4fa860b429f29c::1693769343::res://.godot/exported/133200997/export-6970e517ed58c6154ac6bed061e7401c-scoreboard.scn
+res://scenes/Playable/world.tscn::b7ad208e98c643454694d417913c0669::1693769343::res://.godot/exported/133200997/export-5a2a62ae111ca342727fa23da8bab981-world.scn
+res://scenes/BG music.tscn::936f45ba51ea15e1d663ee81c7412191::1693769343::res://.godot/exported/133200997/export-4bdc3c018f64f4e8a8038c04e565228c-BG music.scn
 res://scenes/Exit.tscn::b9b26e3eed06c456e159e0ee738bb461::1693169017::res://.godot/exported/133200997/export-4a8ca2301d58e1bff8e1cdf7d31a942d-Exit.scn
 res://scenes/guard.tscn::57e9bdd6ddfbbb93e02c983a9af6a48f::1693679125::res://.godot/exported/133200997/export-c852262313283469cca74c0906852806-guard.scn
 res://scenes/loading_screen.tscn::dbf86c85b53d5377d3efc3f162ff35f3::1693163741::res://.godot/exported/133200997/export-1e707b022a70ca8796c92eea804c0b29-loading_screen.scn
-res://scenes/Player.tscn::ca52965ba1433f5cd5132ac195316019::1693768949::res://.godot/exported/133200997/export-e8220e74d1354b9e6b168b513689419c-Player.scn
+res://scenes/Player.tscn::ca52965ba1433f5cd5132ac195316019::1693769343::res://.godot/exported/133200997/export-e8220e74d1354b9e6b168b513689419c-Player.scn
 res://scenes/Score.tscn::f6405e5a10c96df41d471e3226d7c325::1693679125::res://.godot/exported/133200997/export-f759b7b56a32be2a1fece1a4c43419e2-Score.scn
 res://scenes/test.tscn::886714e511993a982f15850523c133ff::1693251873::res://.godot/exported/133200997/export-a8ffa8455ee75708b6c34cd8d7888dc7-test.scn
 res://scenes/treasure.tscn::c57d184e7cb02b62f6528d20a86a1034::1693169017::res://.godot/exported/133200997/export-9be8975e1c7b3fed78c978d25325ea4d-treasure.scn

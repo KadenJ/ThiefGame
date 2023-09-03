@@ -1,9 +1,10 @@
 extends Control
 
-@onready var label = $Panel/Label
-@onready var label_2 = $Panel/Label2
-@onready var label_3 = $Panel/Label3
-@onready var label_4 = $Panel/Label4
+@onready var label = $scores/Label
+@onready var label_2 = $scores/Label2
+@onready var label_3 = $scores/Label3
+@onready var label_4 = $scores/Label4
+
 #set_text(str(score).pad_zeros(5))
 # Called when the node enters the scene tree for the first time.
 func _ready():
