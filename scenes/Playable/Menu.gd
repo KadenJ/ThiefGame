@@ -21,3 +21,7 @@ func _on_timer_timeout():
 
 func lightningHide():
 	lightning.hide()
+
+
+func _on_score_board_pressed():
+	get_tree().change_scene_to_file("res://scenes/Playable/scoreboard.tscn")

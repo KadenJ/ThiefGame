@@ -2,7 +2,8 @@ extends Node
 
 const SAVEFILE = "user://savefile.save"
 
-var highestRecord = 0
+#var highestRecord = 0
+var scoreList = [1,2,3,4]
 
 func _ready():
 	loadScore()
@@ -10,11 +11,15 @@ func _ready():
 
 func saveScore():
 	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE_READ)	
-	file.store_32(highestRecord)
+	for i in scoreList.size():
+		file.store_32(scoreList[i])
+	#file.store_32(highestRecord)
 	file = null
 	
 
 func loadScore():
 	var file = FileAccess.open(SAVEFILE, FileAccess.READ_WRITE)
 	if FileAccess.file_exists(SAVEFILE):
-		highestRecord = file.get_32()
+		for i in scoreList.size():
+			scoreList[i] = file.get_32()
+		#highestRecord = file.get_32()

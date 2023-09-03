@@ -34,7 +34,7 @@ func _ready():
 	#Events.GameOver.connect(GameOver)
 	loading_timer.connect("timeout", hideLoadScreen)
 	_score.set_text(str(score).pad_zeros(5))
-	game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
+	#game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
 	
 	generateLevel()
 
@@ -140,9 +140,21 @@ func giveScore(points):
 	print(score)
 
 func GameOver():
-	if score > SaveLoad.highestRecord:
-		SaveLoad.highestRecord = score
+	var children = get_children()
+	var count = 0
+	for child in children:
+		count += 1
+		if count > 3:
+			child.queue_free()
+	
+	if score > SaveLoad.scoreList[3]:
 		game_over_screen.get_child(4).show()
+		SaveLoad.scoreList.append(score)
+		SaveLoad.scoreList.sort()
+		SaveLoad.scoreList.reverse()
+		SaveLoad.scoreList.pop_back()
 		SaveLoad.saveScore()
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
+	print(SaveLoad.scoreList)
+	

@@ -1,6 +1,8 @@
-AudioStreamPlayer2D
-Label
 Button
+Label
+Panel
+TextEdit
+AudioStreamPlayer2D
 ColorRect
 Timer
 GPUParticles2D

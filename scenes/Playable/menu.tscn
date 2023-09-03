@@ -333,10 +333,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -621.0
-offset_top = -200.0
-offset_right = -453.0
-offset_bottom = -83.0
+offset_left = -575.0
+offset_top = -196.0
+offset_right = -407.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.28, 3.28)
@@ -347,7 +347,7 @@ size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
@@ -355,10 +355,17 @@ text = "Play"
 
 [node name="Quit" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
+
+[node name="scoreBoard" type="Button" parent="images/buttons/buttons"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_occ5i")
+theme_override_font_sizes/font_size = 20
+text = "High scores"
 
 [node name="lightning" type="ColorRect" parent="images"]
 visible = false
@@ -379,4 +386,5 @@ autostart = true
 
 [connection signal="pressed" from="images/buttons/buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="images/buttons/buttons/scoreBoard" to="." method="_on_score_board_pressed"]
 [connection signal="timeout" from="images/Timer" to="." method="_on_timer_timeout"]
