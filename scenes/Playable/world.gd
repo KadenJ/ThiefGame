@@ -29,7 +29,7 @@ var guardList = []
 func _ready():
 	#randomize()
 	Events.TreasureGathered.connect(showTreasurePrompt)
-	Events.treasureStolen.connect(giveScore.bind(100))
+	Events.treasureStolen.connect(collectTreasure)
 	Events.guardCaught.connect(GameOver)
 	#Events.GameOver.connect(GameOver)
 	loading_timer.connect("timeout", hideLoadScreen)
@@ -131,7 +131,10 @@ func giveScore(points):
 	score += points
 	#show score on label
 	_score.set_text(str(score).pad_zeros(5))
-	print(score)
+
+func collectTreasure():
+	giveScore(100)
+	$CanvasLayer/treasureAudio.play()
 
 func GameOver():
 	var children = get_children()

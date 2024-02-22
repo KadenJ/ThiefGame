@@ -1,4 +1,5 @@
 extends Node
+#autoload script
 
 signal treasureStolen
 signal TreasureGathered

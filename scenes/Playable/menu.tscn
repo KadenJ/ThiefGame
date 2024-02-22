@@ -334,9 +334,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -575.0
-offset_top = -84.0
+offset_top = -178.0
 offset_right = -407.0
-offset_bottom = 64.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.28, 3.28)
@@ -354,7 +354,6 @@ theme_override_font_sizes/font_size = 35
 text = "Play"
 
 [node name="Quit" type="Button" parent="images/buttons/buttons"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("2_occ5i")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c24p57l318t6q"]
+[gd_scene load_steps=13 format=3 uid="uid://c24p57l318t6q"]
 
 [ext_resource type="Script" path="res://scenes/Playable/world.gd" id="1_j4w5f"]
 [ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet&sprites/tilemap(floor design) (1).png" id="2_t0r5h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://k3kpawgbfjby" path="res://scenes/loading_screen.tscn" id="5_3qnuo"]
 [ext_resource type="Script" path="res://scenes/Playable/GO_buttonControl.gd" id="6_jj60r"]
 [ext_resource type="FontFile" uid="uid://bgrv4dc4yuvbe" path="res://Assets/fonts/barcode/Barcade-R4LM.otf" id="6_kv4e6"]
+[ext_resource type="AudioStream" uid="uid://b7oo0vrn8iamh" path="res://sounds/collectcoin-6075.mp3" id="8_dmxm8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rrmd8"]
 
@@ -480,6 +481,9 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_kv4e6")
 theme_override_font_sizes/font_size = 25
 text = "NEW HIGHSCORE"
+
+[node name="treasureAudio" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("8_dmxm8")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.105882, 0.105882, 0.105882, 1)
