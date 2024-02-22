@@ -11,3 +11,4 @@ res://BGSounds.gd
 res://scenes/Exit.gd
 res://scenes/Playable/world.gd
 res://scenes/BG sounds.tscn
+res://scenes/Player.gd

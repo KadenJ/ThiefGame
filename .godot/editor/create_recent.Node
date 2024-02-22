@@ -1,3 +1,6 @@
+AnimationTree
+AnimationPlayer
+AnimatedSprite2D
 AudioStreamPlayer
 Node
 Button
@@ -28,4 +31,3 @@ StaticBody2D
 CanvasLayer
 Camera2D
 Node2D
-TileMap
