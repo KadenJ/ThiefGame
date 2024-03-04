@@ -1,14 +1,14 @@
+res://scenes/guard.tscn
+res://scenes/guard.gd
+res://Guard/GuardChase.gd
+res://Guard/GuardWander.gd
 res://scenes/Playable/world.tscn
 res://scenes/Playable/menu.tscn
-res://scenes/BG music.tscn
 res://scenes/Player.tscn
-res://scenes/treasure.tscn
-res://scenes/Playable/scoreboard.tscn
-res://Seperate Scripts/Events.gd
-res://scenes/treasure.gd
-res://scenes/Exit.tscn
-res://BGSounds.gd
-res://scenes/Exit.gd
+res://Guard/States.gd
+res://scenes/Node.gd
+res://scenes/CameraDevControl.gd
 res://scenes/Playable/world.gd
-res://scenes/BG sounds.tscn
+res://scenes/Exit.tscn
+res://scenes/Exit.gd
 res://scenes/Player.gd

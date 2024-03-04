@@ -22,16 +22,12 @@ var floorNumber = 0
 @export var size = 250
 
 var treasureList = []
-#var TList = []
 var guardList = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	#randomize()
 	Events.TreasureGathered.connect(showTreasurePrompt)
 	Events.treasureStolen.connect(collectTreasure)
 	Events.guardCaught.connect(GameOver)
-	#Events.GameOver.connect(GameOver)
 	loading_timer.connect("timeout", hideLoadScreen)
 	_score.set_text(str(score).pad_zeros(5))
 	#game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
@@ -44,12 +40,10 @@ func generateLevel():
 	var map = walker.walk(size)#size of room, amount of total steps taken
 	
 	var player = Player.instantiate()
-	#add_child(player)
 	call_deferred("add_child",player)
 	player.position = map.front()*32
 	
 	var exit = Exit.instantiate()
-	#add_child(exit)
 	call_deferred("add_child",exit)
 	exit.position = walker.getEndRoom().position*32
 	exit.leavingLevel.connect(reloadLevel)
@@ -59,24 +53,19 @@ func generateLevel():
 		var roomEval = randi()% 10
 		if roomEval == 1:
 			var treasure = Treasure.instantiate()
-			#add_child(treasure)
 			call_deferred("add_child",treasure)
 			treasure.position = room.position*32
 			room.hasTreasure = true
 			treasureList.append(treasure.position)
-			#TList.append(Area2D)
 			if treasure.position == exit.position:
 				treasure.queue_free()
 				
 	#spawns guards
-	
 	for room in walker.rooms:
 		var roomEval = randi()% 10
 		if roomEval == 3:
 			var guard = Guard.instantiate()
-			#add_child(guard)
 			call_deferred("add_child",guard)
-			#checks for other guards
 			if guardList.count(room.position*32) == 1:
 				guard.queue_free()
 			else:
@@ -153,5 +142,4 @@ func GameOver():
 		SaveLoad.saveScore()
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
-	print(SaveLoad.scoreList)
 	

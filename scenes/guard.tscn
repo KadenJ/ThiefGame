@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://coijmoeduemce"]
+[gd_scene load_steps=9 format=3 uid="uid://coijmoeduemce"]
 
 [ext_resource type="Script" path="res://scenes/guard.gd" id="1_0m2xc"]
 [ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet&sprites/cop.png" id="1_rnw7a"]
 [ext_resource type="Script" path="res://Guard/StateMachine.gd" id="3_i8e1q"]
 [ext_resource type="Script" path="res://Guard/GuardWander.gd" id="4_lfnbi"]
 [ext_resource type="Script" path="res://Guard/GuardChase.gd" id="5_ph6m7"]
+[ext_resource type="Script" path="res://scenes/Node.gd" id="6_oxree"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]
 radius = 14.0
@@ -13,6 +14,7 @@ radius = 14.0
 size = Vector2(21, 32)
 
 [node name="Guard" type="CharacterBody2D"]
+collision_layer = 0
 collision_mask = 9
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -40,7 +42,7 @@ polygon = PackedVector2Array(32.6024, 18.9999, -91.6852, 33.9996, -91.6851, -36.
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("3_i8e1q")
-initialState = NodePath("GWander")
+initialState = NodePath("StartUp")
 
 [node name="GWander" type="Node" parent="StateMachine" node_paths=PackedStringArray("guard")]
 script = ExtResource("4_lfnbi")
@@ -49,6 +51,9 @@ guard = NodePath("../..")
 [node name="GChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("Guard")]
 script = ExtResource("5_ph6m7")
 Guard = NodePath("../..")
+
+[node name="StartUp" type="Node" parent="StateMachine"]
+script = ExtResource("6_oxree")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

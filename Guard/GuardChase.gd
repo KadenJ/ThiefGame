@@ -28,7 +28,6 @@ func Physics_Update(_delta: float):
 	
 	#on area exit
 	if direction.length() > 350:
-		print(direction.length())
 		Transitioned.emit(self,"GWander")
 		
 	
@@ -40,7 +39,6 @@ func changeState():
 
 
 func _on_area_2d_body_exited(_body):
-	print("player lost")
 	timer.start()
 	
 
