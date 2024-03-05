@@ -6,6 +6,7 @@ const Player = preload("res://scenes/Player.tscn")
 const Exit = preload("res://scenes/Exit.tscn")
 const Treasure = preload("res://scenes/treasure.tscn")
 const Guard = preload("res://scenes/guard.tscn")
+const Dog = preload("res://scenes/dog.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 
@@ -24,7 +25,10 @@ var floorNumber = 0
 var treasureList = []
 var guardList = []
 
+var level = Events.level
+
 func _ready():
+	level = 0
 	Events.TreasureGathered.connect(showTreasurePrompt)
 	Events.treasureStolen.connect(collectTreasure)
 	Events.guardCaught.connect(GameOver)
@@ -35,6 +39,7 @@ func _ready():
 	generateLevel()
 
 func generateLevel():
+	level += 1
 	#@warning_ignore("integer_division")
 	var walker = Walker.new(Vector2(17,9), borders) #Vector2(36/2, 20/2)
 	var map = walker.walk(size)#size of room, amount of total steps taken
@@ -60,9 +65,9 @@ func generateLevel():
 			if treasure.position == exit.position:
 				treasure.queue_free()
 				
-	#spawns guards
+	#spawns enemies
 	for room in walker.rooms:
-		var roomEval = randi()% 10
+		var roomEval = randi()% 12
 		if roomEval == 3:
 			var guard = Guard.instantiate()
 			call_deferred("add_child",guard)
@@ -78,11 +83,28 @@ func generateLevel():
 					guard.queue_free()
 			if guard.position == exit.position || guard.position.distance_to(player.position) < abs(10):
 				guard.queue_free()
+		elif roomEval == 4 && level >= 2:
+			var dog = Dog.instantiate()
+			call_deferred("add_child",dog)
+			if guardList.count(room.position*32) == 1:
+				dog.queue_free()
+			else:
+				dog.position = room.position*32
+				guardList.append(dog.position)
+			#checks for treasure on pos
+			for i in treasureList:
+				if dog.position == i:
+					#change to move 
+					dog.queue_free()
+			if dog.position == exit.position || dog.position.distance_to(player.position) < abs(10):
+				dog.queue_free()
+			
 	#changes floor tiles
 	walker.queue_free()
 	for location in map:
 		tileMap.set_cell(0, location, 1, Vector2i(4,4))
 		
+
 
 func reloadLevel():
 	var children = get_children()

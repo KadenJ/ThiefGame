@@ -44,6 +44,10 @@ polygon = PackedVector2Array(32.6024, 18.9999, -91.6852, 33.9996, -91.6851, -36.
 script = ExtResource("3_i8e1q")
 initialState = NodePath("StartUp")
 
+[node name="StartUp" type="Node" parent="StateMachine"]
+script = ExtResource("6_oxree")
+initialState = "GWander"
+
 [node name="GWander" type="Node" parent="StateMachine" node_paths=PackedStringArray("guard")]
 script = ExtResource("4_lfnbi")
 guard = NodePath("../..")
@@ -51,9 +55,6 @@ guard = NodePath("../..")
 [node name="GChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("Guard")]
 script = ExtResource("5_ph6m7")
 Guard = NodePath("../..")
-
-[node name="StartUp" type="Node" parent="StateMachine"]
-script = ExtResource("6_oxree")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

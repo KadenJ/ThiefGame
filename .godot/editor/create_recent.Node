@@ -1,4 +1,10 @@
+StartUp
 Node
+CollisionShape2D
+Area2D
+Sprite2D
+Control
+CharacterBody2D
 GChase
 State
 AnimationTree
@@ -16,8 +22,6 @@ GPUParticles2D
 TextureRect
 VBoxContainer
 MarginContainer
-CollisionShape2D
-Area2D
 CenterContainer
 CanvasModulate
 PointLight2D
@@ -25,8 +29,5 @@ LightOccluder2D
 DirectionalLight2D
 GWander
 NavigationAgent2D
-Sprite2D
-CharacterBody2D
 CollisionPolygon2D
 StaticBody2D
-CanvasLayer

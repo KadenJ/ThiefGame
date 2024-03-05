@@ -1142,7 +1142,7 @@ maxSpeed = 250
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ff0cr")
 animation = &"idle"
-frame = 18
+frame = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")

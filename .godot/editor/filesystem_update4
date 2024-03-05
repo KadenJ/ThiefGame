@@ -1,14 +1,12 @@
 res://scenes/guard.tscn
-res://scenes/guard.gd
-res://Guard/GuardChase.gd
-res://Guard/GuardWander.gd
+res://Dog/DogWander.gd
+res://scenes/dog.tscn
+res://scenes/Node.gd
 res://scenes/Playable/world.tscn
 res://scenes/Playable/menu.tscn
 res://scenes/Player.tscn
-res://Guard/States.gd
-res://scenes/Node.gd
-res://scenes/CameraDevControl.gd
-res://scenes/Playable/world.gd
 res://scenes/Exit.tscn
-res://scenes/Exit.gd
-res://scenes/Player.gd
+res://Seperate Scripts/Events.gd
+res://scenes/Playable/world.gd
+res://Guard/StateMachine.gd
+res://Guard/GuardWander.gd
