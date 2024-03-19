@@ -76,14 +76,14 @@ func generateLevel():
 			else:
 				guard.position = room.position*32
 				guardList.append(guard.position)
+				
 			#checks for treasure on pos
 			for i in treasureList:
 				if guard.position == i:
-					#change to move 
 					guard.queue_free()
-			if guard.position == exit.position || guard.position.distance_to(player.position) < abs(10):
+			if guard.position == exit.position || guard.position.distance_to(player.position) < abs(20):
 				guard.queue_free()
-		elif roomEval == 4 && level >= 2:
+		elif roomEval == 4 && level >= 5:
 			var dog = Dog.instantiate()
 			call_deferred("add_child",dog)
 			if guardList.count(room.position*32) == 1:
@@ -94,7 +94,6 @@ func generateLevel():
 			#checks for treasure on pos
 			for i in treasureList:
 				if dog.position == i:
-					#change to move 
 					dog.queue_free()
 			if dog.position == exit.position || dog.position.distance_to(player.position) < abs(10):
 				dog.queue_free()

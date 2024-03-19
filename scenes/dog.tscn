@@ -1,20 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://diwjc5kprxfgm"]
+[gd_scene load_steps=9 format=3 uid="uid://diwjc5kprxfgm"]
 
 [ext_resource type="Texture2D" uid="uid://coa6qpi342twj" path="res://Dog/GuardDog.png" id="1_6nfhi"]
 [ext_resource type="Script" path="res://scenes/guard.gd" id="1_58nit"]
 [ext_resource type="Script" path="res://Guard/StateMachine.gd" id="2_4afxm"]
 [ext_resource type="Script" path="res://Dog/DogWander.gd" id="3_dmk80"]
 [ext_resource type="Script" path="res://scenes/Node.gd" id="4_2k7o2"]
+[ext_resource type="Script" path="res://scenes/DogChase.gd" id="6_11w2m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahrtq"]
 radius = 19.661
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hegw2"]
-size = Vector2(15, 10)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsbl5"]
+radius = 239.008
 
 [node name="Dog" type="CharacterBody2D"]
 position = Vector2(635, 165)
 collision_layer = 0
+motion_mode = 1
 script = ExtResource("1_58nit")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,17 +30,21 @@ scale = Vector2(0.425, 0.425)
 texture = ExtResource("1_6nfhi")
 
 [node name="sight" type="Area2D" parent="."]
-monitorable = false
-
-[node name="catcher" type="Area2D" parent="."]
-rotation = 1.5708
 collision_layer = 0
 collision_mask = 8
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="catcher"]
-position = Vector2(-2.5, -15)
-shape = SubResource("RectangleShape2D_hegw2")
+[node name="Smell of Dog" type="CollisionPolygon2D" parent="sight"]
+polygon = PackedVector2Array(12, -6, 73, -14, 160, -1, 74, 10, 12, 5)
+
+[node name="recruitRange" type="Area2D" parent="."]
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="recruitRange"]
+position = Vector2(-4.14648e-06, -1)
+shape = SubResource("CircleShape2D_bsbl5")
 
 [node name="stateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState")]
 script = ExtResource("2_4afxm")
@@ -50,3 +56,16 @@ script = ExtResource("4_2k7o2")
 [node name="Wander" type="Node" parent="stateMachine" node_paths=PackedStringArray("dog")]
 script = ExtResource("3_dmk80")
 dog = NodePath("../..")
+
+[node name="DogChase" type="Node" parent="stateMachine" node_paths=PackedStringArray("Dog")]
+script = ExtResource("6_11w2m")
+Dog = NodePath("../..")
+
+[node name="scentDetectedTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="sight" to="stateMachine/Wander" method="_on_sight_body_entered"]
+[connection signal="body_entered" from="recruitRange" to="stateMachine/DogChase" method="_on_recruit_range_body_entered"]
+[connection signal="timeout" from="scentDetectedTimer" to="stateMachine/Wander" method="_on_scent_detected_timer_timeout"]

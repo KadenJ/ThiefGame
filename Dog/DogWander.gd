@@ -27,9 +27,16 @@ func Update(delta: float):
 func Physics_Update(_delta:float):
 	if dog:
 		dog.velocity = moveDirection* moveSpeed
-	#guard.rotate(guard.velocity.angle())
-	#var direction = guard.global_position - Player.global_position 
 	
 
+func _on_sight_body_entered(body):
+	changeState("DogChase")
+
+
+func _on_scent_detected_timer_timeout():
+	changeState("DogChase")
 	
-	
+
+func changeState(newState):
+	print(newState)
+	Transitioned.emit(self, newState)

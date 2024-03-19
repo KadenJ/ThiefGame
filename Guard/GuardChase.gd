@@ -13,6 +13,7 @@ func _ready():
 	
 
 func Enter():
+	print("GChase")
 	Player = get_tree().get_first_node_in_group("Player")
 	
 
@@ -31,7 +32,6 @@ func Physics_Update(_delta: float):
 		Transitioned.emit(self,"GWander")
 		
 	
-
 
 func changeState():
 	print("giveUp")

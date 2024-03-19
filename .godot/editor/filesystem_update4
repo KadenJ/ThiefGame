@@ -1,12 +1,9 @@
-res://scenes/guard.tscn
-res://Dog/DogWander.gd
-res://scenes/dog.tscn
-res://scenes/Node.gd
 res://scenes/Playable/world.tscn
+res://scenes/DogChase.gd
 res://scenes/Playable/menu.tscn
 res://scenes/Player.tscn
-res://scenes/Exit.tscn
-res://Seperate Scripts/Events.gd
-res://scenes/Playable/world.gd
-res://Guard/StateMachine.gd
+res://scenes/guard.tscn
+res://scenes/dog.tscn
+res://scenes/Playable/test.tscn
 res://Guard/GuardWander.gd
+res://Dog/DogWander.gd

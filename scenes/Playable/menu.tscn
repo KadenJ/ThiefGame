@@ -6,12 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cx3pte28vgxt5" path="res://tileSet&sprites/cloud.png" id="4_7qsr1"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_11rlk"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(600, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(-20.89, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 scale_min = 3.0
 scale_max = 3.0
 

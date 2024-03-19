@@ -1,7 +1,8 @@
 extends CharacterBody2D
-#class_name guardEnemy
+class_name guardEnemy
 
 var Player: CharacterBody2D
+
 func _ready():
 	Player = get_tree().get_first_node_in_group("Player")
 	
@@ -13,4 +14,3 @@ func _physics_process(_delta):
 		pass
 		#play animation
 		
-	

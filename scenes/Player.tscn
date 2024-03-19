@@ -1036,7 +1036,7 @@ nodes/IdleBlendSpace2D/position = Vector2(440, 80)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_dok7v")
 nodes/TimeScale/position = Vector2(667, 135)
 nodes/output/position = Vector2(800, 80)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"IdleBlendSpace2D"]
+node_connections = [&"TimeScale", 0, &"IdleBlendSpace2D", &"output", 0, &"TimeScale"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ff443"]
 animation = &"runL"
@@ -1073,7 +1073,7 @@ nodes/BlendSpace2D/position = Vector2(441, 99)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_53q3a")
 nodes/TimeScale/position = Vector2(684, 130)
 nodes/output/position = Vector2(820, 100)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"BlendSpace2D"]
+node_connections = [&"TimeScale", 0, &"BlendSpace2D", &"output", 0, &"TimeScale"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k7l7u"]
 animation = &"walkL"
@@ -1105,7 +1105,7 @@ nodes/BlendSpace2D/position = Vector2(423, 127)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sdlyx")
 nodes/TimeScale/position = Vector2(633, 127)
 nodes/output/position = Vector2(800, 80)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"BlendSpace2D"]
+node_connections = [&"TimeScale", 0, &"BlendSpace2D", &"output", 0, &"TimeScale"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d1dmp"]
 advance_mode = 2
@@ -1142,7 +1142,6 @@ maxSpeed = 250
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ff0cr")
 animation = &"idle"
-frame = 19
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -1151,9 +1150,12 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_dcfx8")
+}
 tree_root = SubResource("AnimationNodeStateMachine_y2jgr")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/idle/IdleBlendSpace2D/blend_position = Vector2(0, 0)
 parameters/idle/TimeScale/scale = 1.0
 parameters/run/BlendSpace2D/blend_position = Vector2(0, 0)

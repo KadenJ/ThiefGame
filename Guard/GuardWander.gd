@@ -9,6 +9,8 @@ class_name GWander
 var moveDirection: Vector2
 var wanderTime: float
 
+signal recruited
+
 func randomizeWander():
 	moveDirection=Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
 	wanderTime = randfn(1,2)
@@ -16,6 +18,7 @@ func randomizeWander():
 	
 func Enter():
 	#Player = get_tree().get_first_node_in_group("Player")
+	recruited.connect(changeState)
 	randomizeWander()
 
 func Update(delta: float):
@@ -33,6 +36,9 @@ func Physics_Update(_delta:float):
 
 func _on_area_2d_body_entered(_body):
 	print("found player1")
+	Transitioned.emit(self, "GChase")
+	
+func changeState():
 	Transitioned.emit(self, "GChase")
 	
 	
