@@ -62,7 +62,7 @@ script = ExtResource("6_11w2m")
 Dog = NodePath("../..")
 
 [node name="scentDetectedTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 120.0
 one_shot = true
 autostart = true
 

@@ -4,12 +4,13 @@ class_name GWander
 @export var guard:CharacterBody2D
 @export var moveSpeed:=100.0
 
-#var Player: CharacterBody2D
-
 var moveDirection: Vector2
 var wanderTime: float
 
 signal recruited
+
+func _ready():
+	recruited.connect(changeState)
 
 func randomizeWander():
 	moveDirection=Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
@@ -17,8 +18,6 @@ func randomizeWander():
 	guard.rotation = moveDirection.angle()
 	
 func Enter():
-	#Player = get_tree().get_first_node_in_group("Player")
-	recruited.connect(changeState)
 	randomizeWander()
 
 func Update(delta: float):
@@ -35,8 +34,7 @@ func Physics_Update(_delta:float):
 	
 
 func _on_area_2d_body_entered(_body):
-	print("found player1")
-	Transitioned.emit(self, "GChase")
+	changeState()
 	
 func changeState():
 	Transitioned.emit(self, "GChase")

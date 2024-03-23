@@ -1068,6 +1068,7 @@ blend_point_4/pos = Vector2(-1, 0)
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_53q3a"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7so8y"]
+graph_offset = Vector2(-93.124, 47.6198)
 nodes/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_spghs")
 nodes/BlendSpace2D/position = Vector2(441, 99)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_53q3a")
@@ -1132,7 +1133,7 @@ states/walk/position = Vector2(581, 201)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_d1dmp"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_ctgj8"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_qmv6q"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_i6wsl"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_gox5f"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_mtms8"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_6auae")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_leitt"]
-radius = 12.0
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 14
@@ -1164,7 +1165,7 @@ parameters/walk/BlendSpace2D/blend_position = Vector2(0, 0)
 parameters/walk/TimeScale/scale = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_leitt")
 
 [node name="Camera2D" type="Camera2D" parent="."]

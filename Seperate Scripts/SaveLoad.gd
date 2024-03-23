@@ -9,7 +9,9 @@ func _ready():
 	loadScore()
 	
 
+
 func saveScore():
+	
 	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE_READ)	
 	for i in scoreList.size():
 		file.store_32(scoreList[i])

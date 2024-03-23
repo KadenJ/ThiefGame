@@ -51,7 +51,6 @@ initialState = "GWander"
 [node name="GWander" type="Node" parent="StateMachine" node_paths=PackedStringArray("guard")]
 script = ExtResource("4_lfnbi")
 guard = NodePath("../..")
-moveSpeed = 0.0
 
 [node name="GChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("Guard")]
 script = ExtResource("5_ph6m7")

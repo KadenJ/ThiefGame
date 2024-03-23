@@ -154,13 +154,9 @@ func GameOver():
 		if count > 3:
 			child.queue_free()
 	
-	if score > SaveLoad.scoreList[3]:
+	if score > Scores.topScores[3]:
 		game_over_screen.get_child(4).show()
-		SaveLoad.scoreList.append(score)
-		SaveLoad.scoreList.sort()
-		SaveLoad.scoreList.reverse()
-		SaveLoad.scoreList.pop_back()
-		SaveLoad.saveScore()
+		Scores._upload_score(score)
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
 	

@@ -1,9 +1,14 @@
 res://scenes/Playable/world.tscn
-res://scenes/DogChase.gd
 res://scenes/Playable/menu.tscn
 res://scenes/Player.tscn
 res://scenes/guard.tscn
 res://scenes/dog.tscn
 res://scenes/Playable/test.tscn
+res://scenes/BG music.tscn
 res://Guard/GuardWander.gd
-res://Dog/DogWander.gd
+res://scenes/Playable/scoreboard.tscn
+res://scenes/Playable/scoreboard.gd
+res://Seperate Scripts/SaveLoad.gd
+res://LootLockerScores.gd
+res://testboard.tscn
+res://scenes/Playable/world.gd
