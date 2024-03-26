@@ -1,7 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711210741
+::res://::1711473327
 export_presets.cfg::TextFile::-1::1693776128::0::1::::<><>::
 icon.svg::CompressedTexture2D::1192285378039382279::1691595698::1693773692::1::::<><>::
+LootLockerScores.gd::GDScript::-1::1711224390::0::1::::<>Node<>::
+testboard.tscn::PackedScene::6833008365659272235::1711225554::0::1::::<><>::res://LootLockerScores.gd
 ::res://Assets/::1693165431
 info.txt::TextFile::-1::1693011768::0::1::::<><>::
 light.png::CompressedTexture2D::5023772687681136488::1693165041::1693165044::1::::<><>::
@@ -29,42 +31,42 @@ BarcadeSemiItalic-XORg.otf::FontFile::1933375948046842333::1644449512::169301142
 ::res://Dog/::1710866704
 DogWander.gd::GDScript::-1::1710866704::0::1::::DWander<>State<>::
 GuardDog.png::CompressedTexture2D::5757396779317611241::1709671244::1709671246::1::::<><>::
-::res://Guard/::1711209405
+::res://Guard/::1711211481
 GuardChase.gd::GDScript::-1::1710829909::0::1::::GChase<>State<>::
-GuardWander.gd::GDScript::-1::1711209405::0::1::::GWander<>State<>::
+GuardWander.gd::GDScript::-1::1711211481::0::1::::GWander<>State<>::
 StateMachine.gd::GDScript::-1::1709679390::0::1::::<>Node<>::
 States.gd::GDScript::-1::1709589224::0::1::::State<>Node<>::
-::res://scenes/::1711210715
-BG music.tscn::PackedScene::6711125189869296604::1711210713::0::1::::<><>::uid://5g65qwoi7lqf::::res://sounds/funkysuspense.mp3
+::res://scenes/::1711211481
+BG music.tscn::PackedScene::6711125189869296604::1711210749::0::1::::<><>::uid://5g65qwoi7lqf::::res://sounds/funkysuspense.mp3
 CameraDevControl.gd::GDScript::-1::1709590226::0::1::::<>Camera2D<>::
-dog.tscn::PackedScene::7766740727149292820::1711210691::0::1::::<><>::uid://coa6qpi342twj::::res://Dog/GuardDog.png<>res://scenes/guard.gd<>res://Guard/StateMachine.gd<>res://Dog/DogWander.gd<>res://scenes/Node.gd<>res://scenes/DogChase.gd
+dog.tscn::PackedScene::7766740727149292820::1711210748::0::1::::<><>::uid://coa6qpi342twj::::res://Dog/GuardDog.png<>res://scenes/guard.gd<>res://Guard/StateMachine.gd<>res://Dog/DogWander.gd<>res://scenes/Node.gd<>res://scenes/DogChase.gd
 DogChase.gd::GDScript::-1::1711209405::0::1::::DChase<>State<>::
 Exit.gd::GDScript::-1::1709590686::0::1::::<>Area2D<>::
 Exit.tscn::PackedScene::596796655747529981::1710791984::0::1::::<><>::res://scenes/Exit.gd
 guard.gd::GDScript::-1::1710832317::0::1::::guardEnemy<>CharacterBody2D<>::
-guard.tscn::PackedScene::5772568824482214456::1711210691::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet&sprites/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd<>res://scenes/Node.gd
+guard.tscn::PackedScene::5772568824482214456::1711211481::0::1::::<><>::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet&sprites/cop.png<>res://Guard/StateMachine.gd<>res://Guard/GuardWander.gd<>res://Guard/GuardChase.gd<>res://scenes/Node.gd
 loading_screen.tscn::PackedScene::760325004590088662::1693163741::0::1::::<><>::
 Node.gd::GDScript::-1::1709679789::0::1::::StartUp<>State<>::
 Player.gd::GDScript::-1::1711208951::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::9090504454143567303::1711210691::0::1::::<><>::res://scenes/Player.gd<>uid://62xk0kmeybpe::::res://tileSet&sprites/playerspritesheets/Idle_22x28_5.png<>uid://tikkxk353loi::::res://tileSet&sprites/playerspritesheets/Run_22x28_8_12.png<>res://scenes/CameraDevControl.gd<>uid://6rmtd0hg55ye::::res://tileSet&sprites/playerspritesheets/Walk_22x28_8_8.png<>uid://cdts2jlbaa7tc::::res://Assets/light.png
+Player.tscn::PackedScene::9090504454143567303::1711210748::0::1::::<><>::res://scenes/Player.gd<>uid://62xk0kmeybpe::::res://tileSet&sprites/playerspritesheets/Idle_22x28_5.png<>uid://tikkxk353loi::::res://tileSet&sprites/playerspritesheets/Run_22x28_8_12.png<>res://scenes/CameraDevControl.gd<>uid://6rmtd0hg55ye::::res://tileSet&sprites/playerspritesheets/Walk_22x28_8_8.png<>uid://cdts2jlbaa7tc::::res://Assets/light.png
 Score.tscn::PackedScene::2797311890445056731::1693679125::0::1::::<><>::uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf
 test.tscn::PackedScene::7352366873512534580::1693251873::0::1::::<><>::uid://d2rrjr61vxthf::::res://scenes/Player.tscn
 treasure.gd::GDScript::-1::1708634450::0::1::::<>Area2D<>::
 treasure.tscn::PackedScene::1968141821779983713::1708642628::0::1::::<><>::res://scenes/treasure.gd<>uid://hm4ijkkjm3pc::::res://tileSet&sprites/gold.png
 treasure_prompt.tscn::PackedScene::2344246486114080436::1693770226::0::1::::<><>::
-::res://scenes/Playable/::1711210692
+::res://scenes/Playable/::1711225627
 GO_buttonControl.gd::GDScript::-1::1693679113::0::1::::<>ColorRect<>::
 Menu.gd::GDScript::-1::1693768419::0::1::::<>Control<>::
-menu.tscn::PackedScene::1394632985375033094::1711210690::0::1::::<><>::res://scenes/Playable/Menu.gd<>uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf<>uid://dfylm5k3i3mwj::::res://tileSet&sprites/crook.png<>uid://cx3pte28vgxt5::::res://tileSet&sprites/cloud.png
-scoreboard.gd::GDScript::-1::1693769331::0::1::::<>Control<>::
-scoreboard.tscn::PackedScene::1333038831525892178::1708633726::0::1::::<><>::res://scenes/Playable/scoreboard.gd<>uid://bgrv4dc4yuvbe::::res://Assets/fonts/barcode/Barcade-R4LM.otf
-test.tscn::PackedScene::4666898848824970645::1711210692::0::1::::<><>::uid://diwjc5kprxfgm::::res://scenes/dog.tscn<>uid://coijmoeduemce::::res://scenes/guard.tscn<>uid://q8s1bqekgfml::::res://icon.svg
-world.gd::GDScript::-1::1710788812::0::1::::<>Node2D<>::
-world.tscn::PackedScene::6728773128237763682::1711210690::0::1::::<><>::res://scenes/Playable/world.gd<>uid://njlmawtm5tf1::::res://tileSet&sprites/tilemap(floor design) (1).png<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://bf4bk21kjmucx::::res://scenes/Score.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn<>res://scenes/Playable/GO_buttonControl.gd<>uid://bgrv4dc4yuvbe::::res://Assets/fonts/barcode/Barcade-R4LM.otf<>uid://b7oo0vrn8iamh::::res://sounds/collectcoin-6075.mp3
-::res://Seperate Scripts/::1709675383
+menu.tscn::PackedScene::1394632985375033094::1711225627::0::1::::<><>::res://scenes/Playable/Menu.gd<>uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf<>uid://dfylm5k3i3mwj::::res://tileSet&sprites/crook.png<>uid://cx3pte28vgxt5::::res://tileSet&sprites/cloud.png
+scoreboard.gd::GDScript::-1::1711221855::0::1::::<>Control<>::
+scoreboard.tscn::PackedScene::1333038831525892178::1711225553::0::1::::<><>::res://scenes/Playable/scoreboard.gd<>uid://bgrv4dc4yuvbe::::res://Assets/fonts/barcode/Barcade-R4LM.otf
+test.tscn::PackedScene::4666898848824970645::1711210749::0::1::::<><>::uid://diwjc5kprxfgm::::res://scenes/dog.tscn<>uid://coijmoeduemce::::res://scenes/guard.tscn<>uid://q8s1bqekgfml::::res://icon.svg
+world.gd::GDScript::-1::1711223549::0::1::::<>Node2D<>::
+world.tscn::PackedScene::6728773128237763682::1711225553::0::1::::<><>::res://scenes/Playable/world.gd<>uid://njlmawtm5tf1::::res://tileSet&sprites/tilemap(floor design) (1).png<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://bf4bk21kjmucx::::res://scenes/Score.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn<>res://scenes/Playable/GO_buttonControl.gd<>uid://bgrv4dc4yuvbe::::res://Assets/fonts/barcode/Barcade-R4LM.otf<>uid://b7oo0vrn8iamh::::res://sounds/collectcoin-6075.mp3
+::res://Seperate Scripts/::1711215952
 credits.gd::GDScript::-1::1693685068::0::1::::<>Node<>::
 Events.gd::GDScript::-1::1709674746::0::1::::<>Node<>::
-SaveLoad.gd::GDScript::-1::1693775806::0::1::::<>Node<>::
+SaveLoad.gd::GDScript::-1::1711215952::0::1::::<>Node<>::
 Walker.gd::GDScript::-1::1693031038::0::1::::Walker<>Node<>::
 ::res://sounds/::1708634258
 collectcoin-6075.mp3::AudioStreamMP3::4662260781300429647::1708634258::1708634258::1::::<><>::

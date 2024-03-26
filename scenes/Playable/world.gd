@@ -154,7 +154,7 @@ func GameOver():
 		if count > 3:
 			child.queue_free()
 	
-	if score > Scores.topScores[3]:
+	if score > Scores.topScores[len(Scores.topScores) - 1]: #randomly broke
 		game_over_screen.get_child(4).show()
 		Scores._upload_score(score)
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))

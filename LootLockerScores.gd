@@ -1,6 +1,6 @@
 extends Node
 
-var topScores = [1,2,3,4,5]
+var topScores = [01, 2, 3, 4, 5]
 
 
 # Use this game API key if you want to test with a functioning leaderboard
@@ -49,10 +49,6 @@ func _authentication_request():
 	## Convert data to json string:
 	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": true }
 	
-	# If a player session already exists, send with the player identifier
-	if(player_session_exists == true):
-		data = { "game_key": game_API_key, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": true }
-	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
 	
@@ -62,8 +58,6 @@ func _authentication_request():
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	# Send request
 	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
-	# Print what we're sending, for debugging purposes:
-	#print(data)
 
 
 func _on_authentication_request_completed(result, response_code, headers, body):
@@ -78,8 +72,6 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	# Save session_token to memory
 	session_token = json.get_data().session_token
 	
-	# Print server response
-	#print(json.get_data())
 	
 	# Clear node
 	auth_http.queue_free()
@@ -109,18 +101,18 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	#print(json.get_data())
 	
 	# Formatting as a leaderboard
-	var leaderboardFormatted = ""
+	#var leaderboardFormatted = ""
 	
 	var counter = 0
 	for n in json.get_data().items.size():
-		leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
-		leaderboardFormatted += str(json.get_data().items[n].score)
-		#lbf all going in as one score
-		topScores[counter]=str(json.get_data().items[n].score)
+		#leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
+		#leaderboardFormatted += str(json.get_data().items[n].score)
+		topScores[counter] = json.get_data().items[n].score
 		counter +=1
-		if counter == 5:
+		if counter == len(topScores) -1:
 			topScores.sort()
 			topScores.reverse()
+			break
 		
 			
 	# Print the formatted leaderboard to the console
