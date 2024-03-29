@@ -1,7 +1,8 @@
-res://scenes/Playable/scoreboard.tscn
-res://LootLockerScores.gd
+res://scenes/Exit.tscn
 res://scenes/Playable/world.tscn
+res://scenes/Playable/scoreboard.tscn
 res://testboard.tscn
 res://scenes/Playable/menu.tscn
-res://scenes/Playable/world.gd
+res://LootLockerScores.gd
 res://scenes/Playable/scoreboard.gd
+res://scenes/Playable/world.gd

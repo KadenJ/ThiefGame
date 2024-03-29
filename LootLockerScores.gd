@@ -93,6 +93,7 @@ func _get_leaderboards():
 	# Send request
 	leaderboard_http.request(url, headers, HTTPClient.METHOD_GET, "")
 
+signal gotLeaderboard
 func _on_leaderboard_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
@@ -113,8 +114,8 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 			topScores.sort()
 			topScores.reverse()
 			break
+		gotLeaderboard.emit()
 		
-			
 	# Print the formatted leaderboard to the console
 	print(topScores)
 	
