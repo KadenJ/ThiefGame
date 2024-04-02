@@ -12,8 +12,10 @@ func _process(delta):
 
 
 func _on_retry_pressed():
+	Scores._get_leaderboards()
 	get_tree().reload_current_scene()
 
 
 func _on_main_menu_pressed():
+	Scores._get_leaderboards()
 	get_tree().change_scene_to_file("res://scenes/Playable/menu.tscn")

@@ -4,10 +4,10 @@ var topScores = [01, 2, 3, 4, 5]
 
 
 # Use this game API key if you want to test with a functioning leaderboard
-# "987dbd0b9e5eb3749072acc47a210996eea9feb0"
-var game_API_key = "dev_6cbb147ee67142cfbf47fb720799aa8a"
-var development_mode = true
-var leaderboard_key = "TowerTheft"
+# leaderboard key or game api not working on live
+var game_API_key = "prod_315f351de7474f4b92dd307c55825de5"
+var development_mode = false
+var leaderboard_key = "Live"
 var session_token = ""
 var score = 0
 
@@ -18,16 +18,6 @@ var submit_score_http = HTTPRequest.new()
 
 func _ready():
 	_authentication_request()
-
-func _process(_delta):
-	
-	# Upload score when pressing enter
-	if(Input.is_action_just_pressed("ui_accept")):
-		_upload_score(score)
-	
-	# Get score when pressing spacebar
-	if(Input.is_action_just_pressed("ui_select")):
-		_get_leaderboards()
 
 
 func _authentication_request():
@@ -47,7 +37,7 @@ func _authentication_request():
 		player_session_exists = true
 		
 	## Convert data to json string:
-	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": true }
+	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": false }
 	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
@@ -144,3 +134,6 @@ func _on_upload_score_request_completed(result, response_code, headers, body) :
 	
 	# Clear node
 	submit_score_http.queue_free()
+
+
+

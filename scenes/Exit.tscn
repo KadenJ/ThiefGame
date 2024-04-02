@@ -13,7 +13,6 @@ collision_mask = 2
 script = ExtResource("1_poyur")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_right = 32.0
 offset_bottom = 32.0
 color = Color(0.431373, 0.321569, 0.0627451, 1)
