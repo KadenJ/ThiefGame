@@ -112,6 +112,7 @@ func reloadLevel():
 	#place black screen with small animation
 	loading_screen.show()
 	loading_timer.start()
+	$CanvasLayer/loadingScreen/stairAudio.play()
 	#queue_free all nodes thats not tilemap and treasurePrompt
 	treasureList.clear()
 	guardList.clear()
