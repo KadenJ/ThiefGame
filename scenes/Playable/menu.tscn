@@ -382,7 +382,18 @@ one_shot = true
 wait_time = 30.0
 autostart = true
 
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 572.0
+offset_right = 1065.0
+offset_bottom = 603.0
+scale = Vector2(1.51764, 1.44)
+text = "mute
+"
+
 [connection signal="pressed" from="images/buttons/buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/scoreBoard" to="." method="_on_score_board_pressed"]
 [connection signal="timeout" from="images/Timer" to="." method="_on_timer_timeout"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

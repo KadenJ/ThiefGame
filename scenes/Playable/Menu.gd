@@ -25,3 +25,8 @@ func lightningHide():
 
 func _on_score_board_pressed():
 	get_tree().change_scene_to_file("res://scenes/Playable/scoreboard.tscn")
+
+
+func _on_check_button_toggled(toggled_on):
+	Events.isMuted = toggled_on
+	BgMusic.playing = !Events.isMuted

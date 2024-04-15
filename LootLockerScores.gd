@@ -1,6 +1,6 @@
 extends Node
 
-var topScores = [01, 2, 3, 4, 5]
+var topScores = [1, 2, 3, 4, 5]
 
 
 # Use this game API key if you want to test with a functioning leaderboard
@@ -27,7 +27,7 @@ func _authentication_request():
 	var file = FileAccess.open("user://LootLocker.data", FileAccess.READ)
 	if file != null:
 		player_identifier = file.get_as_text()
-		#print("player ID="+player_identifier)
+		print("player ID="+player_identifier)
 		file.close()
  
 	if player_identifier != null and player_identifier.length() > 1:
@@ -37,7 +37,7 @@ func _authentication_request():
 		player_session_exists = true
 		
 	## Convert data to json string:
-	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": false }
+	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": true }
 	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
@@ -67,6 +67,8 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	auth_http.queue_free()
 	# Get leaderboards
 	_get_leaderboards()
+	
+	#send signal to start MM animation, wait until leaderboards gotten
 
 
 func _get_leaderboards():
@@ -88,8 +90,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
-	# Print data
-	#print(json.get_data())
+	print(json.get_data())
 	
 	# Formatting as a leaderboard
 	#var leaderboardFormatted = ""
@@ -112,17 +113,18 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	# Clear node
 	leaderboard_http.queue_free()
 
-
+#bad request on upload
 func _upload_score(score: int):
-	var data = { "score": str(score) }
+	var data = { "member_id": "NA", "score": str(score)}
+	var url : String = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/submit"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	submit_score_http = HTTPRequest.new()
 	add_child(submit_score_http)
 	submit_score_http.request_completed.connect(_on_upload_score_request_completed)
 	# Send request
-	submit_score_http.request("https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/submit", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
+	submit_score_http.request(url, headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 	# Print what we're sending, for debugging purposes:
-	print(data)
+	
 
 
 func _on_upload_score_request_completed(result, response_code, headers, body) :
@@ -132,6 +134,10 @@ func _on_upload_score_request_completed(result, response_code, headers, body) :
 	# Print data
 	print(json.get_data())
 	
+	if response_code == 200:
+		print("Score submitted successfully!")
+	else:
+		print("Error submitting score. Status code: " + str(response_code))
 	# Clear node
 	submit_score_http.queue_free()
 

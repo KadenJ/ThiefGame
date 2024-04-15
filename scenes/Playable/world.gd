@@ -112,7 +112,8 @@ func reloadLevel():
 	#place black screen with small animation
 	loading_screen.show()
 	loading_timer.start()
-	$CanvasLayer/loadingScreen/stairAudio.play()
+	if Events.isMuted == false:
+		$CanvasLayer/loadingScreen/stairAudio.play()
 	#queue_free all nodes thats not tilemap and treasurePrompt
 	treasureList.clear()
 	guardList.clear()
@@ -145,7 +146,8 @@ func giveScore(points):
 
 func collectTreasure():
 	giveScore(100)
-	$CanvasLayer/treasureAudio.play()
+	if Events.isMuted == false:
+		$CanvasLayer/treasureAudio.play()
 
 func GameOver():
 	var children = get_children()
@@ -155,9 +157,11 @@ func GameOver():
 		if count > 3:
 			child.queue_free()
 	
-	if score > Scores.topScores[len(Scores.topScores) - 2]:
+	if score > Scores.topScores[0]:
 		game_over_screen.get_child(4).show()
-	Scores._upload_score(score)
+	if score > Scores.topScores[len(Scores.topScores)-2]:
+		game_over_screen.get_child(5).show()
+		Scores._upload_score(score)
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
 	

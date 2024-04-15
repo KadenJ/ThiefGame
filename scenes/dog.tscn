@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://diwjc5kprxfgm"]
+[gd_scene load_steps=10 format=3 uid="uid://diwjc5kprxfgm"]
 
 [ext_resource type="Texture2D" uid="uid://coa6qpi342twj" path="res://Dog/GuardDog.png" id="1_6nfhi"]
 [ext_resource type="Script" path="res://scenes/guard.gd" id="1_58nit"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Dog/DogWander.gd" id="3_dmk80"]
 [ext_resource type="Script" path="res://scenes/Node.gd" id="4_2k7o2"]
 [ext_resource type="Script" path="res://scenes/DogChase.gd" id="6_11w2m"]
+[ext_resource type="AudioStream" uid="uid://bk1iciem0prof" path="res://sounds/dog-bark-99919.mp3" id="7_oi51x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahrtq"]
 radius = 19.661
@@ -60,6 +61,10 @@ dog = NodePath("../..")
 [node name="DogChase" type="Node" parent="stateMachine" node_paths=PackedStringArray("Dog")]
 script = ExtResource("6_11w2m")
 Dog = NodePath("../..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="stateMachine/DogChase"]
+stream = ExtResource("7_oi51x")
+volume_db = 10.4
 
 [node name="scentDetectedTimer" type="Timer" parent="."]
 wait_time = 120.0

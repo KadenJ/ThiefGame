@@ -8,20 +8,18 @@ extends CharacterBody2D
 
 enum{Idle, Run, Walk}
 var state = Idle
-@onready var animationTree = $AnimationTree
-@onready var SM = animationTree["parameters/playback"]
-var blendPos : Vector2 = Vector2.ZERO
-var blendPosPath = [
-	"parameters/idle/IdleBlendSpace2D/blend_position",
-	"parameters/run/BlendSpace2D/blend_position",
-	"parameters/walk/BlendSpace2D/blend_position"
-]
-var animTreeStateKey = ["idle", "run", "walk"]
+#var blendPos : Vector2 = Vector2.ZERO
+#var blendPosPath = [
+	#"parameters/idle/IdleBlendSpace2D/blend_position",
+	#"parameters/run/BlendSpace2D/blend_position",
+	#"parameters/walk/BlendSpace2D/blend_position"
+#]
+#var animTreeStateKey = ["idle", "run", "walk"]
 
 
 func _physics_process(delta):
 	move(delta)
-	animate()
+	#animate()
 
 func getInputAxis():
 	axis.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
@@ -41,7 +39,8 @@ func move(delta):
 		else: 
 			state = Walk
 		applyMovement(axis*accel*delta)
-		blendPos = axis
+		#blendPos = axis
+		animate()
 	move_and_slide()
 
 func applyFriction(amount):
@@ -56,5 +55,6 @@ func applyMovement(_accel):
 	velocity = velocity.limit_length(maxSpeed)
 
 func animate() -> void:
-	SM.travel(animTreeStateKey[state])
-	animationTree.set(blendPosPath[state], blendPos)
+	$".".rotation = axis.angle()
+	#SM.travel(animTreeStateKey[state])
+	#animationTree.set(blendPosPath[state], blendPos)

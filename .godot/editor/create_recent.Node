@@ -1,3 +1,6 @@
+CheckButton
+Button
+AudioStreamPlayer2D
 Label
 ColorRect
 HTTPRequest
@@ -9,7 +12,3 @@ Sprite2D
 CharacterBody2D
 Node
 CollisionPolygon2D
-StartUp
-Control
-GChase
-State

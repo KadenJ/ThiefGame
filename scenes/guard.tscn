@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://coijmoeduemce"]
+[gd_scene load_steps=10 format=3 uid="uid://coijmoeduemce"]
 
 [ext_resource type="Script" path="res://scenes/guard.gd" id="1_0m2xc"]
 [ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet&sprites/cop.png" id="1_rnw7a"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Guard/GuardWander.gd" id="4_lfnbi"]
 [ext_resource type="Script" path="res://Guard/GuardChase.gd" id="5_ph6m7"]
 [ext_resource type="Script" path="res://scenes/Node.gd" id="6_oxree"]
+[ext_resource type="AudioStream" uid="uid://wxkh17lw5j86" path="res://sounds/police-siren-one-loop-loop-able-104019.mp3" id="7_ecamx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]
 radius = 14.0
@@ -55,6 +56,9 @@ guard = NodePath("../..")
 [node name="GChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("Guard")]
 script = ExtResource("5_ph6m7")
 Guard = NodePath("../..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/GChase"]
+stream = ExtResource("7_ecamx")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

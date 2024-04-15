@@ -8,6 +8,8 @@ var Player : CharacterBody2D
 
 func Enter():
 	Player = get_tree().get_first_node_in_group("Player")
+	if Events.isMuted == false:
+		$AudioStreamPlayer2D.play()
 	
 func Physics_Update(_delta: float):
 	var direction = Player.global_position - Dog.global_position
