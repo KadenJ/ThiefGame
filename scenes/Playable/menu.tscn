@@ -382,6 +382,28 @@ one_shot = true
 wait_time = 30.0
 autostart = true
 
+[node name="loading" type="Control" parent="images"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="images/loading"]
+offset_right = 1150.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="images/loading"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.018
+offset_left = 517.0
+offset_top = 296.0
+offset_right = 537.416
+offset_bottom = 307.336
+theme_override_font_sizes/font_size = 20
+text = "loading"
+metadata/_edit_use_anchors_ = true
+
 [node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 0
 offset_left = 976.0

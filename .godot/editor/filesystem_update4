@@ -1,7 +1,7 @@
-res://scenes/Playable/world.tscn
-res://scenes/Playable/world.gd
 res://LootLockerScores.gd
+res://scenes/Playable/menu.tscn
+res://Seperate Scripts/Events.gd
+res://scenes/Playable/Menu.gd
+res://scenes/Playable/world.tscn
 res://scenes/Player.tscn
 res://scenes/guard.tscn
-res://scenes/Playable/scoreboard.tscn
-res://Seperate Scripts/Events.gd

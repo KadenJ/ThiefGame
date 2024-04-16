@@ -1,8 +1,10 @@
+Control
+Label
+ColorRect
+Node
 CheckButton
 Button
 AudioStreamPlayer2D
-Label
-ColorRect
 HTTPRequest
 VBoxContainer
 Timer
@@ -10,5 +12,4 @@ CollisionShape2D
 Area2D
 Sprite2D
 CharacterBody2D
-Node
 CollisionPolygon2D

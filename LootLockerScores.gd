@@ -68,7 +68,6 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	# Get leaderboards
 	_get_leaderboards()
 	
-	#send signal to start MM animation, wait until leaderboards gotten
 
 
 func _get_leaderboards():
@@ -92,13 +91,9 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	
 	print(json.get_data())
 	
-	# Formatting as a leaderboard
-	#var leaderboardFormatted = ""
 	
 	var counter = 0
 	for n in json.get_data().items.size():
-		#leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
-		#leaderboardFormatted += str(json.get_data().items[n].score)
 		topScores[counter] = json.get_data().items[n].score
 		counter +=1
 		if counter == len(topScores) -1:
@@ -106,7 +101,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 			topScores.reverse()
 			break
 		gotLeaderboard.emit()
-		
+	Events.gotScores.emit()
 	# Print the formatted leaderboard to the console
 	print(topScores)
 	
