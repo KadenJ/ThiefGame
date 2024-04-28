@@ -378,6 +378,10 @@ layer_0/tile_data = PackedInt32Array(65535, 1, 0, 131071, 1, 0, 196607, 1, 0, 26
 [node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_anvvu")]
 visible = false
 
+[node name="Timer" type="Timer" parent="CanvasLayer/treasurePrompt"]
+wait_time = 3.0
+one_shot = true
+
 [node name="Score" parent="CanvasLayer" instance=ExtResource("4_3ssa1")]
 offset_right = 179.0
 offset_bottom = 64.0
@@ -514,5 +518,6 @@ stream = ExtResource("8_dmxm8")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.105882, 0.105882, 0.105882, 1)
 
+[connection signal="timeout" from="CanvasLayer/treasurePrompt/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/retry" to="CanvasLayer/GameOverScreen" method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]

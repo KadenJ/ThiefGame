@@ -15,11 +15,12 @@ func Physics_Update(_delta: float):
 	var direction = Player.global_position - Dog.global_position
 	Dog.velocity = direction.normalized() * ChaseSpeed
 	Dog.look_at(Player.position)
+	if $"..".currentState == self:
+		for guard in $"../../recruitRange".get_overlapping_bodies():
+			guard.get_node("StateMachine/GWander").emit_signal("recruited")
 	
-	
-	
-	
+
+
 func _on_recruit_range_body_entered(guard):
-	#sends signal, but not to the right place
 	if $"..".currentState == self:
 		guard.get_node("StateMachine/GWander").emit_signal("recruited")

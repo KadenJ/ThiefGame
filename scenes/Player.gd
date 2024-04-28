@@ -8,13 +8,6 @@ extends CharacterBody2D
 
 enum{Idle, Run, Walk}
 var state = Idle
-#var blendPos : Vector2 = Vector2.ZERO
-#var blendPosPath = [
-	#"parameters/idle/IdleBlendSpace2D/blend_position",
-	#"parameters/run/BlendSpace2D/blend_position",
-	#"parameters/walk/BlendSpace2D/blend_position"
-#]
-#var animTreeStateKey = ["idle", "run", "walk"]
 
 
 func _physics_process(delta):
@@ -28,7 +21,6 @@ func getInputAxis():
 	
 
 func move(delta):
-	#if camera.zoomed == true run anim else walk
 	axis = getInputAxis()
 	if axis == Vector2.ZERO:
 		state = Idle
@@ -48,7 +40,7 @@ func applyFriction(amount):
 		velocity-=velocity.normalized()*amount
 	else:
 		velocity= Vector2.ZERO
-		
+
 
 func applyMovement(_accel):
 	velocity+=_accel

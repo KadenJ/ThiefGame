@@ -347,6 +347,9 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+focus_neighbor_top = NodePath("../scoreBoard")
+focus_neighbor_right = NodePath("../../../../CheckButton")
+focus_neighbor_bottom = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Play"
@@ -354,6 +357,9 @@ text = "Play"
 [node name="Quit" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../../../../CheckButton")
+focus_neighbor_bottom = NodePath("../scoreBoard")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
@@ -361,6 +367,9 @@ text = "Quit"
 [node name="scoreBoard" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_right = NodePath("../../../../CheckButton")
+focus_neighbor_bottom = NodePath(".")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 20
 text = "High scores"
@@ -383,10 +392,12 @@ wait_time = 30.0
 autostart = true
 
 [node name="loading" type="Control" parent="images"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="images/loading"]
+layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 650.0
 color = Color(0, 0, 0, 1)
@@ -411,6 +422,7 @@ offset_top = 572.0
 offset_right = 1065.0
 offset_bottom = 603.0
 scale = Vector2(1.51764, 1.44)
+focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
 text = "mute
 "
 

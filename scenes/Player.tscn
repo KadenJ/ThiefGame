@@ -500,3 +500,17 @@ script = ExtResource("3_kx537")
 energy = 0.7
 texture = ExtResource("4_ngeu0")
 texture_scale = 0.8
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Detected" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 555.0
+offset_top = 185.0
+offset_right = 595.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0.662745, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1

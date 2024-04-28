@@ -1,5 +1,7 @@
-Control
 Label
+CanvasLayer
+Control
+Timer
 ColorRect
 Node
 CheckButton
@@ -7,9 +9,6 @@ Button
 AudioStreamPlayer2D
 HTTPRequest
 VBoxContainer
-Timer
 CollisionShape2D
 Area2D
 Sprite2D
-CharacterBody2D
-CollisionPolygon2D

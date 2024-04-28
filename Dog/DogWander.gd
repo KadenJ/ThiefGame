@@ -30,6 +30,7 @@ func Physics_Update(_delta:float):
 	
 
 func _on_sight_body_entered(body):
+	body.get_node("CanvasLayer/Detected").show()
 	changeState("DogChase")
 
 
@@ -38,5 +39,5 @@ func _on_scent_detected_timer_timeout():
 	
 
 func changeState(newState):
-	print(newState)
+	#print(newState)
 	Transitioned.emit(self, newState)

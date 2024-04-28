@@ -34,7 +34,7 @@ func Physics_Update(_delta: float):
 	
 
 func changeState():
-	print("giveUp")
+	#print("giveUp")
 	Transitioned.emit(self, "GWander")
 
 
@@ -44,5 +44,5 @@ func _on_area_2d_body_exited(_body):
 
 
 func _on_catcher_body_entered(_body):
-	print("player caught")
+	#print("player caught")
 	Events.guardCaught.emit()

@@ -27,7 +27,7 @@ func _authentication_request():
 	var file = FileAccess.open("user://LootLocker.data", FileAccess.READ)
 	if file != null:
 		player_identifier = file.get_as_text()
-		print("player ID="+player_identifier)
+		#print("player ID="+player_identifier)
 		file.close()
  
 	if player_identifier != null and player_identifier.length() > 1:
@@ -72,7 +72,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 
 func _get_leaderboards():
 	#leaderboard needs to load scores before writing label
-	print("Getting leaderboards")
+	#print("Getting leaderboards")
 	var url = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/list?count=10"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	
@@ -89,7 +89,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
-	print(json.get_data())
+	#print(json.get_data())
 	
 	
 	var counter = 0
@@ -103,14 +103,15 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 		gotLeaderboard.emit()
 	Events.gotScores.emit()
 	# Print the formatted leaderboard to the console
-	print(topScores)
+	#print(topScores)
 	
 	# Clear node
 	leaderboard_http.queue_free()
 
 #bad request on upload
 func _upload_score(score: int):
-	var data = { "member_id": "NA", "score": str(score)}
+	#can't be same member ID
+	var data = { "member_id": str(randi_range(0,10000)).pad_zeros(5), "score": str(score)}
 	var url : String = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/submit"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	submit_score_http = HTTPRequest.new()
@@ -129,10 +130,7 @@ func _on_upload_score_request_completed(result, response_code, headers, body) :
 	# Print data
 	print(json.get_data())
 	
-	if response_code == 200:
-		print("Score submitted successfully!")
-	else:
-		print("Error submitting score. Status code: " + str(response_code))
+	#print(response_code)
 	# Clear node
 	submit_score_http.queue_free()
 

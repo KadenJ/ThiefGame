@@ -133,6 +133,8 @@ func reloadLevel():
 func showTreasurePrompt():
 	giveScore(500)
 	treasure_prompt.show()
+	$CanvasLayer/treasurePrompt/Timer.start()
+
 
 func hideLoadScreen():
 	loading_screen.hide()
@@ -141,7 +143,6 @@ func hideLoadScreen():
 
 func giveScore(points):
 	score += points
-	#show score on label
 	scoreLabel.set_text(str(score).pad_zeros(5))
 
 func collectTreasure():
@@ -159,9 +160,15 @@ func GameOver():
 	
 	if score > Scores.topScores[0]:
 		game_over_screen.get_child(4).show()
-	if score > Scores.topScores[len(Scores.topScores)-2]:
+		Scores._upload_score(score)
+	elif score > Scores.topScores[len(Scores.topScores)-2]:
 		game_over_screen.get_child(5).show()
 		Scores._upload_score(score)
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
+	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
+
+
+func _on_timer_timeout():
+	treasure_prompt.hide()

@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$images/buttons/buttons/Play.grab_focus()
 	timer.connect("timeout", lightningHide)
 	if Events.loaded == false:
 		Events.gotScores.connect(loadingFinished)

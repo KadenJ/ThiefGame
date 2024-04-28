@@ -1,7 +1,14 @@
+res://scenes/Playable/world.tscn
 res://LootLockerScores.gd
 res://scenes/Playable/menu.tscn
-res://Seperate Scripts/Events.gd
-res://scenes/Playable/Menu.gd
-res://scenes/Playable/world.tscn
-res://scenes/Player.tscn
+res://scenes/Score.tscn
+res://scenes/Playable/GO_buttonControl.gd
+res://scenes/Playable/world.gd
+res://scenes/dog.tscn
+res://scenes/DogChase.gd
 res://scenes/guard.tscn
+res://scenes/Player.tscn
+res://scenes/Player.gd
+res://Dog/DogWander.gd
+res://scenes/treasure_prompt.tscn
+res://scenes/lockNodePos.gd
