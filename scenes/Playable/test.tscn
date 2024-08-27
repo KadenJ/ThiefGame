@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7qxe3m65o3wj"]
+
+[ext_resource type="PackedScene" uid="uid://diwjc5kprxfgm" path="res://scenes/dog.tscn" id="1_w8alm"]
+[ext_resource type="PackedScene" uid="uid://coijmoeduemce" path="res://scenes/guard.tscn" id="2_gq4el"]
+[ext_resource type="Texture2D" uid="uid://q8s1bqekgfml" path="res://icon.svg" id="3_ee85x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agphr"]
+size = Vector2(124, 123)
+
+[node name="Test" type="Node2D"]
+
+[node name="Dog" parent="." instance=ExtResource("1_w8alm")]
+position = Vector2(624, 497)
+
+[node name="Guard" parent="." instance=ExtResource("2_gq4el")]
+position = Vector2(832, 511)
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(808, 314)
+collision_layer = 14
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_ee85x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_agphr")

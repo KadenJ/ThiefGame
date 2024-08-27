@@ -1,7 +1,12 @@
 extends Node
+#autoload script
 
 signal treasureStolen
 signal TreasureGathered
 
 signal guardCaught
-signal GameOver
+signal gotScores
+var loaded : bool = false
+var level : int
+var isMuted : bool
+#signal GameOver

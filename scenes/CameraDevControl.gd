@@ -13,4 +13,3 @@ func _input(event):
 			zoom = Vector2(3,3)
 			zoomed = true
 			get_parent().maxSpeed = 300
-		print(zoomed)

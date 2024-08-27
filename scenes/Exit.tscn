@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://irdfhydba2a8"]
+[gd_scene load_steps=5 format=3 uid="uid://irdfhydba2a8"]
 
 [ext_resource type="Script" path="res://scenes/Exit.gd" id="1_poyur"]
+[ext_resource type="Texture2D" uid="uid://co17if0mnut5s" path="res://tileSet&sprites/stairewell (1).png" id="2_nxbeg"]
+[ext_resource type="Texture2D" uid="uid://cr0f2e16n0q37" path="res://tileSet&sprites/stairewell (3).png" id="4_ktlyt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isipn"]
 size = Vector2(28, 28)
@@ -18,5 +20,16 @@ color = Color(0.431373, 0.321569, 0.0627451, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_isipn")
+
+[node name="Stairewell" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, 15)
+scale = Vector2(0.0430686, 0.0499168)
+texture = ExtResource("2_nxbeg")
+
+[node name="Stairewell(3)" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(0.0403768, 0.0499168)
+texture = ExtResource("4_ktlyt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

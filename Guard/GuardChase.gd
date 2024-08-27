@@ -14,7 +14,8 @@ func _ready():
 
 func Enter():
 	Player = get_tree().get_first_node_in_group("Player")
-	
+	if Events.isMuted == false:
+		$AudioStreamPlayer2D.play()
 
 func Physics_Update(_delta: float):
 	var direction = Player.global_position - Guard.global_position
@@ -28,23 +29,20 @@ func Physics_Update(_delta: float):
 	
 	#on area exit
 	if direction.length() > 350:
-		print(direction.length())
 		Transitioned.emit(self,"GWander")
 		
 	
 
-
 func changeState():
-	print("giveUp")
+	#print("giveUp")
 	Transitioned.emit(self, "GWander")
 
 
 func _on_area_2d_body_exited(_body):
-	print("player lost")
 	timer.start()
 	
 
 
 func _on_catcher_body_entered(_body):
-	print("player caught")
+	#print("player caught")
 	Events.guardCaught.emit()

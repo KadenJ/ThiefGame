@@ -1,13 +1,14 @@
-res://scenes/Playable/world.tscn
-res://scenes/Playable/menu.tscn
-res://scenes/Playable/scoreboard.tscn
-res://Seperate Scripts/SaveLoad.gd
-res://scenes/Playable/world.gd
-res://scenes/BG music.tscn
 res://scenes/Player.tscn
-res://Guard/GuardChase.gd
+res://scenes/Player.gd
+res://scenes/invisPowerUp.gd
+res://scenes/invisPowerUp.tscn
+res://scenes/Playable/world.tscn
+res://scenes/Playable/world.gd
+res://scenes/guard.tscn
+res://scenes/dog.tscn
+res://scenes/Score.tscn
+res://scenes/Exit.gd
+res://scenes/Playable/GO_buttonControl.gd
+res://LootLockerScores.gd
 res://scenes/treasure.gd
-res://scenes/Playable/scoreboard.gd
-res://scenes/Playable/Menu.gd
-res://scenes/treasure_prompt.tscn
-res://scenes/treasure.tscn
+res://Seperate Scripts/Walker.gd

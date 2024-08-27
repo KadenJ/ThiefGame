@@ -6,12 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cx3pte28vgxt5" path="res://tileSet&sprites/cloud.png" id="4_7qsr1"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_11rlk"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(600, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(-20.89, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 scale_min = 3.0
 scale_max = 3.0
 
@@ -334,9 +332,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -575.0
-offset_top = -84.0
+offset_top = -178.0
 offset_right = -407.0
-offset_bottom = 64.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.28, 3.28)
@@ -349,14 +347,19 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+focus_neighbor_top = NodePath("../scoreBoard")
+focus_neighbor_right = NodePath("../../../../CheckButton")
+focus_neighbor_bottom = NodePath("../Quit")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Play"
 
 [node name="Quit" type="Button" parent="images/buttons/buttons"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../../../../CheckButton")
+focus_neighbor_bottom = NodePath("../scoreBoard")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
@@ -364,6 +367,9 @@ text = "Quit"
 [node name="scoreBoard" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
 size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_right = NodePath("../../../../CheckButton")
+focus_neighbor_bottom = NodePath(".")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 20
 text = "High scores"
@@ -385,7 +391,43 @@ one_shot = true
 wait_time = 30.0
 autostart = true
 
+[node name="loading" type="Control" parent="images"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="images/loading"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="images/loading"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.018
+offset_left = 517.0
+offset_top = 296.0
+offset_right = 537.416
+offset_bottom = 307.336
+theme_override_font_sizes/font_size = 20
+text = "loading"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 572.0
+offset_right = 1065.0
+offset_bottom = 603.0
+scale = Vector2(1.51764, 1.44)
+focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
+text = "mute
+"
+
 [connection signal="pressed" from="images/buttons/buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/scoreBoard" to="." method="_on_score_board_pressed"]
 [connection signal="timeout" from="images/Timer" to="." method="_on_timer_timeout"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

@@ -55,9 +55,9 @@ func changeDirection():
 		direction = directions.pop_front()
 
 
-func createRoom(position, size):
+func createRoom(_position, size):
 	var hasTreasure = false
-	return{position = position, size = size, hasTreasure = hasTreasure}
+	return{position = _position, size = size, hasTreasure = hasTreasure}
 
 func placeRoom(position):
 	var size = Vector2(randi()%4+2, randi()%4+2)
