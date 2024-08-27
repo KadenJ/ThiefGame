@@ -46,6 +46,8 @@ func applyMovement(_accel):
 	velocity+=_accel
 	velocity = velocity.limit_length(maxSpeed)
 
+
+
 func animate() -> void:
 	$".".rotation = axis.angle()
 	#SM.travel(animTreeStateKey[state])

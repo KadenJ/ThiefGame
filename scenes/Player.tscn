@@ -480,7 +480,7 @@ animations = [{
 radius = 9.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 14
+collision_layer = 2062
 script = ExtResource("1_a5fjl")
 maxSpeed = 250
 
@@ -514,3 +514,6 @@ theme_override_font_sizes/font_size = 50
 text = "!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PowerUpTimer" type="Timer" parent="."]
+one_shot = true

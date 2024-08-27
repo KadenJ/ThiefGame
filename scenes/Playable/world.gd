@@ -38,6 +38,7 @@ func _ready():
 	
 	generateLevel()
 
+var powerUp = load("res://scenes/invisPowerUp.tscn")
 func generateLevel():
 	level += 1
 	#@warning_ignore("integer_division")
@@ -47,6 +48,10 @@ func generateLevel():
 	var player = Player.instantiate()
 	call_deferred("add_child",player)
 	player.position = map.front()*32
+	
+	var powerUpT = powerUp.instantiate()
+	powerUpT.position = walker.rooms[randi() % len(walker.rooms)].position*32
+	call_deferred("add_child", powerUpT)
 	
 	var exit = Exit.instantiate()
 	call_deferred("add_child",exit)
