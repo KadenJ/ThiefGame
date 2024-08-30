@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://duk0a0bph1q05"]
 
-[ext_resource type="Script" path="res://scenes/invisPowerUp.gd" id="1_vj18w"]
-[ext_resource type="Texture2D" uid="uid://q8s1bqekgfml" path="res://icon.svg" id="2_nibr0"]
+[ext_resource type="Script" path="res://scenes/PowerUp.gd" id="1_gky85"]
+[ext_resource type="Texture2D" uid="uid://q8s1bqekgfml" path="res://icon.svg" id="2_vowiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mykf"]
 
 [node name="PowerUp" type="Area2D"]
 collision_layer = 0
 collision_mask = 2048
-script = ExtResource("1_vj18w")
+script = ExtResource("1_gky85")
 powerTime = 5.0
+
+[node name="PowerShell" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0mykf")
@@ -17,7 +19,7 @@ shape = SubResource("RectangleShape2D_0mykf")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -0.75)
 scale = Vector2(0.15625, 0.175781)
-texture = ExtResource("2_nibr0")
+texture = ExtResource("2_vowiq")
 
 [node name="powerTimer" type="Timer" parent="."]
 one_shot = true

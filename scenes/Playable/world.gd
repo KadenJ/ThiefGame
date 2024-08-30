@@ -38,7 +38,7 @@ func _ready():
 	
 	generateLevel()
 
-var powerUp = load("res://scenes/invisPowerUp.tscn")
+var powerUp = load("res://scenes/PowerUps/InvisPowerUp.tscn")
 func generateLevel():
 	level += 1
 	#@warning_ignore("integer_division")

@@ -5,3 +5,9 @@ res://scenes/guard.tscn
 res://scenes/dog.tscn
 res://scenes/Player.tscn
 res://scenes/Score.tscn
+res://scenes/PowerUp.tscn
+res://scenes/PowerUp.gd
+res://scenes/PowerUps/invisibleScript.gd
+res://scenes/PowerUps/InvisPowerUp.tscn
+res://scenes/Playable/world.gd
+res://Seperate Scripts/Walker.gd

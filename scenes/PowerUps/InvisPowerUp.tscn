@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dspnfe5ys6vhr"]
+
+[ext_resource type="Script" path="res://scenes/PowerUp.gd" id="1_artlj"]
+[ext_resource type="Script" path="res://scenes/PowerUps/invisibleScript.gd" id="2_2s5ip"]
+[ext_resource type="Texture2D" uid="uid://q8s1bqekgfml" path="res://icon.svg" id="2_n1ecu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mykf"]
+
+[node name="PowerUp" type="Area2D"]
+collision_layer = 0
+collision_mask = 2048
+script = ExtResource("1_artlj")
+powerTime = 5.0
+
+[node name="PowerShell" type="Node2D" parent="."]
+script = ExtResource("2_2s5ip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0mykf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -0.75)
+scale = Vector2(0.15625, 0.175781)
+texture = ExtResource("2_n1ecu")
+
+[node name="powerTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="collected" from="." to="PowerShell" method="_on_power_up_collected"]
+[connection signal="wornOff" from="." to="PowerShell" method="_on_power_up_worn_off"]
+[connection signal="timeout" from="powerTimer" to="." method="_on_timer_timeout"]

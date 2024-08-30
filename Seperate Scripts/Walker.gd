@@ -59,10 +59,10 @@ func createRoom(_position, size):
 	var hasTreasure = false
 	return{position = _position, size = size, hasTreasure = hasTreasure}
 
-func placeRoom(position):
+func placeRoom(position_):
 	var size = Vector2(randi()%4+2, randi()%4+2)
-	var topLeftCorner=(position-size/2).ceil()
-	rooms.append(createRoom(position,size))
+	var topLeftCorner=(position_-size/2).ceil()
+	rooms.append(createRoom(position_,size))
 	for y in size.y:
 		for x in size.x:
 			var newStep= topLeftCorner+Vector2(x,y)

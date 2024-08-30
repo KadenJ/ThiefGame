@@ -1,3 +1,5 @@
+Node2D
+PowerUp
 Timer
 Sprite2D
 CollisionShape2D
@@ -11,4 +13,3 @@ CheckButton
 Button
 AudioStreamPlayer2D
 HTTPRequest
-VBoxContainer
