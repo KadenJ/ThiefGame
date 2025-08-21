@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://coijmoeduemce"]
 
-[ext_resource type="Script" path="res://scenes/guard.gd" id="1_0m2xc"]
+[ext_resource type="Script" uid="uid://c5snekoyx7jf4" path="res://scenes/guard.gd" id="1_0m2xc"]
 [ext_resource type="Texture2D" uid="uid://brrb1djyil17o" path="res://tileSet&sprites/cop.png" id="1_rnw7a"]
-[ext_resource type="Script" path="res://Guard/StateMachine.gd" id="3_i8e1q"]
-[ext_resource type="Script" path="res://Guard/GuardWander.gd" id="4_lfnbi"]
-[ext_resource type="Script" path="res://Guard/GuardChase.gd" id="5_ph6m7"]
-[ext_resource type="Script" path="res://scenes/Node.gd" id="6_oxree"]
+[ext_resource type="Script" uid="uid://c08b5y6h6fwb3" path="res://Guard/StateMachine.gd" id="3_i8e1q"]
+[ext_resource type="Script" uid="uid://dtc4hf3pd2ah8" path="res://Guard/GuardWander.gd" id="4_lfnbi"]
+[ext_resource type="Script" uid="uid://bc0w151quyvm3" path="res://Guard/GuardChase.gd" id="5_ph6m7"]
+[ext_resource type="Script" uid="uid://cy0jjdomoqguc" path="res://scenes/Node.gd" id="6_oxree"]
 [ext_resource type="AudioStream" uid="uid://wxkh17lw5j86" path="res://sounds/police-siren-one-loop-loop-able-104019.mp3" id="7_ecamx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]

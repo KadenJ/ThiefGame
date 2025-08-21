@@ -1,0 +1,98 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1755736454
+icon.svg::CompressedTexture2D/CompressedTexture2D::1192285378039382279::1755573730::1755573900::1::::<><><>0<>0<>6b6855af14a073e3205176ac4e8c6c82<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+LootLockerScores.gd::GDScript/GDScript::1005642719464182768::1755736388::0::1::::<>Node<><>0<>0<><>::
+testboard.tscn::PackedScene/PackedScene::6833008365659272235::1755574017::0::1::::<><><>0<>0<><>::uid://ole12xvhavvc::::res://LootLockerScores.gd
+::res://Assets/::1755573900
+info.txt::TextFile/TextFile::-1::1755573730::0::1::::<><><>0<>0<><>::
+light.png::CompressedTexture2D/CompressedTexture2D::5023772687681136488::1755573730::1755573900::1::::<><><>0<>0<>0105d8a5d34b36cc214addf9c557b672<>res://.godot/imported/light.png-2a7c25d2528b528b4775521a146eeb11.ctex::
+video-png-effects-5.png::CompressedTexture2D/CompressedTexture2D::8434380673735009111::1755573730::1755573900::1::::<><><>0<>0<>677ec65e8fbaa4132d6db2eb0e9daf3d<>res://.godot/imported/video-png-effects-5.png-e0167310ea22f3dece9bc4ac9a4b6be7.ctex::
+::res://Assets/fonts/::1755573730
+::res://Assets/fonts/barcode/::1755573899
+Barcade3D-YZBj.otf::FontFile/FontFile::7613343550363766630::1755573730::1755573899::1::::<><><>0<>0<>c02721c5e9badadf75ab15fd9f0d98d2<>res://.godot/imported/Barcade3D-YZBj.otf-1de3f7530f6759fef2065d0d4a51321d.fontdata::
+Barcade3DItalic-r6eO.otf::FontFile/FontFile::6838643118443787278::1755573730::1755573899::1::::<><><>0<>0<>ba2976a3955fb48d49739976fb201043<>res://.godot/imported/Barcade3DItalic-r6eO.otf-8b30196ddf3bfc2f6974394e585d167a.fontdata::
+Barcade-R4LM.otf::FontFile/FontFile::2843975174221818298::1755573730::1755573899::1::::<><><>0<>0<>10164a25ee9be4cf2ab106d45bf0928a<>res://.godot/imported/Barcade-R4LM.otf-9be6d1086c0635cecb648d717e43e134.fontdata::
+BarcadeBold-B8nV.otf::FontFile/FontFile::5329720188374520703::1755573730::1755573899::1::::<><><>0<>0<>71d26c0e2d1271edc409f6563b8984a8<>res://.godot/imported/BarcadeBold-B8nV.otf-7739117e6904444f81f345c379d07e18.fontdata::
+BarcadeBoldItalic-8pqD.otf::FontFile/FontFile::7491896704742883692::1755573730::1755573899::1::::<><><>0<>0<>e3545901904cb4bbc94cd1c13c3fbf41<>res://.godot/imported/BarcadeBoldItalic-8pqD.otf-ef1f592c5ad477bcc278e52350d2427a.fontdata::
+BarcadeCondensed-MPwe.otf::FontFile/FontFile::7196670587398008822::1755573730::1755573899::1::::<><><>0<>0<>128abbaa6ebc222a50212ab353541a22<>res://.godot/imported/BarcadeCondensed-MPwe.otf-6cc24e43d2a7ecfa5737fad905fa210b.fontdata::
+BarcadeCondensedItalic-Km2o.otf::FontFile/FontFile::7416096268287847162::1755573730::1755573899::1::::<><><>0<>0<>9868854b82497ebb2fbae1db8ee728a5<>res://.godot/imported/BarcadeCondensedItalic-Km2o.otf-d33b1df3b13e3a9ddad4e78f707aea65.fontdata::
+BarcadeExpanded-2aq8.otf::FontFile/FontFile::7175736601377831242::1755573730::1755573899::1::::<><><>0<>0<>96631d1c27e5aefd428befeca74e9e7b<>res://.godot/imported/BarcadeExpanded-2aq8.otf-c226f97fa4ec26a8ccf8f02521650a93.fontdata::
+BarcadeExpandedItalic-vzeM.otf::FontFile/FontFile::3311115517090574850::1755573730::1755573899::1::::<><><>0<>0<>d93c8a71f046c9f6875b7358d449360e<>res://.godot/imported/BarcadeExpandedItalic-vzeM.otf-fc879ef963643e0d7919dfce8cd8adf3.fontdata::
+BarcadeItalic-wzZz.otf::FontFile/FontFile::6729030347678601851::1755573730::1755573899::1::::<><><>0<>0<>af41f24642bbd8e37fdfbac956988002<>res://.godot/imported/BarcadeItalic-wzZz.otf-e590573e6c38ea922a787684384c82a1.fontdata::
+BarcadeLeftalic-7xqV.otf::FontFile/FontFile::543807605132671093::1755573730::1755573899::1::::<><><>0<>0<>6f010144f76a29e4f0a23b46beb11b20<>res://.godot/imported/BarcadeLeftalic-7xqV.otf-62648ff01e9bcd1c0730a4df0426b5d5.fontdata::
+BarcadeNoBar-mzD9.otf::FontFile/FontFile::5469948748429854793::1755573730::1755573899::1::::<><><>0<>0<>77fd710245f7f5c72938be4f040c98e1<>res://.godot/imported/BarcadeNoBar-mzD9.otf-d63c1499dbbb5735f29b5ce1316aea05.fontdata::
+BarcadeNoBarBold-gzXq.otf::FontFile/FontFile::5505348836010058771::1755573730::1755573899::1::::<><><>0<>0<>771e2815c3ed9821b3bf91a9c090459f<>res://.godot/imported/BarcadeNoBarBold-gzXq.otf-622f6617e832c3782b309ea6c6808e31.fontdata::
+BarcadeNoBarBoldItalic-oz6B.otf::FontFile/FontFile::8448478791070194792::1755573730::1755573899::1::::<><><>0<>0<>ac39c5c3abe248f300a46ab5760c5613<>res://.godot/imported/BarcadeNoBarBoldItalic-oz6B.otf-70d7e41e2a2f9230c6b268fa239d21b0.fontdata::
+BarcadeNoBarItalic-dzdR.otf::FontFile/FontFile::6698086110524970229::1755573730::1755573899::1::::<><><>0<>0<>8110c21fee14fc06a93231b3d4285ecf<>res://.godot/imported/BarcadeNoBarItalic-dzdR.otf-13ef66a82893592def5195a8dfb067dc.fontdata::
+BarcadeOutline-PgdB.otf::FontFile/FontFile::1161572178590485250::1755573730::1755573899::1::::<><><>0<>0<>7ebeccbc878927e07601d4bc1a2a538e<>res://.godot/imported/BarcadeOutline-PgdB.otf-651d54f2a56c2e10a1cd0d093499a6a9.fontdata::
+BarcadeOutlineItalic-Ldvn.otf::FontFile/FontFile::9046568731994826206::1755573730::1755573899::1::::<><><>0<>0<>1808971ce1d1fc717189bd33eb9a83ee<>res://.godot/imported/BarcadeOutlineItalic-Ldvn.otf-5fc8a3e2652ddb51f4fa9a620ca680b8.fontdata::
+BarcadeSemiItalic-XORg.otf::FontFile/FontFile::1933375948046842333::1755573730::1755573899::1::::<><><>0<>0<>c2a2f438de21f12e3a0be99c630d7444<>res://.godot/imported/BarcadeSemiItalic-XORg.otf-133e33cf4988d8d26bfb77e1d5e90828.fontdata::
+::res://Dog/::1755573900
+DogWander.gd::GDScript/GDScript::1677600294476184157::1755573730::0::1::::DWander<>State<><>0<>0<><>::
+GuardDog.png::CompressedTexture2D/CompressedTexture2D::5757396779317611241::1755573730::1755573900::1::::<><><>0<>0<>ddba202cbf439d18b628c8e9644e8294<>res://.godot/imported/GuardDog.png-964c1bc49672093020537587d2853e46.ctex::
+::res://Guard/::1755573899
+GuardChase.gd::GDScript/GDScript::2579791635923130376::1755573730::0::1::::GChase<>State<><>0<>0<><>::
+GuardWander.gd::GDScript/GDScript::8498752435615475959::1755573730::0::1::::GWander<>State<><>0<>0<><>::
+StateMachine.gd::GDScript/GDScript::6595802523839934414::1755573730::0::1::::<>Node<><>0<>0<><>::
+States.gd::GDScript/GDScript::4246262680610370470::1755573730::0::1::::State<>Node<><>0<>0<><>::
+::res://scenes/::1755736445
+BG music.tscn::PackedScene/PackedScene::6711125189869296604::1755574017::0::1::::<><><>0<>0<><>::uid://5g65qwoi7lqf::::res://sounds/funkysuspense.mp3
+CameraDevControl.gd::GDScript/GDScript::268621670032290510::1755573730::0::1::::<>Camera2D<><>0<>0<><>::
+dog.tscn::PackedScene::7766740727149292820::1755736445::0::1::::<><><>0<>0<><>::uid://coa6qpi342twj::::res://Dog/GuardDog.png<>uid://c5snekoyx7jf4::::res://scenes/guard.gd<>uid://c08b5y6h6fwb3::::res://Guard/StateMachine.gd<>uid://x5v3jrc4tnnh::::res://Dog/DogWander.gd<>uid://cy0jjdomoqguc::::res://scenes/Node.gd<>uid://dievlcoovoydx::::res://scenes/DogChase.gd<>uid://bk1iciem0prof::::res://sounds/dog-bark-99919.mp3
+DogChase.gd::GDScript/GDScript::7730325139119550173::1755573730::0::1::::DChase<>State<><>0<>0<><>::
+Exit.gd::GDScript/GDScript::8563346099741583569::1755573730::0::1::::<>Area2D<><>0<>0<><>::
+Exit.tscn::PackedScene/PackedScene::596796655747529981::1755574017::0::1::::<><><>0<>0<><>::uid://duafcamr45cg4::::res://scenes/Exit.gd<>uid://co17if0mnut5s::::res://tileSet&sprites/stairewell (1).png<>uid://cr0f2e16n0q37::::res://tileSet&sprites/stairewell (3).png
+guard.gd::GDScript/GDScript::6916462488165050715::1755573730::0::1::::guardEnemy<>CharacterBody2D<><>0<>0<><>::
+guard.tscn::PackedScene::5772568824482214456::1755736445::0::1::::<><><>0<>0<><>::uid://c5snekoyx7jf4::::res://scenes/guard.gd<>uid://brrb1djyil17o::::res://tileSet&sprites/cop.png<>uid://c08b5y6h6fwb3::::res://Guard/StateMachine.gd<>uid://dtc4hf3pd2ah8::::res://Guard/GuardWander.gd<>uid://bc0w151quyvm3::::res://Guard/GuardChase.gd<>uid://cy0jjdomoqguc::::res://scenes/Node.gd<>uid://wxkh17lw5j86::::res://sounds/police-siren-one-loop-loop-able-104019.mp3
+loading_screen.tscn::PackedScene/PackedScene::760325004590088662::1755574017::0::1::::<><><>0<>0<><>::
+Node.gd::GDScript/GDScript::6509545763392398498::1755573730::0::1::::StartUp<>State<><>0<>0<><>::
+Player.gd::GDScript/GDScript::1808825341215050677::1755573730::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::9090504454143567303::1755736445::0::1::::<><><>0<>0<><>::uid://01hda84xr08x::::res://scenes/Player.gd<>uid://cwiux3kdhra6w::::res://tileSet&sprites/crook2.png<>uid://tikkxk353loi::::res://tileSet&sprites/playerspritesheets/Run_22x28_8_12.png<>uid://d3efotiqwmbm::::res://scenes/CameraDevControl.gd<>uid://6rmtd0hg55ye::::res://tileSet&sprites/playerspritesheets/Walk_22x28_8_8.png<>uid://cdts2jlbaa7tc::::res://Assets/light.png
+PowerUp.gd::GDScript/GDScript::7002293176967367226::1755573730::0::1::::PowerUp<>Area2D<><>0<>0<><>::
+PowerUp.tscn::PackedScene::8585201941520195216::1755736445::0::1::::<><><>0<>0<><>::uid://c6070l5fe0yuk::::res://scenes/PowerUp.gd<>uid://q8s1bqekgfml::::res://icon.svg
+Score.tscn::PackedScene::2797311890445056731::1755736445::0::1::::<><><>0<>0<><>::uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf
+test.tscn::PackedScene/PackedScene::7352366873512534580::1755574017::0::1::::<><><>0<>0<><>::uid://d2rrjr61vxthf::::res://scenes/Player.tscn
+treasure.gd::GDScript/GDScript::6800093589256797330::1755573730::0::1::::<>Area2D<><>0<>0<><>::
+treasure.tscn::PackedScene/PackedScene::1968141821779983713::1755574017::0::1::::<><><>0<>0<><>::uid://c35asvnaptefq::::res://scenes/treasure.gd<>uid://hm4ijkkjm3pc::::res://tileSet&sprites/gold.png
+treasure_prompt.tscn::PackedScene/PackedScene::2344246486114080436::1755574017::0::1::::<><><>0<>0<><>::
+::res://scenes/Playable/::1755736445
+GO_buttonControl.gd::GDScript/GDScript::8463700979376943476::1755573730::0::1::::<>ColorRect<><>0<>0<><>::
+Menu.gd::GDScript/GDScript::7775654389806206295::1755573730::0::1::::<>Control<><>0<>0<><>::
+menu.tscn::PackedScene/PackedScene::1394632985375033094::1755574017::0::1::::<><><>0<>0<><>::uid://di1t5k43yhkbv::::res://scenes/Playable/Menu.gd<>uid://dah8llpnex5du::::res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf<>uid://dfylm5k3i3mwj::::res://tileSet&sprites/crook.png<>uid://cx3pte28vgxt5::::res://tileSet&sprites/cloud.png
+scoreboard.gd::GDScript/GDScript::1409396229293446801::1755573730::0::1::::<>Control<><>0<>0<><>::
+scoreboard.tscn::PackedScene/PackedScene::1333038831525892178::1755574017::0::1::::<><><>0<>0<><>::uid://ucysx1psljav::::res://scenes/Playable/scoreboard.gd<>uid://bgrv4dc4yuvbe::::res://Assets/fonts/barcode/Barcade-R4LM.otf
+test.tscn::PackedScene/PackedScene::4666898848824970645::1755574017::0::1::::<><><>0<>0<><>::uid://diwjc5kprxfgm::::res://scenes/dog.tscn<>uid://coijmoeduemce::::res://scenes/guard.tscn<>uid://q8s1bqekgfml::::res://icon.svg
+world.gd::GDScript/GDScript::6129665484673049782::1755573730::0::1::::<>Node2D<><>0<>0<><>::
+world.tscn::PackedScene::6728773128237763682::1755736445::0::1::::<><><>0<>0<><>::uid://ctlixvnndd3io::::res://scenes/Playable/world.gd<>uid://njlmawtm5tf1::::res://tileSet&sprites/tilemap(floor design) (1).png<>uid://8ntnrcx56uqm::::res://scenes/treasure_prompt.tscn<>uid://bf4bk21kjmucx::::res://scenes/Score.tscn<>uid://k3kpawgbfjby::::res://scenes/loading_screen.tscn<>uid://dvke8uigufut0::::res://sounds/undertale-flee.mp3<>uid://dst46h4nxl5cq::::res://scenes/Playable/GO_buttonControl.gd<>uid://bgrv4dc4yuvbe::::res://Assets/fonts/barcode/Barcade-R4LM.otf<>uid://b7oo0vrn8iamh::::res://sounds/collectcoin-6075.mp3
+::res://scenes/PowerUps/::1755736445
+invisibleScript.gd::GDScript/GDScript::1640881287244974917::1755573730::0::1::::<>Node2D<><>0<>0<><>::
+InvisPowerUp.tscn::PackedScene::8454425410303551467::1755736445::0::1::::<><><>0<>0<><>::uid://c6070l5fe0yuk::::res://scenes/PowerUp.gd<>uid://xm4cs1mj0uin::::res://scenes/PowerUps/invisibleScript.gd<>uid://q8s1bqekgfml::::res://icon.svg
+::res://Seperate Scripts/::1755573899
+credits.gd::GDScript/GDScript::2322018004962500825::1755573730::0::1::::<>Node<><>0<>0<><>::
+Events.gd::GDScript/GDScript::2846176988562838786::1755573730::0::1::::<>Node<><>0<>0<><>::
+SaveLoad.gd::GDScript/GDScript::2317487592988108940::1755573730::0::1::::<>Node<><>0<>0<><>::
+Walker.gd::GDScript/GDScript::8672218967661092584::1755573730::0::1::::Walker<>Node<><>0<>0<><>::
+::res://sounds/::1755573900
+collectcoin-6075.mp3::AudioStreamMP3/AudioStreamMP3::4662260781300429647::1755573730::1755573900::1::::<><><>0<>0<>f35019f9ce7879bd73dc55ac79f80998<>res://.godot/imported/collectcoin-6075.mp3-419657d01223cdd77872c7a53ef70294.mp3str::
+dog-bark-99919.mp3::AudioStreamMP3/AudioStreamMP3::3142472676154182573::1755573730::1755573900::1::::<><><>0<>0<>31cd1a498d7f99de50a37ca171c63a36<>res://.godot/imported/dog-bark-99919.mp3-79428fab0de800ddd5d6e002d75ce226.mp3str::
+funkysuspense.mp3::AudioStreamMP3/AudioStreamMP3::2119988251265594513::1755573730::1755573900::1::::<><><>0<>0<>4d3186e13c3516f9e670632fa7c1ff93<>res://.godot/imported/funkysuspense.mp3-c068766e5381a4e916bd67643638b5b9.mp3str::
+police-siren-one-loop-loop-able-104019.mp3::AudioStreamMP3/AudioStreamMP3::1592256334436310997::1755573730::1755573900::1::::<><><>0<>0<>67e2745983b053fcd6d97b25cb7ecc86<>res://.godot/imported/police-siren-one-loop-loop-able-104019.mp3-162afca3891856fab152b4b5f664507b.mp3str::
+undertale-flee.mp3::AudioStreamMP3/AudioStreamMP3::8654174407313506199::1755573730::1755573900::1::::<><><>0<>0<>da363da541fdad12b844f734f05af3e9<>res://.godot/imported/undertale-flee.mp3-ac687aa2670ed8d6f78f7c6c9ccb6b0d.mp3str::
+::res://tileSet&sprites/::1755573900
+cloud.png::CompressedTexture2D/CompressedTexture2D::6445932286481125600::1755573730::1755573900::1::::<><><>0<>0<>7ba9bd4e644c560db7c7cc333267588a<>res://.godot/imported/cloud.png-0ca64bd840995499f4dfca778ffde243.ctex::
+cop.png::CompressedTexture2D/CompressedTexture2D::3614832767567856078::1755573730::1755573900::1::::<><><>0<>0<>46b93597fb94f44c1b00bfc626e68f2f<>res://.godot/imported/cop.png-abd37c79bb7787eb7cfc3122abe1c736.ctex::
+crook2.png::CompressedTexture2D/CompressedTexture2D::6334767848818712716::1755573730::1755573900::1::::<><><>0<>0<>31c163b9819e504194fb0539c90a15c3<>res://.godot/imported/crook2.png-7b0e1dc502dca37cb6177783e0424a3a.ctex::
+crook.png::CompressedTexture2D/CompressedTexture2D::7560442244246735749::1755573730::1755573900::1::::<><><>0<>0<>d559128cb1f9c320cc1e5800aa44454b<>res://.godot/imported/crook.png-0b04d7ea4ac142cda0330aa87a440ddc.ctex::
+Full.png::CompressedTexture2D/CompressedTexture2D::1988851278328837936::1755573730::1755573900::1::::<><><>0<>0<>a459e3dacd2dbc5930bd0539fe2a4761<>res://.godot/imported/Full.png-60c8cb9580435c57c92d1bac576f73aa.ctex::
+gold.png::CompressedTexture2D/CompressedTexture2D::517870006281491872::1755573730::1755573900::1::::<><><>0<>0<>c9be43dd8157bc96c429a9da75ae4d24<>res://.godot/imported/gold.png-43b177a4c4b639266054c1bafd4478e4.ctex::
+stairewell (1).png::CompressedTexture2D/CompressedTexture2D::5811116531844243338::1755573730::1755573900::1::::<><><>0<>0<>85f537e82e2b14af90ea7666bb4e7b30<>res://.godot/imported/stairewell (1).png-a59c999e6e3d65545f2d1f6ee1162ad7.ctex::
+stairewell (2).png::CompressedTexture2D/CompressedTexture2D::3456027816678225749::1755573730::1755573900::1::::<><><>0<>0<>1ecdfd6b2fd5bbff5e7976a7f86b584a<>res://.godot/imported/stairewell (2).png-3f9c39079cd318012e29496b0300254e.ctex::
+stairewell (3).png::CompressedTexture2D/CompressedTexture2D::6018013206168699536::1755573730::1755573900::1::::<><><>0<>0<>ab42127ea32f3cc3c0b715d6650dd792<>res://.godot/imported/stairewell (3).png-aa2b97ae0f56a59019c7d33ed83311f4.ctex::
+stairewell.png::CompressedTexture2D/CompressedTexture2D::6684500771878446571::1755573730::1755573900::1::::<><><>0<>0<>653a2906a424200583efdc9ce9d05828<>res://.godot/imported/stairewell.png-d132e72286630e01cf54722723c7c7df.ctex::
+tilemap (2).png::CompressedTexture2D/CompressedTexture2D::7876305842402554345::1755573730::1755573900::1::::<><><>0<>0<>5e19242cf1ba1942953a4f98dfbe44e7<>res://.godot/imported/tilemap (2).png-d4cb48f7fb905a8178549401738a93ad.ctex::
+tilemap(floor design) (1).png::CompressedTexture2D/CompressedTexture2D::931723718394456352::1755573730::1755573900::1::::<><><>0<>0<>a3a8e605806248875af03512317ef60d<>res://.godot/imported/tilemap(floor design) (1).png-0e85a8a699d1e8763f1bda6616bd3c9c.ctex::
+tilemap(floor design).png::CompressedTexture2D/CompressedTexture2D::3811761257883680021::1755573730::1755573900::1::::<><><>0<>0<>0db38d25a9efd97253df3e7cb2934306<>res://.godot/imported/tilemap(floor design).png-65bcf5ecba786a6cb1bf4cc8635326c6.ctex::
+::res://tileSet&sprites/playerspritesheets/::1755573900
+Idle_22x28_5.png::CompressedTexture2D/CompressedTexture2D::2233008029994608646::1755573730::1755573900::1::::<><><>0<>0<>4b11603f696f1a1cc4b7fb25c278f23d<>res://.godot/imported/Idle_22x28_5.png-2c0bdd62bc40952bd99221731e40cc1a.ctex::
+Run_22x28_8_12.png::CompressedTexture2D/CompressedTexture2D::1350729303820300240::1755573730::1755573900::1::::<><><>0<>0<>06873a5da3a72674f0a3bc37bc2c6f03<>res://.godot/imported/Run_22x28_8_12.png-f854acce9c305a02ab71c35ba6fce005.ctex::
+Walk_22x28_8_8.png::CompressedTexture2D/CompressedTexture2D::2211711305112852124::1755573730::1755573900::1::::<><><>0<>0<>8ffb3ce33550aa90281d6a68b945693a<>res://.godot/imported/Walk_22x28_8_8.png-ad0887de925cb224fce44b4e50f4af9c.ctex::

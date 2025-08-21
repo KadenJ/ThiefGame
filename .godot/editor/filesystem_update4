@@ -1,13 +1,11 @@
-res://scenes/invisPowerUp.tscn
-res://scenes/invisPowerUp.gd
 res://scenes/Playable/world.tscn
 res://scenes/guard.tscn
 res://scenes/dog.tscn
 res://scenes/Player.tscn
 res://scenes/Score.tscn
 res://scenes/PowerUp.tscn
-res://scenes/PowerUp.gd
-res://scenes/PowerUps/invisibleScript.gd
 res://scenes/PowerUps/InvisPowerUp.tscn
-res://scenes/Playable/world.gd
-res://Seperate Scripts/Walker.gd
+res://scenes/treasure_prompt.tscn
+res://scenes/Playable/scoreboard.tscn
+res://scenes/Playable/menu.tscn
+res://LootLockerScores.gd

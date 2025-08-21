@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dspnfe5ys6vhr"]
 
-[ext_resource type="Script" path="res://scenes/PowerUp.gd" id="1_artlj"]
-[ext_resource type="Script" path="res://scenes/PowerUps/invisibleScript.gd" id="2_2s5ip"]
+[ext_resource type="Script" uid="uid://c6070l5fe0yuk" path="res://scenes/PowerUp.gd" id="1_artlj"]
+[ext_resource type="Script" uid="uid://xm4cs1mj0uin" path="res://scenes/PowerUps/invisibleScript.gd" id="2_2s5ip"]
 [ext_resource type="Texture2D" uid="uid://q8s1bqekgfml" path="res://icon.svg" id="2_n1ecu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mykf"]

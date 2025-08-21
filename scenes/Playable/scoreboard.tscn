@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://s8y7p0ka7i6u"]
 
-[ext_resource type="Script" path="res://scenes/Playable/scoreboard.gd" id="1_pldmj"]
+[ext_resource type="Script" uid="uid://ucysx1psljav" path="res://scenes/Playable/scoreboard.gd" id="1_pldmj"]
 [ext_resource type="FontFile" uid="uid://bgrv4dc4yuvbe" path="res://Assets/fonts/barcode/Barcade-R4LM.otf" id="2_nbx2f"]
 
 [node name="Control" type="Control"]
@@ -12,7 +12,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pldmj")
 
+[node name="boardCover" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[node name="Label" type="Label" parent="boardCover"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -361.0
+offset_right = 134.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Getting Scores
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="scores" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -30,9 +60,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -85.0
-offset_top = 213.125
+offset_top = 385.625
 offset_right = 83.0
-offset_bottom = 278.125
+offset_bottom = 450.625
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
@@ -46,9 +76,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -85.0
-offset_top = -49.0
+offset_top = -174.375
 offset_right = 83.0
-offset_bottom = 16.0
+offset_bottom = -109.375
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
@@ -63,9 +93,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -85.0
-offset_top = -311.125
+offset_top = -738.75
 offset_right = 83.0
-offset_bottom = -246.125
+offset_bottom = -673.75
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_nbx2f")
@@ -80,9 +110,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -84.0
-offset_top = -248.625
+offset_top = -658.75
 offset_right = 84.0
-offset_bottom = -183.625
+offset_bottom = -593.75
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_nbx2f")
@@ -109,8 +139,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
+offset_left = -133.0
+offset_top = -72.0
+offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_neighbor_left = NodePath("../refresh")
@@ -121,15 +152,11 @@ text = "Back"
 
 [node name="refresh" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1144.0
 offset_top = -70.0
-offset_right = -922.0
-grow_horizontal = 0
+offset_right = 223.0
 grow_vertical = 0
 focus_neighbor_right = NodePath("../Button")
 theme_override_fonts/font = ExtResource("2_nbx2f")
@@ -137,25 +164,6 @@ theme_override_font_sizes/font_size = 50
 text = "refresh"
 
 [node name="HIghScoreRequest" type="HTTPRequest" parent="."]
-
-[node name="boardCover" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 646.0
-color = Color(0.0588235, 0.0588235, 0.0588235, 1)
-
-[node name="Label" type="Label" parent="boardCover"]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 283.0
-offset_right = 716.0
-offset_bottom = 338.0
-theme_override_font_sizes/font_size = 20
-text = "Getting Scores
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]

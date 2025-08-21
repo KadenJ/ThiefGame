@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://irdfhydba2a8"]
 
-[ext_resource type="Script" path="res://scenes/Exit.gd" id="1_poyur"]
+[ext_resource type="Script" uid="uid://duafcamr45cg4" path="res://scenes/Exit.gd" id="1_poyur"]
 [ext_resource type="Texture2D" uid="uid://co17if0mnut5s" path="res://tileSet&sprites/stairewell (1).png" id="2_nxbeg"]
 [ext_resource type="Texture2D" uid="uid://cr0f2e16n0q37" path="res://tileSet&sprites/stairewell (3).png" id="4_ktlyt"]
 

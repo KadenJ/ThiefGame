@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3bnajsqitpw8"]
 
-[ext_resource type="Script" path="res://scenes/treasure.gd" id="1_cmg33"]
+[ext_resource type="Script" uid="uid://c35asvnaptefq" path="res://scenes/treasure.gd" id="1_cmg33"]
 [ext_resource type="Texture2D" uid="uid://hm4ijkkjm3pc" path="res://tileSet&sprites/gold.png" id="2_cv8qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g16ms"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://t4tnwe8g1ykc"]
 
-[ext_resource type="Script" path="res://scenes/Playable/Menu.gd" id="1_ymwdn"]
+[ext_resource type="Script" uid="uid://di1t5k43yhkbv" path="res://scenes/Playable/Menu.gd" id="1_ymwdn"]
 [ext_resource type="FontFile" uid="uid://dah8llpnex5du" path="res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf" id="2_occ5i"]
 [ext_resource type="Texture2D" uid="uid://dfylm5k3i3mwj" path="res://tileSet&sprites/crook.png" id="3_8flyo"]
 [ext_resource type="Texture2D" uid="uid://cx3pte28vgxt5" path="res://tileSet&sprites/cloud.png" id="4_7qsr1"]
@@ -25,18 +25,18 @@ script = ExtResource("1_ymwdn")
 [node name="images" type="Node" parent="."]
 
 [node name="character" type="TextureRect" parent="images"]
-offset_left = 447.0
-offset_top = 513.0
-offset_right = 479.0
-offset_bottom = 545.0
+offset_left = 85.0
+offset_top = 639.0
+offset_right = 117.0
+offset_bottom = 671.0
 scale = Vector2(4.25, 4.25)
 texture = ExtResource("3_8flyo")
 flip_h = true
 
 [node name="building" type="ColorRect" parent="images"]
-offset_left = 832.0
+offset_left = 433.0
 offset_top = -64.0
-offset_right = 1056.0
+offset_right = 657.0
 offset_bottom = 520.0
 color = Color(0.254902, 0.254902, 0.254902, 1)
 
@@ -249,45 +249,49 @@ offset_bottom = 448.0
 color = Color(0.866667, 0.858824, 0.109804, 1)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="images"]
-position = Vector2(652, -44)
+position = Vector2(435, -64)
 amount = 50
-process_material = SubResource("ParticleProcessMaterial_11rlk")
 lifetime = 5.0
 speed_scale = 3.39
+process_material = SubResource("ParticleProcessMaterial_11rlk")
 
 [node name="CloudFormation1" type="Node" parent="images"]
 
 [node name="cloud" type="TextureRect" parent="images/CloudFormation1"]
-offset_left = 636.0
+offset_left = 331.0
 offset_top = -307.0
-offset_right = 1636.0
+offset_right = 1331.0
 offset_bottom = 443.0
 texture = ExtResource("4_7qsr1")
 flip_v = true
+metadata/_edit_use_anchors_ = true
 
 [node name="cloud2" type="TextureRect" parent="images/CloudFormation1"]
-offset_left = 390.0
+offset_left = 85.0
 offset_top = -372.0
-offset_right = 1390.0
+offset_right = 1085.0
 offset_bottom = 378.0
 texture = ExtResource("4_7qsr1")
 flip_v = true
+metadata/_edit_use_anchors_ = true
 
 [node name="cloud3" type="TextureRect" parent="images/CloudFormation1"]
-offset_left = 302.0
+offset_left = -3.0
 offset_top = -194.0
-offset_right = 1302.0
+offset_right = 997.0
 offset_bottom = 556.0
 texture = ExtResource("4_7qsr1")
 flip_h = true
+metadata/_edit_use_anchors_ = true
 
 [node name="cloud4" type="TextureRect" parent="images/CloudFormation1"]
-offset_left = 546.0
+offset_left = 241.0
 offset_top = -221.0
-offset_right = 1546.0
+offset_right = 1241.0
 offset_bottom = 529.0
 texture = ExtResource("4_7qsr1")
 flip_v = true
+metadata/_edit_use_anchors_ = true
 
 [node name="CloudFormation2" type="Node" parent="images"]
 
@@ -301,13 +305,14 @@ texture = ExtResource("4_7qsr1")
 flip_v = true
 
 [node name="cloud2" type="TextureRect" parent="images/CloudFormation2"]
-offset_left = -262.0
-offset_top = -313.0
-offset_right = 738.0
-offset_bottom = 437.0
+offset_left = -362.0
+offset_top = -322.0
+offset_right = 638.0
+offset_bottom = 428.0
 texture = ExtResource("4_7qsr1")
 flip_h = true
 flip_v = true
+metadata/_edit_use_anchors_ = true
 
 [node name="cloud3" type="TextureRect" parent="images/CloudFormation2"]
 visible = false
@@ -319,11 +324,12 @@ texture = ExtResource("4_7qsr1")
 flip_h = true
 
 [node name="cloud4" type="TextureRect" parent="images/CloudFormation2"]
-offset_left = -147.0
-offset_top = -130.0
-offset_right = 853.0
-offset_bottom = 620.0
+offset_left = -247.0
+offset_top = -139.0
+offset_right = 753.0
+offset_bottom = 611.0
 texture = ExtResource("4_7qsr1")
+metadata/_edit_use_anchors_ = true
 
 [node name="buttons" type="MarginContainer" parent="images"]
 anchors_preset = 8
@@ -331,10 +337,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -575.0
-offset_top = -178.0
-offset_right = -407.0
-offset_bottom = -30.0
+offset_left = -338.0
+offset_top = 147.0
+offset_right = -170.0
+offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.28, 3.28)
@@ -417,10 +423,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 0
-offset_left = 976.0
-offset_top = 572.0
-offset_right = 1065.0
-offset_bottom = 603.0
+offset_left = 508.0
+offset_top = 1151.0
+offset_right = 597.0
+offset_bottom = 1182.0
 scale = Vector2(1.51764, 1.44)
 focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
 text = "mute

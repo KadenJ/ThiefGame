@@ -10,17 +10,17 @@ color = Color(0, 0, 0, 0.203922)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -452.5
-offset_top = 64.0
-offset_right = 452.5
-offset_bottom = 204.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 417.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(720, 12)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.619608)
 theme_override_font_sizes/font_size = 100
 text = "All Treasure Found"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

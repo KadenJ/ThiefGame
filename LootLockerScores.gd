@@ -89,7 +89,6 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
-	#print(json.get_data())
 	
 	
 	var counter = 0
@@ -133,6 +132,3 @@ func _on_upload_score_request_completed(result, response_code, headers, body) :
 	#print(response_code)
 	# Clear node
 	submit_score_http.queue_free()
-
-
-
