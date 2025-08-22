@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c24p57l318t6q"]
+[gd_scene load_steps=15 format=3 uid="uid://c24p57l318t6q"]
 
 [ext_resource type="Script" uid="uid://ctlixvnndd3io" path="res://scenes/Playable/world.gd" id="1_j4w5f"]
 [ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet&sprites/tilemap(floor design) (1).png" id="2_t0r5h"]
 [ext_resource type="PackedScene" uid="uid://8ntnrcx56uqm" path="res://scenes/treasure_prompt.tscn" id="3_anvvu"]
+[ext_resource type="PackedScene" uid="uid://c8baw35oy0sg" path="res://scenes/mobile/joystick.tscn" id="3_hk8a2"]
 [ext_resource type="PackedScene" uid="uid://bf4bk21kjmucx" path="res://scenes/Score.tscn" id="4_3ssa1"]
 [ext_resource type="PackedScene" uid="uid://k3kpawgbfjby" path="res://scenes/loading_screen.tscn" id="5_3qnuo"]
 [ext_resource type="AudioStream" uid="uid://dvke8uigufut0" path="res://sounds/undertale-flee.mp3" id="6_i6y2s"]
@@ -329,6 +330,9 @@ layer_0/tile_data = PackedInt32Array(65535, 1, 0, 131071, 1, 0, 196607, 1, 0, 26
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="joystick" parent="CanvasLayer" instance=ExtResource("3_hk8a2")]
+position = Vector2(338, 989)
+
 [node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_anvvu")]
 visible = false
 anchors_preset = 5
@@ -484,6 +488,7 @@ horizontal_alignment = 1
 stream = ExtResource("8_dmxm8")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 scale = Vector2(1, 0.997739)
 color = Color(0.105882, 0.105882, 0.105882, 1)
 

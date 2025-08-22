@@ -484,7 +484,7 @@ collision_layer = 2062
 script = ExtResource("1_a5fjl")
 maxSpeed = 250
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
 sprite_frames = SubResource("SpriteFrames_ff0cr")
 animation = &"idle"
 flip_h = true

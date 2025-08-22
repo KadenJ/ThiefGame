@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8baw35oy0sg"]
+
+[ext_resource type="Script" uid="uid://36q5sleqw3vu" path="res://scenes/mobile/joystick.gd" id="1_t2f76"]
+[ext_resource type="Texture2D" uid="uid://q8s1bqekgfml" path="res://icon.svg" id="2_535e8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_535e8"]
+radius = 75.0
+
+[node name="joystick" type="TouchScreenButton" groups=["joystick"]]
+texture_normal = ExtResource("2_535e8")
+shape = SubResource("CircleShape2D_535e8")
+script = ExtResource("1_t2f76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(66, 60)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("2_535e8")

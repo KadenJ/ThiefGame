@@ -125,7 +125,7 @@ func reloadLevel():
 	var count = 0
 	for child in children:
 		count += 1
-		if count > 3:
+		if count > 4:
 			child.queue_free()
 	treasure_prompt.hide()
 	#repavement
