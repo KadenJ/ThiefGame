@@ -13,7 +13,7 @@ var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 var score = 0
 var floorNumber = 0
 
-@onready var tileMap = $TileMap
+@onready var tileMap = $Layer0#$TileMap
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
 @onready var loading_screen = $CanvasLayer/loadingScreen
 @onready var loading_timer = $CanvasLayer/loadingScreen/loadingTimer
@@ -46,7 +46,7 @@ func generateLevel():
 	var map = walker.walk(size)#size of room, amount of total steps taken
 	
 	var player = Player.instantiate()
-	call_deferred("add_child",player)
+	call_deferred("add_child", player)
 	player.position = map.front()*32
 	
 	var powerUpT = powerUp.instantiate()
@@ -54,7 +54,7 @@ func generateLevel():
 	call_deferred("add_child", powerUpT)
 	
 	var exit = Exit.instantiate()
-	call_deferred("add_child",exit)
+	call_deferred("add_child", exit)
 	exit.position = walker.getEndRoom().position*32
 	exit.leavingLevel.connect(reloadLevel)
 	
@@ -63,50 +63,57 @@ func generateLevel():
 		var roomEval = randi()% 10
 		if roomEval == 1:
 			var treasure = Treasure.instantiate()
-			call_deferred("add_child",treasure)
+			call_deferred("add_child", treasure)
 			treasure.position = room.position*32
 			room.hasTreasure = true
 			treasureList.append(treasure.position)
 			if treasure.position == exit.position:
 				treasure.queue_free()
-				
+	
 	#spawns enemies
+	#loading guard causes game to crash
 	for room in walker.rooms:
 		var roomEval = randi()% 12
 		if roomEval == 3:
 			var guard = Guard.instantiate()
-			call_deferred("add_child",guard)
+			
+			
 			if guardList.count(room.position*32) == 1:
-				guard.queue_free()
+				print("alreqady guarded")
 			else:
 				guard.position = room.position*32
 				guardList.append(guard.position)
-				
+				call_deferred("add_child", guard)
+			await get_tree().process_frame
 			#checks for treasure on pos
-			for i in treasureList:
-				if guard.position == i:
-					guard.queue_free()
-			if guard.position == exit.position || guard.position.distance_to(player.position) < abs(20):
+			if guard.position.distance_to(player.position) < abs(20):
 				guard.queue_free()
+			#else:
+				#for i in treasureList:
+					#if guard.position == i:
+						#guard.queue_free()
 		elif roomEval == 4 && level >= 5:
 			var dog = Dog.instantiate()
-			call_deferred("add_child",dog)
+			
 			if guardList.count(room.position*32) == 1:
-				dog.queue_free()
+				print("already guarded")
 			else:
 				dog.position = room.position*32
 				guardList.append(dog.position)
+				call_deferred("add_child", dog)
+			await get_tree().process_frame
 			#checks for treasure on pos
-			for i in treasureList:
-				if dog.position == i:
-					dog.queue_free()
-			if dog.position == exit.position || dog.position.distance_to(player.position) < abs(10):
+			if dog.position.distance_to(player.position) < abs(10):
 				dog.queue_free()
-			
+			#else:
+				#for i in treasureList:
+					#if dog.position == i:
+						#dog.queue_free()
+		
 	#changes floor tiles
 	walker.queue_free()
 	for location in map:
-		tileMap.set_cell(0, location, 1, Vector2i(4,4))
+		tileMap.set_cell(location, 1, Vector2i(4,4))
 		
 
 
@@ -125,13 +132,13 @@ func reloadLevel():
 	var count = 0
 	for child in children:
 		count += 1
-		if count > 4:
+		if count > 3:
 			child.queue_free()
 	treasure_prompt.hide()
 	#repavement
 	for row in 20:
 		for i in 36:
-			tileMap.set_cell(0,Vector2i(i,row), 1, Vector2i(0,0))
+			tileMap.set_cell(Vector2i(i,row), 1, Vector2i(0,0))
 		
 	#generateLevel()
 
@@ -142,9 +149,10 @@ func showTreasurePrompt():
 
 
 func hideLoadScreen():
-	loading_screen.hide()
-	loading_timer.stop()
+	
 	generateLevel()
+	print("new level gen")
+	loading_screen.hide()
 
 func giveScore(points):
 	score += points

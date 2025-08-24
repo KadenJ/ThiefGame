@@ -15,7 +15,6 @@ radius = 19.661
 radius = 239.008
 
 [node name="Dog" type="CharacterBody2D"]
-position = Vector2(635, 165)
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_58nit")

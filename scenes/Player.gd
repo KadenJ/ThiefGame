@@ -15,6 +15,8 @@ var clockPos : String = "1"
 func _physics_process(delta):
 	movement(delta)
 	move_and_slide()
+	if Input.is_action_just_pressed("ui_accept"):
+		Events.guardCaught.emit()
 	
 	
 	#animate() #<-- uncomment when animations are complete

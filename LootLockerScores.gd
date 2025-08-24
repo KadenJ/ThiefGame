@@ -105,7 +105,7 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	#print(topScores)
 	
 	# Clear node
-	leaderboard_http.queue_free()
+	#leaderboard_http.queue_free()
 
 #bad request on upload
 func _upload_score(score: int):

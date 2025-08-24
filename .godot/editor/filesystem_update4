@@ -1,10 +1,9 @@
+res://scenes/dog.tscn
+res://scenes/Node.gd
+res://scenes/guard.tscn
+res://scenes/Playable/menu.tscn
+res://scenes/Playable/world.gd
 res://scenes/Playable/world.tscn
 res://scenes/Playable/scoreboard.tscn
-res://scenes/Playable/menu.tscn
-res://scenes/Player.tscn
-res://scenes/Playable/world.gd
-res://scenes/control.tscn
-res://Joystick.gd
-res://scenes/mobile/joystick.tscn
-res://scenes/mobile/joystick.gd
-res://scenes/Player.gd
+res://scenes/Score.tscn
+res://LootLockerScores.gd
