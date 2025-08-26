@@ -3,4 +3,10 @@ res://scenes/guard.tscn
 res://scenes/Playable/world.tscn
 res://scenes/Score.tscn
 res://scenes/Playable/scoreboard.tscn
+res://scenes/Player.tscn
+res://scenes/Player.gd
+res://scenes/PowerUp.tscn
 res://scenes/Playable/world.gd
+res://scenes/CameraDevControl.gd
+res://scenes/mobile/joystick.tscn
+res://scenes/mobile/joystick.gd

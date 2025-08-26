@@ -489,7 +489,6 @@ horizontal_alignment = 1
 stream = ExtResource("8_dmxm8")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 scale = Vector2(1, 0.997739)
 color = Color(0.105882, 0.105882, 0.105882, 1)
 

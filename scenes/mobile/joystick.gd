@@ -4,6 +4,7 @@ extends TouchScreenButton
 @onready var maxRadius = shape.radius
 @onready var knobCenter = texture_normal.get_size()/2
 
+signal clicked
 var touched : bool = false
 
 func _process(delta: float) -> void:
@@ -14,6 +15,8 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
+		if event.double_tap:
+			clicked.emit()
 		if event.pressed:
 			if event.position.distance_to(global_position+knobCenter)<maxRadius:
 				touched = true

@@ -63,12 +63,13 @@ func generateLevel():
 		var roomEval = randi()% 10
 		if roomEval == 1:
 			var treasure = Treasure.instantiate()
-			call_deferred("add_child", treasure)
 			treasure.position = room.position*32
-			room.hasTreasure = true
-			treasureList.append(treasure.position)
 			if treasure.position == exit.position:
-				treasure.queue_free()
+				pass
+			else:
+				call_deferred("add_child", treasure)
+				room.hasTreasure = true
+				treasureList.append(treasure.position)
 	
 	#spawns enemies
 	var guardCount = 2 + floorNumber #max guards per floor

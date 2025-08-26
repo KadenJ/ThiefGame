@@ -7,10 +7,13 @@ extends CharacterBody2D
 @onready var axis = Vector2.ZERO
 @onready var joystick = get_tree().get_first_node_in_group("joystick")
 
+
 enum{Idle, Run, Walk}
 var state = Idle
 var clockPos : String = "1"
 
+func _ready() -> void:
+	joystick.connect("clicked", changeCam)
 
 func _physics_process(delta):
 	movement(delta)
@@ -31,12 +34,23 @@ func movement(delta):
 		state = Idle
 		#play Idle
 	elif joystickStrength > .5:
-		if $Camera2D.zoomed:
+		if $Camera2D.zoomed == false:
 			state = Run
 		else:
 			state = Walk
 		velocity = getMovementVector(angle) * maxSpeed
 	
+
+func changeCam():
+	print("changeCam")
+	if $Camera2D.zoomed == true:
+		$Camera2D.zoom = Vector2(1,1)
+		$Camera2D.zoomed = false
+		maxSpeed = 100
+	else:
+		$Camera2D.zoom = Vector2(3,3)
+		$Camera2D.zoomed = true
+		maxSpeed = 300
 
 func applyFriction(amount):
 	if velocity.length()>amount:
