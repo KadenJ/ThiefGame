@@ -38,3 +38,7 @@ func _on_check_button_toggled(toggled_on):
 func loadingFinished():
 	$images/loading.visible = false
 	Events.loaded = true
+
+
+func _on_touch_screen_button_pressed() -> void:
+	$CheckButton.button_pressed = !$CheckButton.button_pressed

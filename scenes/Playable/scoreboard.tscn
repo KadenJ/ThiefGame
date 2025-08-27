@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://s8y7p0ka7i6u"]
+[gd_scene load_steps=5 format=3 uid="uid://s8y7p0ka7i6u"]
 
 [ext_resource type="Script" uid="uid://ucysx1psljav" path="res://scenes/Playable/scoreboard.gd" id="1_pldmj"]
 [ext_resource type="FontFile" uid="uid://bgrv4dc4yuvbe" path="res://Assets/fonts/barcode/Barcade-R4LM.otf" id="2_nbx2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lugp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp454"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -109,9 +113,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -72.0
-offset_bottom = -2.0
+offset_left = -190.0
+offset_top = -150.0
+offset_right = -57.0
+offset_bottom = -80.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_neighbor_left = NodePath("../refresh")
@@ -120,20 +125,33 @@ theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
+[node name="button" type="TouchScreenButton" parent="Button"]
+position = Vector2(67, 39)
+scale = Vector2(7.6, 3.4)
+shape = SubResource("RectangleShape2D_lugp7")
+
 [node name="refresh" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -70.0
-offset_right = 223.0
+offset_left = 59.0
+offset_top = -150.0
+offset_right = 282.0
+offset_bottom = -80.0
 grow_vertical = 0
 focus_neighbor_right = NodePath("../Button")
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
 text = "refresh"
 
+[node name="refresh" type="TouchScreenButton" parent="refresh"]
+position = Vector2(113, 38)
+scale = Vector2(12.24, 3.96)
+shape = SubResource("RectangleShape2D_wp454")
+
 [node name="boardCover" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,4 +183,6 @@ uppercase = true
 [node name="HIghScoreRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button/button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="refresh/refresh" to="." method="_on_refresh_pressed"]

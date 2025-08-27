@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c24p57l318t6q"]
+[gd_scene load_steps=17 format=4 uid="uid://c24p57l318t6q"]
 
 [ext_resource type="Script" uid="uid://ctlixvnndd3io" path="res://scenes/Playable/world.gd" id="1_j4w5f"]
 [ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet&sprites/tilemap(floor design) (1).png" id="2_t0r5h"]
@@ -319,6 +319,10 @@ terrain_set_0/terrain_1/name = "floor"
 terrain_set_0/terrain_1/color = Color(0.0352941, 0.996078, 0.996078, 1)
 sources/1 = SubResource("TileSetAtlasSource_ii0im")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hk8a2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ucjt"]
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_j4w5f")
 
@@ -409,6 +413,11 @@ theme_override_fonts/font = ExtResource("6_kv4e6")
 theme_override_font_sizes/font_size = 25
 text = "Keep Stealin'"
 
+[node name="retry" type="TouchScreenButton" parent="CanvasLayer/GameOverScreen/retry"]
+position = Vector2(88.5593, 21.6102)
+scale = Vector2(9.0678, 2.11864)
+shape = SubResource("RectangleShape2D_hk8a2")
+
 [node name="MainMenu" type="Button" parent="CanvasLayer/GameOverScreen"]
 layout_mode = 1
 anchors_preset = 8
@@ -427,6 +436,11 @@ focus_neighbor_top = NodePath("../retry")
 theme_override_fonts/font = ExtResource("6_kv4e6")
 theme_override_font_sizes/font_size = 25
 text = "Main Menu"
+
+[node name="mainMenu" type="TouchScreenButton" parent="CanvasLayer/GameOverScreen/MainMenu"]
+position = Vector2(71.7607, 22.6613)
+scale = Vector2(7.57177, 1.75537)
+shape = SubResource("RectangleShape2D_7ucjt")
 
 [node name="score" type="Label" parent="CanvasLayer/GameOverScreen"]
 layout_mode = 1
@@ -494,4 +508,6 @@ color = Color(0.105882, 0.105882, 0.105882, 1)
 
 [connection signal="timeout" from="CanvasLayer/treasurePrompt/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/retry" to="CanvasLayer/GameOverScreen" method="_on_retry_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/retry/retry" to="CanvasLayer/GameOverScreen" method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu/mainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]

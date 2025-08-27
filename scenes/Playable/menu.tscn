@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://t4tnwe8g1ykc"]
+[gd_scene load_steps=10 format=3 uid="uid://t4tnwe8g1ykc"]
 
 [ext_resource type="Script" uid="uid://di1t5k43yhkbv" path="res://scenes/Playable/Menu.gd" id="1_ymwdn"]
 [ext_resource type="FontFile" uid="uid://dah8llpnex5du" path="res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf" id="2_occ5i"]
@@ -12,6 +12,15 @@ emission_box_extents = Vector3(600, 1, 1)
 gravity = Vector3(-20.89, 98, 0)
 scale_min = 3.0
 scale_max = 3.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgww0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n4u1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d6yp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgww0"]
+radius = 35.81
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -360,6 +369,12 @@ theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Play"
 
+[node name="play" type="TouchScreenButton" parent="images/buttons/buttons/Play"]
+position = Vector2(54.386, 29.5732)
+scale = Vector2(5.24561, 1.87805)
+shape = SubResource("RectangleShape2D_fgww0")
+visibility_mode = 1
+
 [node name="Quit" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -370,6 +385,12 @@ theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 
+[node name="quit" type="TouchScreenButton" parent="images/buttons/buttons/Quit"]
+position = Vector2(48.6842, 30.1951)
+scale = Vector2(4.54386, 2.03659)
+shape = SubResource("RectangleShape2D_5n4u1")
+visibility_mode = 1
+
 [node name="scoreBoard" type="Button" parent="images/buttons/buttons"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -379,6 +400,12 @@ focus_neighbor_bottom = NodePath(".")
 theme_override_fonts/font = ExtResource("2_occ5i")
 theme_override_font_sizes/font_size = 20
 text = "High scores"
+
+[node name="scoreBoard" type="TouchScreenButton" parent="images/buttons/buttons/scoreBoard"]
+position = Vector2(78.0702, 17.7073)
+scale = Vector2(7.44526, 1.47427)
+shape = SubResource("RectangleShape2D_7d6yp")
+visibility_mode = 1
 
 [node name="lightning" type="ColorRect" parent="images"]
 visible = false
@@ -432,8 +459,16 @@ focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
 text = "mute
 "
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CheckButton"]
+position = Vector2(32.9459, 16.6667)
+shape = SubResource("CircleShape2D_fgww0")
+
 [connection signal="pressed" from="images/buttons/buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="images/buttons/buttons/Play/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="images/buttons/buttons/Quit/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/scoreBoard" to="." method="_on_score_board_pressed"]
+[connection signal="pressed" from="images/buttons/buttons/scoreBoard/scoreBoard" to="." method="_on_score_board_pressed"]
 [connection signal="timeout" from="images/Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="CheckButton/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

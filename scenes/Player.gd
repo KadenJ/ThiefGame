@@ -40,7 +40,7 @@ func movement(delta):
 			state = Walk
 		velocity = getMovementVector(angle) * maxSpeed
 	
-
+	
 func changeCam():
 	print("changeCam")
 	if $Camera2D.zoomed == true:
