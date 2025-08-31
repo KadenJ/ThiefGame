@@ -3,7 +3,7 @@ extends Node
 const SAVEFILE = "user://savefile.save"
 
 #var highestRecord = 0
-var scoreList = [15000,7500,4500,1500]
+var scoreList = [15000,7500,4500,1500,500,200,100]
 
 func _ready():
 	loadScore()

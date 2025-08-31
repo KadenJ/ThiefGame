@@ -16,79 +16,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pldmj")
 
-[node name="scores" type="Panel" parent="."]
+[node name="scores" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -186.0
-offset_bottom = -186.0
+offset_left = -128.0
+offset_top = 354.0
+offset_right = 39.0
+offset_bottom = 354.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
 
 [node name="Label" type="Label" parent="scores"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -85.0
-offset_top = 385.625
-offset_right = 83.0
-offset_bottom = 450.625
-grow_horizontal = 2
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
 text = "score1"
 
 [node name="Label2" type="Label" parent="scores"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -174.375
-offset_right = 83.0
-offset_bottom = -109.375
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
 text = "score1"
 
 [node name="Label3" type="Label" parent="scores"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = -738.75
-offset_right = 83.0
-offset_bottom = -673.75
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
 text = "score1"
 
 [node name="Label4" type="Label" parent="scores"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -84.0
-offset_top = -658.75
-offset_right = 84.0
-offset_bottom = -593.75
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nbx2f")
+theme_override_font_sizes/font_size = 50
+text = "score1"
+
+[node name="Label5" type="Label" parent="scores"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nbx2f")
+theme_override_font_sizes/font_size = 50
+text = "score1"
+
+[node name="Label6" type="Label" parent="scores"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 50
 text = "score1"
@@ -105,6 +78,22 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_nbx2f")
 theme_override_font_sizes/font_size = 100
 text = "High Scores"
+
+[node name="offlineScores" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -306.5
+offset_top = 158.0
+offset_right = 306.5
+offset_bottom = 282.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nbx2f")
+theme_override_font_sizes/font_size = 50
+text = "Offline Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -129,6 +118,7 @@ text = "Back"
 position = Vector2(67, 39)
 scale = Vector2(7.6, 3.4)
 shape = SubResource("RectangleShape2D_lugp7")
+shape_visible = false
 
 [node name="refresh" type="Button" parent="."]
 layout_mode = 1
@@ -149,6 +139,7 @@ text = "refresh"
 position = Vector2(113, 38)
 scale = Vector2(12.24, 3.96)
 shape = SubResource("RectangleShape2D_wp454")
+shape_visible = false
 
 [node name="boardCover" type="ColorRect" parent="."]
 visible = false

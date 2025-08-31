@@ -1,7 +1,7 @@
 extends Node
 
-var topScores = [1, 2, 3, 4, 5]
-
+var OnlineTopScores = [1, 2, 3, 4, 5, 6 , 7]
+var online = false
 
 # Use this game API key if you want to test with a functioning leaderboard
 # leaderboard key or game api not working on live
@@ -18,6 +18,7 @@ var submit_score_http = HTTPRequest.new()
 
 func _ready():
 	_authentication_request()
+	loadScores()
 
 
 func _authentication_request():
@@ -51,6 +52,7 @@ func _authentication_request():
 
 
 func _on_authentication_request_completed(result, response_code, headers, body):
+	online = true
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
@@ -66,7 +68,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 	# Clear node
 	auth_http.queue_free()
 	# Get leaderboards
-	_get_leaderboards()
+	#_get_leaderboards()
 	
 
 
@@ -92,17 +94,18 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	
 	
 	var counter = 0
+	print(json.get_data())
 	for n in json.get_data().items.size():
-		topScores[counter] = json.get_data().items[n].score
+		OnlineTopScores[counter] = json.get_data().items[n].score
 		counter +=1
-		if counter == len(topScores) -1:
-			topScores.sort()
-			topScores.reverse()
+		if counter == len(OnlineTopScores):
+			OnlineTopScores.sort()
+			OnlineTopScores.reverse()
 			break
 		gotLeaderboard.emit()
 	Events.gotScores.emit()
 	# Print the formatted leaderboard to the console
-	#print(topScores)
+	#print(OnlineTopScores)
 	
 	# Clear node
 	#leaderboard_http.queue_free()
@@ -132,3 +135,26 @@ func _on_upload_score_request_completed(result, response_code, headers, body) :
 	#print(response_code)
 	# Clear node
 	submit_score_http.queue_free()
+
+#offline#########################################################################################
+var offlineTopScores = [1,2,3,4,5,6]
+#open offline score json
+#load scores to offlineTopScores
+
+func loadScores():
+	var file = FileAccess.open("res://offlineScores.json", FileAccess.READ)
+	var jsonScores = file.get_as_text()
+	var json = JSON.new()
+	offlineTopScores = json.parse_string(jsonScores)
+	
+	file.close()
+
+func saveScores():
+	#if score > offlineTopScores[i]: drop lowest, append score
+	var file = FileAccess.open("res://offlineScores.json",FileAccess.WRITE)
+	#just change offlineTopScores then run saveScores()
+	var scoreToSave = JSON.stringify(offlineTopScores)
+	
+	file.store_string(scoreToSave)
+	
+	file.close()

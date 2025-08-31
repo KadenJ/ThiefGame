@@ -373,6 +373,7 @@ text = "Play"
 position = Vector2(54.386, 29.5732)
 scale = Vector2(5.24561, 1.87805)
 shape = SubResource("RectangleShape2D_fgww0")
+shape_visible = false
 visibility_mode = 1
 
 [node name="Quit" type="Button" parent="images/buttons/buttons"]
@@ -389,6 +390,7 @@ text = "Quit"
 position = Vector2(48.6842, 30.1951)
 scale = Vector2(4.54386, 2.03659)
 shape = SubResource("RectangleShape2D_5n4u1")
+shape_visible = false
 visibility_mode = 1
 
 [node name="scoreBoard" type="Button" parent="images/buttons/buttons"]
@@ -405,6 +407,7 @@ text = "High scores"
 position = Vector2(78.0702, 17.7073)
 scale = Vector2(7.44526, 1.47427)
 shape = SubResource("RectangleShape2D_7d6yp")
+shape_visible = false
 visibility_mode = 1
 
 [node name="lightning" type="ColorRect" parent="images"]
@@ -427,26 +430,36 @@ autostart = true
 [node name="loading" type="Control" parent="images"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="images/loading"]
-layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 650.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="images/loading"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.017
-anchor_bottom = 0.018
-offset_left = 517.0
-offset_top = 296.0
-offset_right = 537.416
-offset_bottom = 307.336
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -14.0
+offset_right = 36.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "loading"
-metadata/_edit_use_anchors_ = true
 
 [node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 0
@@ -462,6 +475,7 @@ text = "mute
 [node name="TouchScreenButton" type="TouchScreenButton" parent="CheckButton"]
 position = Vector2(32.9459, 16.6667)
 shape = SubResource("CircleShape2D_fgww0")
+shape_visible = false
 
 [connection signal="pressed" from="images/buttons/buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Play/play" to="." method="_on_play_pressed"]

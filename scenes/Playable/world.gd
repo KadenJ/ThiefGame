@@ -158,17 +158,33 @@ func GameOver():
 		if count > 3:
 			child.queue_free()
 	
-	if score > Scores.topScores[0]:
-		game_over_screen.get_child(4).show()
-		Scores._upload_score(score)
-	elif score > Scores.topScores[len(Scores.topScores)-2]:
-		game_over_screen.get_child(5).show()
-		Scores._upload_score(score)
+	uploadPlayerScore()
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
 	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
 
+func uploadPlayerScore():
+	if Scores.online == true:
+		if score > Scores.OnlineTopScores[0]:
+			game_over_screen.get_child(4).show()
+			Scores._upload_score(score)
+		elif score > Scores.OnlineTopScores.back():
+			game_over_screen.get_child(5).show()
+			Scores._upload_score(score)
+	else:
+		#offline Score
+		var offlineScores = Scores.offlineTopScores
+		if score > Scores.offlineTopScores[0]:
+			game_over_screen.get_child(4).show()
+			offlineScores.pop_back()
+			offlineScores.append(score)
+		elif score > Scores.OnlineTopScores.back():
+			game_over_screen.get_child(5).show()
+			offlineScores.pop_back()
+			offlineScores.append(score)
+		print(offlineScores)
+		Scores.saveScores()
 
 func _on_timer_timeout():
 	treasure_prompt.hide()

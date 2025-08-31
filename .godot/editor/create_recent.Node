@@ -1,3 +1,4 @@
+VBoxContainer
 TouchScreenButton
 Label
 Node
@@ -11,4 +12,3 @@ Sprite2D
 CanvasLayer
 Control
 Node2D
-PowerUp
