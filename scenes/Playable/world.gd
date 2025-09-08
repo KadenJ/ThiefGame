@@ -72,14 +72,15 @@ func generateLevel():
 				treasureList.append(treasure.position)
 	
 	#spawns enemies
-	var guardCount = 2 + floorNumber #max guards per floor
+	var maxGuardCount = 2 + floorNumber #max guards per floor
+	var maxDogSquadCount = 2
 	for room in walker.rooms:
 		var roomEval = randi()% 12
-		if roomEval == 3 && guardList.size() <= guardCount:
+		if roomEval == 3 && guardList.size() <= maxGuardCount:
 			var guard = Guard.instantiate()
 			
-			
 			if guardList.count(room.position*32) == 1:
+				#if guard in room pass
 				pass
 			else:
 				guard.position = room.position*32
@@ -87,15 +88,18 @@ func generateLevel():
 					call_deferred("add_child", guard)
 					guardList.append(guard.position)
 					
-		elif roomEval == 4 && level >= 5:
+		elif roomEval == 4 && level >= 3 && guardList.size() <= maxGuardCount:
 			var dog = Dog.instantiate()
-			
+			var guard = Guard.instantiate()
 			if guardList.count(room.position*32) == 1:
 				pass
 			else:
 				dog.position = room.position*32
+				guard.position = room.position*32
 				if dog.position.distance_to(player.position) > abs(10):
 					call_deferred("add_child", dog)
+					call_deferred("add_child", guard)
+					guardList.append(guard.position)
 					guardList.append(dog.position)
 	
 	#changes floor tiles
@@ -163,7 +167,6 @@ func GameOver():
 	game_over_screen.show()
 	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
-
 func uploadPlayerScore():
 	if Scores.online == true:
 		if score > Scores.OnlineTopScores[0]:

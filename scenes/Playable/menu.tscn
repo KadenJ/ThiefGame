@@ -477,6 +477,28 @@ position = Vector2(32.9459, 16.6667)
 shape = SubResource("CircleShape2D_fgww0")
 shape_visible = false
 
+[node name="connection" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 1090.0
+offset_right = 597.0
+offset_bottom = 1121.0
+scale = Vector2(1.51764, 1.44)
+focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
+text = "wifi
+"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="connection"]
+position = Vector2(32.9459, 16.6667)
+shape = SubResource("CircleShape2D_fgww0")
+shape_visible = false
+
+[node name="wifiLoading" type="ColorRect" parent="connection"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="images/buttons/buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Play/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="images/buttons/buttons/Quit" to="." method="_on_quit_pressed"]
@@ -486,3 +508,4 @@ shape_visible = false
 [connection signal="timeout" from="images/Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="CheckButton/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="toggled" from="connection" to="." method="_on_connection_toggled"]

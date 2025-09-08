@@ -17,7 +17,7 @@ var leaderboard_http = HTTPRequest.new()
 var submit_score_http = HTTPRequest.new()
 
 func _ready():
-	_authentication_request()
+	#
 	loadScores()
 
 
@@ -49,27 +49,34 @@ func _authentication_request():
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	# Send request
 	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
+	
 
-
+signal toggleWifi
 func _on_authentication_request_completed(result, response_code, headers, body):
-	online = true
-	var json = JSON.new()
-	json.parse(body.get_string_from_utf8())
-	
-	# Save the player_identifier to file
-	var file = FileAccess.open("user://LootLocker.data", FileAccess.WRITE)
-	file.store_string(json.get_data().player_identifier)
-	file.close()
-	
-	# Save session_token to memory
-	session_token = json.get_data().session_token
-	
-	
-	# Clear node
-	auth_http.queue_free()
-	# Get leaderboards
-	#_get_leaderboards()
-	
+	#if online run this else: signal offline
+	if result != HTTPRequest.RESULT_SUCCESS || online == true:
+		print("offline")
+		online = false
+	else:
+		online = true
+		var json = JSON.new()
+		json.parse(body.get_string_from_utf8())
+		
+		# Save the player_identifier to file
+		var file = FileAccess.open("user://LootLocker.data", FileAccess.WRITE)
+		file.store_string(json.get_data().player_identifier)
+		file.close()
+		
+		# Save session_token to memory
+		session_token = json.get_data().session_token
+		
+		
+		# Clear node
+		auth_http.queue_free()
+		# Get leaderboards
+		#_get_leaderboards()
+		online = true
+	toggleWifi.emit()
 
 
 func _get_leaderboards():

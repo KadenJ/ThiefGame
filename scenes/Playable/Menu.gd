@@ -6,6 +6,9 @@ func _ready():
 	if Events.loaded == false:
 		Events.gotScores.connect(loadingFinished)
 	else: $images/loading.visible = false
+	
+	Scores.toggleWifi.connect(toggleOnline)
+
 
 
 func _on_play_pressed():
@@ -42,3 +45,13 @@ func loadingFinished():
 
 func _on_touch_screen_button_pressed() -> void:
 	$CheckButton.button_pressed = !$CheckButton.button_pressed
+	Scores.online = $CheckButton.button_pressed
+
+
+func _on_connection_toggled(toggled_on: bool) -> void:
+	Scores._authentication_request()
+	$connection/wifiLoading.visible = true
+func toggleOnline():
+	$connection.button_pressed = Scores.online
+	$connection/wifiLoading.visible = false
+	

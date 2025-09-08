@@ -16,7 +16,7 @@ func makeLeaderboard():
 	var scoreCount = 0
 	if Scores.online:
 		for i in SCORES.get_children():
-			print(Scores.online)
+
 			i.set_text(str(int(Scores.OnlineTopScores[scoreCount])).pad_zeros(5))
 			scoreCount+=1
 	else:

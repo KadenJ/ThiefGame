@@ -142,7 +142,6 @@ shape = SubResource("RectangleShape2D_wp454")
 shape_visible = false
 
 [node name="boardCover" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
