@@ -1,3 +1,4 @@
+NavigationAgent2D
 ColorRect
 VBoxContainer
 TouchScreenButton
@@ -12,4 +13,3 @@ CharacterBody2D
 Sprite2D
 CanvasLayer
 Control
-Node2D

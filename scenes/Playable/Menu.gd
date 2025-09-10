@@ -51,6 +51,7 @@ func _on_touch_screen_button_pressed() -> void:
 func _on_connection_toggled(toggled_on: bool) -> void:
 	Scores._authentication_request()
 	$connection/wifiLoading.visible = true
+
 func toggleOnline():
 	$connection.button_pressed = Scores.online
 	$connection/wifiLoading.visible = false

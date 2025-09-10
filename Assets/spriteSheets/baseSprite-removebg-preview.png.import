@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tikkxk353loi"
-path="res://.godot/imported/Run_22x28_8_12.png-f854acce9c305a02ab71c35ba6fce005.ctex"
+uid="uid://cedkt5prw1piy"
+path="res://.godot/imported/baseSprite-removebg-preview.png-3b7885035a46690e643effd9c7ab14ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tileSet&sprites/playerspritesheets/Run_22x28_8_12.png"
-dest_files=["res://.godot/imported/Run_22x28_8_12.png-f854acce9c305a02ab71c35ba6fce005.ctex"]
+source_file="res://Assets/spriteSheets/baseSprite-removebg-preview.png"
+dest_files=["res://.godot/imported/baseSprite-removebg-preview.png-3b7885035a46690e643effd9c7ab14ec.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

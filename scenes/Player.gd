@@ -18,29 +18,24 @@ func _ready() -> void:
 func _physics_process(delta):
 	movement(delta)
 	move_and_slide()
-	if Input.is_action_just_pressed("ui_accept"):
-		Events.guardCaught.emit()
 	
-	
-	#animate() #<-- uncomment when animations are complete
+	animate() #<-- uncomment when animations are complete
 
 func movement(delta):
 	var angle = joystick.getJsAngle()
-	if angle != 0 : clockPos = str(getClockPos(angle))
+	if angle != 0 : rotation = joystick.getJsDir().angle()
 	var joystickStrength = joystick.getJsPos()/joystick.maxRadius
 	
 	if joystickStrength == 0:
 		applyFriction(friction*delta)
-		state = Idle
-		#play Idle
 	elif joystickStrength > .5:
 		if $Camera2D.zoomed == false:
-			state = Run
-		else:
 			state = Walk
+		else:
+			state = Run
 		velocity = getMovementVector(angle) * maxSpeed
 	
-	
+
 func changeCam():
 	print("changeCam")
 	if $Camera2D.zoomed == true:
@@ -84,8 +79,8 @@ func animate() -> void:
 	match state:
 		#8 different angles of each
 		Run:
-			$AnimatedSprite2D.play("run" + clockPos)
+			$AnimatedSprite2D.play("run")
 		Walk:
-			$AnimatedSprite2D.play("walk" + clockPos)
+			$AnimatedSprite2D.play("walk")
 		Idle:
-			$AnimatedSprite2D.play("idle" + clockPos)
+			$AnimatedSprite2D.play("idle")

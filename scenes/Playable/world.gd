@@ -169,6 +169,7 @@ func GameOver():
 	
 func uploadPlayerScore():
 	if Scores.online == true:
+		Scores._get_leaderboards()
 		if score > Scores.OnlineTopScores[0]:
 			game_over_screen.get_child(4).show()
 			Scores._upload_score(score)
@@ -182,12 +183,13 @@ func uploadPlayerScore():
 			game_over_screen.get_child(4).show()
 			offlineScores.pop_back()
 			offlineScores.append(score)
-		elif score > Scores.OnlineTopScores.back():
+		elif score > Scores.offlineTopScores.back():
 			game_over_screen.get_child(5).show()
 			offlineScores.pop_back()
 			offlineScores.append(score)
-		print(offlineScores)
 		Scores.saveScores()
+		print(offlineScores)
+		
 
 func _on_timer_timeout():
 	treasure_prompt.hide()

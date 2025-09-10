@@ -28,7 +28,6 @@ func _input(event: InputEvent) -> void:
 		if event.position.distance_to(global_position+knobCenter)<maxRadius or touched:
 			knob.global_position = event.position
 		
-		print(getJsPos())
 	
 
 func getJsDir():
