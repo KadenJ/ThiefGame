@@ -3,12 +3,16 @@ extends Area2D
 
 var player
 @export var powerTime : float
+@export var sprite : int
 signal collected
 signal wornOff
 
 #changes playr layer on entering
 #can make to signal is emmitted and make this a class
 #add onsignalemit to powerup child node script to do effect
+func _enter_tree() -> void:
+	$AnimatedSprite2D.frame = sprite
+
 func _on_body_entered(body):
 	if player == null:
 		player = body

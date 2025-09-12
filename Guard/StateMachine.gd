@@ -5,6 +5,8 @@ extends Node
 var currentState : State
 var states: Dictionary = {}
 
+var alertLevel: int =  0
+
 func _ready():
 	for child in get_children():
 		if child is State:

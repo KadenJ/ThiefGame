@@ -4,6 +4,7 @@ extends Node2D
 
 const Player = preload("res://scenes/Player.tscn")
 const Exit = preload("res://scenes/Exit.tscn")
+const exitSwitch = preload("res://scenes/PowerUps/switch.tscn")
 const Treasure = preload("res://scenes/treasure.tscn")
 const Guard = preload("res://scenes/guard.tscn")
 const Dog = preload("res://scenes/dog.tscn")
@@ -56,7 +57,13 @@ func generateLevel():
 	var exit = Exit.instantiate()
 	call_deferred("add_child", exit)
 	exit.position = walker.getEndRoom().position*32
+	if exit.isLocked == true:
+		var es = exitSwitch.instantiate()
+		es.position = walker.rooms[4].position*32
+		exit.call_deferred("add_child", es)
+	
 	exit.leavingLevel.connect(reloadLevel)
+	
 	
 	#spawns treasures
 	for room in walker.rooms:

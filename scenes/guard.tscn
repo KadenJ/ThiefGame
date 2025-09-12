@@ -58,9 +58,10 @@ script = ExtResource("5_ph6m7")
 Guard = NodePath("../..")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="StateMachine/GChase"]
+visible = false
 stream = ExtResource("7_ecamx")
 
-[node name="Timer" type="Timer" parent="StateMachine/GChase"]
+[node name="Timer" type="Timer" parent="StateMachine"]
 wait_time = 5.0
 one_shot = true
 

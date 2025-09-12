@@ -12,6 +12,7 @@ signal recruited
 func _ready():
 	recruited.connect(changeState)
 
+
 func randomizeWander():
 	moveDirection=Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
 	wanderTime = randfn(1,2)
@@ -35,8 +36,8 @@ func Physics_Update(_delta:float):
 
 func _on_area_2d_body_entered(_body):
 	changeState()
-	
+
+
 func changeState():
 	Transitioned.emit(self, "GChase")
-	
 	

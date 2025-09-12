@@ -6,26 +6,33 @@ class_name GChase
 @export var Goal: Node = null
 
 @onready var navAgent: NavigationAgent2D = $"../../NavigationAgent2D"
-@onready var timer = $Timer
+@onready var timer = $"../Timer"
 @onready var  Player : CharacterBody2D
 
 func _ready():
-	timer.connect("timeout", changeState)
+	pass
 	
 
 func Enter():
+	timer.connect("timeout", changeState)
 	Player = get_tree().get_first_node_in_group("Player")
 	Goal = Player
 	if Events.isMuted == false:
 		$AudioStreamPlayer2D.play()
 		
-	timer.start()
+	if get_parent().alertLevel < 2:
+		timer.start(2)
+	if get_parent().alertLevel == 2:
+		timer.start(3)
+	if get_parent().alertLevel > 3:
+		timer.start(5)
+		#can recruit passing guards
 
 func Physics_Update(_delta: float):
 	var direction = Player.global_position - Guard.global_position
 	
 	#on area enter
-	if direction.length() < 400:
+	if direction.length() < 250:
 		#new pathfinding
 		if is_instance_valid(Goal):
 			navAgent.target_position = Goal.global_position
@@ -37,16 +44,11 @@ func Physics_Update(_delta: float):
 		if navAgent.is_navigation_finished():
 			changeState()
 		
-		#og chase
-		#Guard.velocity= direction.normalized()*ChaseSpeed
-		#Guard.look_at(Player.position)
-	#else:
-		#Guard.velocity = Vector2()
-	
-	
+
 
 func changeState():
 	print("giveup")
+	timer.disconnect("timeout", changeState)
 	Transitioned.emit(self, "GWander")
 
 

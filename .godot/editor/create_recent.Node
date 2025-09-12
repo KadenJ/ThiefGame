@@ -1,9 +1,10 @@
+Node
+AnimatedSprite2D
 NavigationAgent2D
 ColorRect
 VBoxContainer
 TouchScreenButton
 Label
-Node
 State
 guardEnemy
 Timer
@@ -11,5 +12,3 @@ CollisionShape2D
 Area2D
 CharacterBody2D
 Sprite2D
-CanvasLayer
-Control

@@ -1,44 +1,44 @@
-[gd_scene load_steps=14 format=3 uid="uid://dspnfe5ys6vhr"]
+[gd_scene load_steps=14 format=3 uid="uid://tegrd0ub1ln2"]
 
-[ext_resource type="Script" uid="uid://c6070l5fe0yuk" path="res://scenes/PowerUp.gd" id="1_artlj"]
-[ext_resource type="Script" uid="uid://xm4cs1mj0uin" path="res://scenes/PowerUps/invisibleScript.gd" id="2_2s5ip"]
-[ext_resource type="Texture2D" uid="uid://coa6qpi342twj" path="res://Dog/GuardDog.png" id="3_w7esi"]
+[ext_resource type="Script" uid="uid://c6070l5fe0yuk" path="res://scenes/PowerUp.gd" id="1_wwlte"]
+[ext_resource type="Script" uid="uid://v7bt2g4ghfhp" path="res://scenes/exitSwitch.gd" id="2_xyw5s"]
+[ext_resource type="Texture2D" uid="uid://coa6qpi342twj" path="res://Dog/GuardDog.png" id="3_wwlte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mykf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywfeb"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lceq8"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0m56g"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vg1to"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m07d0"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ch8t"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlaob"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebmcr"]
-atlas = ExtResource("3_w7esi")
+atlas = ExtResource("3_wwlte")
 region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5op7w"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyw5s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -70,15 +70,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="PowerUp" type="Area2D"]
+[node name="switch" type="Area2D"]
 collision_layer = 0
 collision_mask = 2048
-script = ExtResource("1_artlj")
+script = ExtResource("1_wwlte")
 powerTime = 5.0
-sprite = 1
 
-[node name="PowerShell" type="Node2D" parent="."]
-script = ExtResource("2_2s5ip")
+[node name="PowerShell" type="Node" parent="."]
+script = ExtResource("2_xyw5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0mykf")
@@ -87,9 +86,8 @@ shape = SubResource("RectangleShape2D_0mykf")
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_5op7w")
+sprite_frames = SubResource("SpriteFrames_xyw5s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="collected" from="." to="PowerShell" method="_on_power_up_collected"]
-[connection signal="wornOff" from="." to="PowerShell" method="_on_power_up_worn_off"]
+[connection signal="collected" from="." to="PowerShell" method="_on_switch_collected"]
 [connection signal="timeout" from="powerTimer" to="." method="_on_timer_timeout"]
