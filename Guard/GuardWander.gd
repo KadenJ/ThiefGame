@@ -34,10 +34,11 @@ func Physics_Update(_delta:float):
 	#var direction = guard.global_position - Player.global_position 
 	
 
-func _on_area_2d_body_entered(_body):
-	changeState()
-
 
 func changeState():
 	Transitioned.emit(self, "GChase")
 	
+
+
+func _on_vision_cone_area_body_entered(body: Node2D) -> void:
+	changeState()

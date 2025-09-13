@@ -80,27 +80,24 @@ func generateLevel():
 	
 	#spawns enemies
 	var maxGuardCount = 2 + floorNumber #max guards per floor
-	var maxDogSquadCount = 2
+	var maxDogSquadCount = 0
 	for room in walker.rooms:
 		var roomEval = randi()% 12
 		if roomEval == 3 && guardList.size() <= maxGuardCount:
 			var guard = Guard.instantiate()
 			
-			if guardList.count(room.position*32) == 1:
-				#if guard in room pass
-				pass
-			else:
+			#if guard in room pass
+			if guardList.count(room.position*32) < 1:
 				guard.position = room.position*32
 				if guard.position.distance_to(player.position) > abs(20):
 					call_deferred("add_child", guard)
 					guardList.append(guard.position)
 					
-		elif roomEval == 4 && level >= 3 && guardList.size() <= maxGuardCount:
+		elif roomEval == 4 && level >= 3 && guardList.size() <= maxGuardCount && maxDogSquadCount < 2:
 			var dog = Dog.instantiate()
 			var guard = Guard.instantiate()
-			if guardList.count(room.position*32) == 1:
-				pass
-			else:
+			if guardList.count(room.position*32) < 1:
+				maxDogSquadCount += 1
 				dog.position = room.position*32
 				guard.position = room.position*32
 				if dog.position.distance_to(player.position) > abs(10):

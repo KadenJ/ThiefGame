@@ -29,6 +29,7 @@ func _input(event: InputEvent) -> void:
 			knob.global_position = event.position
 		
 	
+	released
 
 func getJsDir():
 	var dir = knob.position - knobCenter

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2rrjr61vxthf"]
+[gd_scene load_steps=21 format=3 uid="uid://d2rrjr61vxthf"]
 
 [ext_resource type="Script" uid="uid://01hda84xr08x" path="res://scenes/Player.gd" id="1_a5fjl"]
 [ext_resource type="Script" uid="uid://d3efotiqwmbm" path="res://scenes/CameraDevControl.gd" id="3_kx537"]
@@ -117,8 +117,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_leitt"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdl7e"]
+radius = 16.29
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 2062
+collision_layer = 14
 script = ExtResource("1_a5fjl")
 maxSpeed = 250
 
@@ -165,3 +168,17 @@ vertical_alignment = 1
 
 [node name="PowerUpTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mdl7e")
+
+[node name="interactingTImer" type="Timer" parent="Area2D"]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Area2D/interactingTImer" to="." method="_on_interacting_t_imer_timeout"]

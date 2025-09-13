@@ -96,6 +96,7 @@ pointing/emulate_mouse_from_touch=false
 2d_physics/layer_2="exit"
 2d_physics/layer_3="collectables"
 2d_physics/layer_4="Player"
+2d_physics/layer_5="interactables"
 2d_physics/layer_12="powerUp"
 
 [rendering]

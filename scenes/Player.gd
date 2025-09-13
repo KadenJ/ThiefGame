@@ -12,8 +12,12 @@ enum{Idle, Run, Walk}
 var state = Idle
 var clockPos : String = "1"
 
+var canInteract = false
+var interactable : Area2D = null
+
 func _ready() -> void:
 	joystick.connect("clicked", changeCam)
+	joystick.connect("released", interact)
 
 func _physics_process(delta):
 	movement(delta)
@@ -84,3 +88,20 @@ func animate() -> void:
 			$AnimatedSprite2D.play("walk")
 		Idle:
 			$AnimatedSprite2D.play("idle")
+
+func interact():
+	if interactable != null:
+		$Area2D/interactingTImer.start(interactable.timeToCollect)
+
+func _on_interacting_t_imer_timeout() -> void:
+	interactable.complete.emit()
+	
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	interactable = area
+	print(interactable)
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	interactable = null
+	$Area2D/interactingTImer.stop()
+	#stop interacting timer

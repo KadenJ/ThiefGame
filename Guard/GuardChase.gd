@@ -39,9 +39,9 @@ func Physics_Update(_delta: float):
 		var currentNavPos = Guard.global_position
 		var nextNavPos = navAgent.get_next_path_position()
 		Guard.velocity = currentNavPos.direction_to(nextNavPos) * ChaseSpeed
-		Guard.look_at(currentNavPos.direction_to(nextNavPos))
+		Guard.look_at(Player.position)
 	else:
-		if navAgent.is_navigation_finished():
+		if navAgent.is_navigation_finished():	
 			changeState()
 		
 
