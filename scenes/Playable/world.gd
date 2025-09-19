@@ -11,6 +11,7 @@ const Dog = preload("res://scenes/dog.tscn")
 
 var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 
+
 var score = 0
 var floorNumber = 0
 
@@ -41,6 +42,7 @@ func _ready():
 
 var powerUp = load("res://scenes/PowerUps/InvisPowerUp.tscn")
 func generateLevel():
+	randi_range(250, 500)
 	level += 1
 	#@warning_ignore("integer_division")
 	var walker = Walker.new(Vector2(17,9), borders) #Vector2(36/2, 20/2)
@@ -79,32 +81,35 @@ func generateLevel():
 				treasureList.append(treasure.position)
 	
 	#spawns enemies
-	var maxGuardCount = 2 + floorNumber #max guards per floor
+	var maxGuardCount = 0#2 + floorNumber #max guards per floor
 	var maxDogSquadCount = 0
 	for room in walker.rooms:
-		var roomEval = randi()% 12
-		if roomEval == 3 && guardList.size() <= maxGuardCount:
-			var guard = Guard.instantiate()
-			
-			#if guard in room pass
-			if guardList.count(room.position*32) < 1:
-				guard.position = room.position*32
-				if guard.position.distance_to(player.position) > abs(20):
-					call_deferred("add_child", guard)
-					guardList.append(guard.position)
-					
-		elif roomEval == 4 && level >= 3 && guardList.size() <= maxGuardCount && maxDogSquadCount < 2:
-			var dog = Dog.instantiate()
-			var guard = Guard.instantiate()
-			if guardList.count(room.position*32) < 1:
-				maxDogSquadCount += 1
-				dog.position = room.position*32
-				guard.position = room.position*32
-				if dog.position.distance_to(player.position) > abs(10):
-					call_deferred("add_child", dog)
-					call_deferred("add_child", guard)
-					guardList.append(guard.position)
-					guardList.append(dog.position)
+		if guardList.size() <= maxGuardCount:
+			print("guard")
+			var roomEval = randi()% 12
+			if roomEval == 3:
+				var guard = Guard.instantiate()
+				
+				#if guard in room pass
+				if guardList.count(room.position*32) < 1:
+					guard.position = room.position*32
+					if guard.position.distance_to(player.position) > abs(20):
+						call_deferred("add_child", guard)
+						guardList.append(guard.position)
+						
+			elif roomEval == 4 && level >= 3:
+				var dog = Dog.instantiate()
+				var guard = Guard.instantiate()
+				if guardList.count(room.position*32) < 1:
+					maxDogSquadCount += 1
+					dog.position = room.position*32
+					guard.position = room.position*32
+					if dog.position.distance_to(player.position) > abs(10):
+						call_deferred("add_child", dog)
+						call_deferred("add_child", guard)
+						guardList.append(guard.position)
+						guardList.append(dog.position)
+		else: print("full")
 	
 	#changes floor tiles
 	walker.queue_free()
@@ -112,11 +117,18 @@ func generateLevel():
 		tileMap.set_cell(location, 1, Vector2i(4,4))
 		
 
-
-func reloadLevel():
+var h = 35 
+var w = 25
+func reloadLevel(): #level complete
 	var children = get_children()
 	giveScore(200)
-	floorNumber += 1
+	#floorNumber += 1
+	
+	h += 1
+	w += 1
+	borders = Rect2(1, 1, h, w)
+	print(borders)
+	
 	#place black screen with small animation
 	loading_screen.show()
 	loading_timer.start()
@@ -132,8 +144,9 @@ func reloadLevel():
 			child.queue_free()
 	treasure_prompt.hide()
 	#repavement
-	for row in 20:
-		for i in 36:
+	#tile not placing issue
+	for row in w + 3:
+		for i in h + 3:
 			tileMap.set_cell(Vector2i(i,row), 1, Vector2i(0,0))
 		
 

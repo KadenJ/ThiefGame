@@ -1,18 +1,15 @@
-res://scenes/guard.tscn
-res://Guard/GuardChase.gd
 res://scenes/Playable/world.tscn
+res://scenes/Playable/world.gd
 res://scenes/Exit.tscn
 res://scenes/PowerUps/InvisPowerUp.tscn
 res://scenes/PowerUps/switch.tscn
 res://scenes/PowerUps/PowerUp.tscn
-res://addons/vision_cone_2d/vision_cone_2d_template.tscn
-res://addons/vision_cone_2d/examples/example.tscn
-res://Guard/GuardWander.gd
-res://scenes/Playable/world.gd
-res://scenes/mobile/joystick.gd
+res://scenes/guard.tscn
 res://scenes/Player.tscn
-res://scenes/Player.gd
 res://scenes/interactable.tscn
-res://scenes/interactable.gd
-res://scenes/vent.gd
-res://interactableScripts/Safe.gd
+res://scenes/Playable/menu.tscn
+res://LootLockerScores.gd
+res://scenes/Playable/Menu.gd
+res://scenes/BG music.tscn
+res://scenes/Playable/scoreboard.tscn
+res://scenes/Playable/scoreboard.gd

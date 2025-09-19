@@ -134,6 +134,7 @@ animation = &"run"
 frame_progress = 0.0422581
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_leitt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -166,10 +167,19 @@ text = "!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="interactableTimer" type="HSlider" parent="CanvasLayer"]
+visible = false
+offset_left = 311.0
+offset_top = 557.0
+offset_right = 418.0
+offset_bottom = 573.0
+scrollable = false
+
 [node name="PowerUpTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 16
 input_pickable = false
@@ -178,6 +188,7 @@ input_pickable = false
 shape = SubResource("CircleShape2D_mdl7e")
 
 [node name="interactingTImer" type="Timer" parent="Area2D"]
+one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

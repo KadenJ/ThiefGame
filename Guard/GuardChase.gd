@@ -32,13 +32,16 @@ func Physics_Update(_delta: float):
 	var direction = Player.global_position - Guard.global_position
 	
 	#on area enter
-	if direction.length() < 250:
+	if direction.length() < 250 && direction.length() > 100: #pathfinding window
 		#new pathfinding
 		if is_instance_valid(Goal):
 			navAgent.target_position = Goal.global_position
 		var currentNavPos = Guard.global_position
 		var nextNavPos = navAgent.get_next_path_position()
 		Guard.velocity = currentNavPos.direction_to(nextNavPos) * ChaseSpeed
+		Guard.look_at(Player.position)
+	elif direction.length() < 100: #chase distance:
+		Guard.velocity= direction.normalized()*ChaseSpeed
 		Guard.look_at(Player.position)
 	else:
 		if navAgent.is_navigation_finished():	

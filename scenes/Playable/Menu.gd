@@ -3,56 +3,53 @@ extends Control
 func _ready():
 	$images/buttons/buttons/Play.grab_focus()
 	timer.connect("timeout", lightningHide)
-	if Events.loaded == false:
-		Events.gotScores.connect(loadingFinished)
-	else: $images/loading.visible = false
 	
 	Scores.toggleWifi.connect(toggleOnline)
+	$connection.button_pressed = Scores.online
+	
+	if !Scores.online:
+		Scores._authentication_request()
+	else: loadingFinished()
 
-
-
-func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/Playable/world.tscn")
-
-
-func _on_quit_pressed():
-	get_tree().quit()
-
+#######################bg effects
 @onready var lightning = $images/lightning
 @onready var timer = $images/lightning/Timer
 
 func _on_timer_timeout():
+	print("light")
 	lightning.show()
 	timer.start()
-	
 
 func lightningHide():
 	lightning.hide()
+#######################
 
+#######################Buttons
+func _on_play_pressed():
+	get_tree().change_scene_to_file("res://scenes/Playable/world.tscn")
 
 func _on_score_board_pressed():
 	get_tree().change_scene_to_file("res://scenes/Playable/scoreboard.tscn")
 
+func _on_quit_pressed():
+	get_tree().quit()
 
-func _on_check_button_toggled(toggled_on):
-	Events.isMuted = toggled_on
+func _on_mute_button_pressed() -> void: #touch to mute
+	$CheckButton.button_pressed = Events.isMuted
+	Events.isMuted = !Events.isMuted
+	
 	BgMusic.playing = !Events.isMuted
+
+func _on_touch_screen_button_pressed() -> void: #touch button for wifi
+	Scores._authentication_request()
+	$connection/wifiLoading.visible = true
+
+func toggleOnline(): #after auth updates online status 
+	$connection.button_pressed = Scores.online
+	$connection/wifiLoading.visible = false
+	$images/loading.hide()
+#####################################
 
 func loadingFinished():
 	$images/loading.visible = false
 	Events.loaded = true
-
-
-func _on_touch_screen_button_pressed() -> void:
-	$CheckButton.button_pressed = !$CheckButton.button_pressed
-	Scores.online = $CheckButton.button_pressed
-
-
-func _on_connection_toggled(toggled_on: bool) -> void:
-	Scores._authentication_request()
-	$connection/wifiLoading.visible = true
-
-func toggleOnline():
-	$connection.button_pressed = Scores.online
-	$connection/wifiLoading.visible = false
-	

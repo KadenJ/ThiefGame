@@ -23,7 +23,12 @@ func _physics_process(delta):
 	movement(delta)
 	move_and_slide()
 	
+
+func _process(delta: float) -> void:
 	animate() #<-- uncomment when animations are complete
+	
+	if !$Area2D/interactingTImer.is_stopped():
+		$CanvasLayer/interactableTimer.value = $Area2D/interactingTImer.time_left*100 #*10 - choppy effect
 
 func movement(delta):
 	var angle = joystick.getJsAngle()
@@ -38,7 +43,6 @@ func movement(delta):
 		else:
 			state = Run
 		velocity = getMovementVector(angle) * maxSpeed
-	
 
 func changeCam():
 	print("changeCam")
@@ -90,18 +94,22 @@ func animate() -> void:
 			$AnimatedSprite2D.play("idle")
 
 func interact():
-	if interactable != null:
+	if interactable != null && interactable.completed == false:
+		print(interactable.completed)
+		$CanvasLayer/interactableTimer.max_value = interactable.timeToCollect*100
 		$Area2D/interactingTImer.start(interactable.timeToCollect)
+		if !$CanvasLayer/interactableTimer.visible: $CanvasLayer/interactableTimer.show()
 
 func _on_interacting_t_imer_timeout() -> void:
-	interactable.complete.emit()
 	
+	interactable.complete.emit()
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	interactable = area
 	print(interactable)
 
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	interactable = null
 	$Area2D/interactingTImer.stop()
+	$CanvasLayer/interactableTimer.hide()
 	#stop interacting timer

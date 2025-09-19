@@ -17,7 +17,6 @@ var leaderboard_http = HTTPRequest.new()
 var submit_score_http = HTTPRequest.new()
 
 func _ready():
-	#
 	loadScores()
 
 
@@ -48,12 +47,13 @@ func _authentication_request():
 	add_child(auth_http)
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	# Send request
-	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 	
+	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
 signal toggleWifi
 func _on_authentication_request_completed(result, response_code, headers, body):
 	#if online run this else: signal offline
+	var current = online
 	if result != HTTPRequest.RESULT_SUCCESS || online == true:
 		print("offline")
 		online = false
@@ -75,7 +75,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 		auth_http.queue_free()
 		# Get leaderboards
 		#_get_leaderboards()
-		online = true
+		#online = true
 	toggleWifi.emit()
 
 

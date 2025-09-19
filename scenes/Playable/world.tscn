@@ -348,6 +348,7 @@ sources/1 = SubResource("TileSetAtlasSource_ii0im")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_j4w5f")
+size = 500
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -362,7 +363,8 @@ position = Vector2(412, 327)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="joystick" parent="CanvasLayer" instance=ExtResource("3_hk8a2")]
-position = Vector2(338, 989)
+position = Vector2(267, 918)
+scale = Vector2(1.55469, 1.55469)
 
 [node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_anvvu")]
 visible = false
