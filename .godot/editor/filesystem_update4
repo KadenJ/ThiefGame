@@ -1,5 +1,4 @@
-res://scenes/Playable/world.tscn
-res://scenes/Playable/world.gd
+res://scenes/Playable/tutorial.tscn
 res://scenes/Exit.tscn
 res://scenes/PowerUps/InvisPowerUp.tscn
 res://scenes/PowerUps/switch.tscn
@@ -8,8 +7,20 @@ res://scenes/guard.tscn
 res://scenes/Player.tscn
 res://scenes/interactable.tscn
 res://scenes/Playable/menu.tscn
-res://LootLockerScores.gd
-res://scenes/Playable/Menu.gd
 res://scenes/BG music.tscn
 res://scenes/Playable/scoreboard.tscn
+res://scenes/Tutorial/tutorial.gd
+res://scenes/Exit.gd
+res://scenes/exitSwitch.gd
+res://scenes/Playable/world.gd
+res://scenes/interactable.gd
+res://scenes/Score.tscn
+res://scenes/dog.tscn
+res://wander.gd
+res://TGuard/wander.gd
+res://TGuard/t_guard.tscn
+res://TGuard/t_guard.gd
+res://LootLockerScores.gd
+res://offlineScores.json
+res://scenes/Playable/world.tscn
 res://scenes/Playable/scoreboard.gd

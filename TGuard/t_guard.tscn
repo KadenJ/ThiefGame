@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://danpnclqiwnvn"]
+
+[ext_resource type="Script" uid="uid://dse3kn6gxrxve" path="res://TGuard/t_guard.gd" id="1_1kuai"]
+[ext_resource type="Script" uid="uid://c08b5y6h6fwb3" path="res://Guard/StateMachine.gd" id="1_r1ccn"]
+[ext_resource type="Script" uid="uid://ph0fymjy86sk" path="res://TGuard/wander.gd" id="2_1kuai"]
+[ext_resource type="Script" uid="uid://b1q6lc2v8cnso" path="res://Guard/States.gd" id="3_igc88"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohy46"]
+
+[node name="TGuard" type="CharacterBody2D"]
+script = ExtResource("1_1kuai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ohy46")
+
+[node name="States" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("1_r1ccn")
+initialState = NodePath("Wander")
+
+[node name="Wander" type="Node" parent="States" node_paths=PackedStringArray("guard")]
+script = ExtResource("2_1kuai")
+guard = NodePath("../..")
+metadata/_custom_type_script = "uid://b1q6lc2v8cnso"
+
+[node name="PointA" type="Node2D" parent="States/Wander"]
+
+[node name="PointB" type="Node2D" parent="States/Wander"]
+position = Vector2(289, 0)
+
+[node name="Chase" type="Node" parent="States"]
+script = ExtResource("3_igc88")
+metadata/_custom_type_script = "uid://b1q6lc2v8cnso"

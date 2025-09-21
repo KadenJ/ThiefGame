@@ -101,13 +101,14 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	
 	
 	var counter = 0
-	print(json.get_data())
+	#print(json.get_data())
 	for n in json.get_data().items.size():
 		OnlineTopScores[counter] = json.get_data().items[n].score
 		counter +=1
 		if counter == len(OnlineTopScores):
 			OnlineTopScores.sort()
 			OnlineTopScores.reverse()
+			print(OnlineTopScores)
 			break
 		gotLeaderboard.emit()
 	Events.gotScores.emit()

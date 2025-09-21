@@ -60,8 +60,9 @@ func generateLevel():
 	call_deferred("add_child", exit)
 	exit.position = walker.getEndRoom().position*32
 	if exit.isLocked == true:
+		print("sounds locked")
 		var es = exitSwitch.instantiate()
-		es.position = walker.rooms[4].position*32
+		es.position = walker.rooms[randi() % len(walker.rooms)].position*32
 		exit.call_deferred("add_child", es)
 	
 	exit.leavingLevel.connect(reloadLevel)
@@ -85,7 +86,6 @@ func generateLevel():
 	var maxDogSquadCount = 0
 	for room in walker.rooms:
 		if guardList.size() <= maxGuardCount:
-			print("guard")
 			var roomEval = randi()% 12
 			if roomEval == 3:
 				var guard = Guard.instantiate()
@@ -109,7 +109,6 @@ func generateLevel():
 						call_deferred("add_child", guard)
 						guardList.append(guard.position)
 						guardList.append(dog.position)
-		else: print("full")
 	
 	#changes floor tiles
 	walker.queue_free()
@@ -185,14 +184,18 @@ func GameOver():
 	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
 func uploadPlayerScore():
+	print(Scores.OnlineTopScores.back())
 	if Scores.online == true:
 		Scores._get_leaderboards()
+		await Events.gotScores
+		
 		if score > Scores.OnlineTopScores[0]:
 			game_over_screen.get_child(4).show()
 			Scores._upload_score(score)
 		elif score > Scores.OnlineTopScores.back():
 			game_over_screen.get_child(5).show()
 			Scores._upload_score(score)
+		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
 	else:
 		#offline Score
 		var offlineScores = Scores.offlineTopScores
@@ -205,6 +208,7 @@ func uploadPlayerScore():
 			offlineScores.pop_back()
 			offlineScores.append(score)
 		Scores.saveScores()
+		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
 		print(offlineScores)
 		
 

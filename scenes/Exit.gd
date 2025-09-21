@@ -1,11 +1,15 @@
 extends Area2D
 
 signal leavingLevel
-var isLocked : bool = true
+@export var isLocked : bool
 
-func _on_body_entered(_body):
-	leavingLevel.emit()
+func _ready() -> void:
 	var lockNumb = randi() % 3
-	if lockNumb == 2 :
+	if lockNumb == 2:
 		isLocked = true
 		print("locked")
+
+func _on_body_entered(_body):
+	if isLocked == false:
+		leavingLevel.emit()
+	else: print("its locked")
