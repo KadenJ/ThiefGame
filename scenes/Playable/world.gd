@@ -190,14 +190,18 @@ func uploadPlayerScore():
 	print(Scores.OnlineTopScores.back())
 	if Scores.online == true:
 		Scores._get_leaderboards()
-		await Events.gotScores
+		await Scores.gotLeaderboard
 		
 		if score > Scores.OnlineTopScores[0]:
 			game_over_screen.get_child(4).show()
 			Scores._upload_score(score)
+			Scores.offlineTopScores.pop_back()
+			Scores.offlineTopScores.append(score)
 		elif score > Scores.OnlineTopScores.back():
 			game_over_screen.get_child(5).show()
 			Scores._upload_score(score)
+			Scores.offlineTopScores.pop_back()
+			Scores.offlineTopScores.append(score)
 		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
 	else: 
 		#offline Score
@@ -210,10 +214,10 @@ func uploadPlayerScore():
 			game_over_screen.get_child(5).show()
 			offlineScores.pop_back()
 			offlineScores.append(score)
-		Scores.saveScores()
+		
 		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
 		print(offlineScores)
-		
+	Scores.saveScores()
 
 func _on_timer_timeout():
 	treasure_prompt.hide()

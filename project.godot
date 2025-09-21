@@ -31,6 +31,10 @@ window/handheld/orientation=1
 window/layer_3="collectables"
 window/layer_2="exit"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/LootLockerSDK/plugin.cfg")
+
 [input]
 
 ui_accept={

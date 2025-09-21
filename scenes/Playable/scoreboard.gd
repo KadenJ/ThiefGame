@@ -1,14 +1,12 @@
 extends Control
 @onready var SCORES = $scores
 
-var boardType : bool #false = offline
 
 func _ready():
 	print(Scores.online)
 	Scores.gotLeaderboard.connect(makeLeaderboard)
-	boardType = Scores.online
-	$CheckButton.button_pressed = !boardType
-	if boardType == false: #offline
+	$CheckButton.button_pressed = !Scores.online
+	if Scores.online == false: #offline
 		makeLeaderboard()
 	else:
 		#$offlineScores.visible = false
@@ -20,9 +18,8 @@ func makeLeaderboard():
 	$offlineScores.show()
 	var scoreCount = 0
 	
-	if boardType:
+	if Scores.online == true:
 		for i in SCORES.get_children():
-
 			i.set_text(str(int(Scores.OnlineTopScores[scoreCount])).pad_zeros(5))
 			scoreCount+=1
 			$offlineScores.hide()
@@ -45,7 +42,7 @@ func _on_refresh_pressed():
 	
 
 func refresh():
-	if boardType:
+	if Scores.online == true:
 		$boardCover.visible = true
 		Scores._get_leaderboards()
 	else:
@@ -55,7 +52,6 @@ func refresh():
 		
 
 func _on_online_offline_pressed() -> void:
-	if Scores.online:
-		$CheckButton.button_pressed = boardType
-		boardType = !boardType
-		refresh()
+	Scores.online = !Scores.online
+	$CheckButton.button_pressed = !Scores.online
+	refresh()
