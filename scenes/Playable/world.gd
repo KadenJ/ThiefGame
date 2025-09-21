@@ -4,7 +4,7 @@ extends Node2D
 
 const Player = preload("res://scenes/Player.tscn")
 const Exit = preload("res://scenes/Exit.tscn")
-const exitSwitch = preload("res://scenes/PowerUps/switch.tscn")
+
 const Treasure = preload("res://scenes/treasure.tscn")
 const Guard = preload("res://scenes/guard.tscn")
 const Dog = preload("res://scenes/dog.tscn")
@@ -39,7 +39,7 @@ func _ready():
 	#game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
 	
 	generateLevel()
-
+var exitSwitch = load("res://scenes/PowerUps/switch.tscn")
 var powerUp = load("res://scenes/PowerUps/InvisPowerUp.tscn")
 func generateLevel():
 	randi_range(250, 500)
@@ -59,11 +59,14 @@ func generateLevel():
 	var exit = Exit.instantiate()
 	call_deferred("add_child", exit)
 	exit.position = walker.getEndRoom().position*32
+	
+	await exit.doneLocking
 	if exit.isLocked == true:
 		print("sounds locked")
 		var es = exitSwitch.instantiate()
-		es.position = walker.rooms[randi() % len(walker.rooms)].position*32
-		exit.call_deferred("add_child", es)
+		exit.add_child(es)
+		es.global_position = walker.rooms[2].position*32
+	
 	
 	exit.leavingLevel.connect(reloadLevel)
 	
@@ -114,7 +117,7 @@ func generateLevel():
 	walker.queue_free()
 	for location in map:
 		tileMap.set_cell(location, 1, Vector2i(4,4))
-		
+	
 
 var h = 35 
 var w = 25
@@ -122,9 +125,10 @@ func reloadLevel(): #level complete
 	var children = get_children()
 	giveScore(200)
 	#floorNumber += 1
+	if level % 5 == 0:
+		h += 1
+		w += 1
 	
-	h += 1
-	w += 1
 	borders = Rect2(1, 1, h, w)
 	print(borders)
 	
@@ -156,7 +160,6 @@ func showTreasurePrompt():
 
 
 func hideLoadScreen():
-	
 	generateLevel()
 	print("new level gen")
 	loading_screen.hide()
@@ -196,7 +199,7 @@ func uploadPlayerScore():
 			game_over_screen.get_child(5).show()
 			Scores._upload_score(score)
 		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
-	else:
+	else: 
 		#offline Score
 		var offlineScores = Scores.offlineTopScores
 		if score > Scores.offlineTopScores[0]:
