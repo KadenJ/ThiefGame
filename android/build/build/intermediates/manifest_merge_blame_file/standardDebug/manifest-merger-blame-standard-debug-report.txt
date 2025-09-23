@@ -1,0 +1,177 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="Tower.Theft.DRG"
+4    android:installLocation="auto"
+5    android:versionCode="1"
+6    android:versionName="1.0.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="24"
+10        android:targetSdkVersion="34" />
+11
+12    <supports-screens
+12-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:8:5-12:40
+13        android:largeScreens="true"
+13-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:11:9-36
+14        android:normalScreens="true"
+14-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:10:9-37
+15        android:smallScreens="true"
+15-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:9:9-36
+16        android:xlargeScreens="true" />
+16-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:12:9-37
+17
+18    <uses-feature
+18-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:14:5-16:35
+19        android:glEsVersion="0x00030000"
+19-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:15:9-41
+20        android:required="true" />
+20-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:16:9-32
+21
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:11:5-79
+22-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:11:22-76
+23    <uses-permission android:name="android.permission.INTERNET" />
+23-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:12:5-67
+23-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:12:22-64
+24
+25    <uses-feature
+25-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:13:5-132
+26        android:name="android.hardware.vulkan.level"
+26-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:13:40-84
+27        android:required="false"
+27-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:13:85-109
+28        android:version="1" />
+28-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:13:110-129
+29    <uses-feature
+29-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:14:5-140
+30        android:name="android.hardware.vulkan.version"
+30-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:14:40-86
+31        android:required="true"
+31-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:14:87-110
+32        android:version="0x400003" />
+32-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\src\debug\AndroidManifest.xml:14:111-137
+33
+34    <application
+34-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:18:5-60:19
+35        android:allowBackup="false"
+35-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:20:9-36
+36        android:appCategory="game"
+36-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:22:9-35
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.8.0] C:\Users\Owner\.gradle\caches\transforms-3\245f1aa0863a677574781ac0a1900f6e\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+38        android:debuggable="true"
+39        android:extractNativeLibs="false"
+40        android:hasFragileUserData="false"
+40-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:24:9-43
+41        android:icon="@mipmap/icon"
+41-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:21:9-36
+42        android:isGame="true"
+42-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:23:9-30
+43        android:label="@string/godot_project_name_string"
+43-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:19:9-58
+44        android:requestLegacyExternalStorage="false" >
+44-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:25:9-53
+45        <activity
+45-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:41:9-58:20
+46            android:name="com.godot.game.GodotApp"
+46-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:42:13-37
+47            android:configChanges="layoutDirection|locale|orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+47-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:49:13-164
+48            android:excludeFromRecents="false"
+48-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:46:13-47
+49            android:exported="true"
+49-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:47:13-36
+50            android:label="@string/godot_project_name_string"
+50-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:43:13-62
+51            android:launchMode="singleInstancePerTask"
+51-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:45:13-55
+52            android:resizeableActivity="true"
+52-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:50:13-47
+53            android:screenOrientation="portrait"
+53-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:48:13-50
+54            android:theme="@style/GodotAppSplashTheme" >
+54-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:44:13-55
+55            <intent-filter>
+55-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:53:13-57:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:54:17-69
+56-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:54:25-66
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:55:17-76
+58-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:55:27-73
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:56:17-77
+59-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:56:27-74
+60            </intent-filter>
+61        </activity>
+62
+63        <profileable
+63-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:27:9-30:36
+64            android:enabled="true"
+64-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:29:13-35
+65            android:shell="true" /> <!-- Records the version of the Godot editor used for building -->
+65-->C:\Users\Owner\Desktop\GameDev\ThiefGame\android\build\AndroidManifest.xml:28:13-33
+66        <meta-data
+67            android:name="org.godotengine.editor.version"
+68            android:value="4.4.1.stable" /> <!-- Records the rendering method used by the Godot engine -->
+69        <meta-data
+70            android:name="org.godotengine.rendering.method"
+71            android:value="mobile" />
+72
+73        <provider
+73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:24:9-32:20
+74            android:name="androidx.startup.InitializationProvider"
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:25:13-67
+75            android:authorities="Tower.Theft.DRG.androidx-startup"
+75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:26:13-68
+76            android:exported="false" >
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:27:13-37
+77            <meta-data
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+79                android:value="androidx.startup" />
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+80        </provider>
+81
+82        <receiver
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+83            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+84            android:directBootAware="false"
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+85            android:enabled="true"
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+86            android:exported="true"
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+87            android:permission="android.permission.DUMP" >
+87-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+89                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+92                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+93            </intent-filter>
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+95                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+96            </intent-filter>
+97            <intent-filter>
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+98                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Owner\.gradle\caches\transforms-3\618293b988a94b2ad64fc8615e872ffd\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+99            </intent-filter>
+100        </receiver>
+101    </application>
+102
+103</manifest>

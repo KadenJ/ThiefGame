@@ -1,11 +1,12 @@
-res://scenes/Playable/menu.tscn
 res://scenes/Exit.tscn
+res://LootLockerScores.gd
 res://scenes/PowerUps/InvisPowerUp.tscn
 res://scenes/PowerUps/switch.tscn
 res://scenes/PowerUps/PowerUp.tscn
 res://scenes/guard.tscn
 res://scenes/Player.tscn
 res://scenes/interactable.tscn
+res://scenes/Playable/menu.tscn
 res://scenes/BG music.tscn
 res://scenes/Playable/scoreboard.tscn
 res://scenes/Playable/tutorial.tscn
@@ -13,9 +14,7 @@ res://scenes/Score.tscn
 res://scenes/dog.tscn
 res://TGuard/t_guard.tscn
 res://scenes/Playable/world.tscn
-res://scenes/Playable/Menu.gd
-res://scenes/Playable/scoreboard.gd
-res://offlineScores.json
+res://addons/LootLockerSDK/Game/Internals/LootLockerInternal_Settings.gd
 res://LootLockerSettings.cfg
-res://LootLockerScores.gd
-res://scenes/Playable/world.gd
+res://export_presets.cfg
+res://testboard.tscn
