@@ -49,9 +49,11 @@ func _authentication_request():
 	add_child(auth_http)
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	# Send request
+	print("requesting")
 	auth_http.request("https://api.lootlocker.io/game/v2/session/guest", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
 func _on_authentication_request_completed(result, response_code, headers, body):
+	print("returned ", result)
 	if result != HTTPRequest.RESULT_SUCCESS:
 		print("offline")
 		online = false
@@ -73,7 +75,7 @@ func _on_authentication_request_completed(result, response_code, headers, body):
 		auth_http.queue_free()
 		# Get leaderboards
 		#_get_leaderboards()
-		online = true
+
 	toggleWifi.emit()
 
 func _get_leaderboards():
@@ -146,20 +148,33 @@ var offlineTopScores = [1,2,3,4,5,6]
 #open offline score json
 #load scores to offlineTopScores
 
+
 func loadScores():
-	var file = FileAccess.open("res://offlineScores.json", FileAccess.READ)
-	var jsonScores = file.get_as_text()
-	#var json = JSON.new()
-	offlineTopScores = JSON.parse_string(jsonScores)
+	if FileAccess.file_exists("user://offlineScores.json"):
+		print("exists")
+		var file = FileAccess.open("user://offlineScores.json", FileAccess.READ)
+		var jsonScores = file.get_as_text()
+		#var json = JSON.new()
+		offlineTopScores = JSON.parse_string(jsonScores)
+		
+		file.close()
+	else:
+		print("MT")
+		var newScores = FileAccess.open("user://offlineScores.json", FileAccess.WRITE)
+		newScores.store_string(JSON.stringify(offlineTopScores))
+		newScores.close()
 	
-	file.close()
 
 func saveScores():
 	#if score > offlineTopScores[i]: drop lowest, append score
-	var file = FileAccess.open("res://offlineScores.json",FileAccess.WRITE)
-	#just change offlineTopScores then run saveScores()
-	var scoreToSave = JSON.stringify(offlineTopScores)
-	
-	file.store_string(scoreToSave)
-	
+	#FFFFFAHHHHHHHHHHHHHHHHJHHHHH Zack was right
+	var file = FileAccess.open("user://offlineScores.json",FileAccess.WRITE)
+	if file == null:
+		printerr("FNF")
+	else:
+		#just change offlineTopScores then run saveScores()
+		var scoreToSave = JSON.stringify(offlineTopScores)
+		print(scoreToSave)
+		file.store_string(scoreToSave)
+		
 	file.close()

@@ -6,7 +6,7 @@ func _ready():
 	print(Scores.online)
 	Scores.gotLeaderboard.connect(makeLeaderboard)
 	$CheckButton.button_pressed = !Scores.online
-	if Scores.online == false: #offline
+	if !Scores.online: #offline
 		makeLeaderboard()
 	else:
 		#$offlineScores.visible = false

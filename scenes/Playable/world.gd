@@ -195,14 +195,20 @@ func uploadPlayerScore():
 		if score > Scores.OnlineTopScores[0]:
 			game_over_screen.get_child(4).show()
 			Scores._upload_score(score)
-			Scores.offlineTopScores.pop_back()
-			Scores.offlineTopScores.append(score)
 		elif score > Scores.OnlineTopScores.back():
 			game_over_screen.get_child(5).show()
 			Scores._upload_score(score)
-			Scores.offlineTopScores.pop_back()
-			Scores.offlineTopScores.append(score)
+		
+		#offlne scores still get submitted
+		var offlineScores = Scores.offlineTopScores
+		if score > Scores.offlineTopScores[0]:
+			offlineScores.pop_back()
+			offlineScores.append(score)
+		elif score > Scores.offlineTopScores.back():
+			offlineScores.pop_back()
+			offlineScores.append(score)
 		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
+	
 	else: 
 		#offline Score
 		var offlineScores = Scores.offlineTopScores

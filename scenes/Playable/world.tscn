@@ -363,8 +363,8 @@ position = Vector2(412, 327)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="joystick" parent="CanvasLayer" instance=ExtResource("3_hk8a2")]
-position = Vector2(267, 918)
-scale = Vector2(1.55469, 1.55469)
+position = Vector2(305, 986)
+scale = Vector2(1.20313, 1.20313)
 
 [node name="treasurePrompt" parent="CanvasLayer" instance=ExtResource("3_anvvu")]
 visible = false
@@ -533,7 +533,7 @@ layout_mode = 0
 offset_left = 1.0
 offset_top = 266.0
 offset_right = 717.0
-offset_bottom = 571.0
+offset_bottom = 666.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer/GameOverScreen/ScoreLoadingPanel"]
