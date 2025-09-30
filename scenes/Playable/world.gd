@@ -19,7 +19,7 @@ var floorNumber = 0
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
 @onready var loading_screen = $CanvasLayer/loadingScreen
 @onready var loading_timer = $CanvasLayer/loadingScreen/loadingTimer
-@onready var scoreLabel = $CanvasLayer/Score/Label
+@onready var scoreLabel = $CanvasLayer/Score
 @onready var game_over_screen = $CanvasLayer/GameOverScreen
 
 @export var size = 250
@@ -35,7 +35,7 @@ func _ready():
 	Events.treasureStolen.connect(collectTreasure)
 	Events.guardCaught.connect(GameOver)
 	loading_timer.connect("timeout", hideLoadScreen)
-	scoreLabel.set_text(str(score).pad_zeros(5))
+	scoreLabel.get_child(0).set_text(str(score).pad_zeros(5))
 	#game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
 	
 	generateLevel()
@@ -151,6 +151,7 @@ func reloadLevel(): #level complete
 	for row in w + 3:
 		for i in h + 3:
 			tileMap.set_cell(Vector2i(i,row), 1, Vector2i(0,0))
+			tileMap.get_neighbor_cell()
 		
 
 func showTreasurePrompt():
@@ -166,7 +167,9 @@ func hideLoadScreen():
 
 func giveScore(points):
 	score += points
-	scoreLabel.set_text(str(score).pad_zeros(5))
+	scoreLabel.get_child(1).addScoreEffect(points)
+	scoreLabel.get_child(0).set_text(str(score).pad_zeros(5))
+	
 
 func collectTreasure():
 	giveScore(100)

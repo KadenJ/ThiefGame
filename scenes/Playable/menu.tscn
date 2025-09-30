@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://t4tnwe8g1ykc"]
 
 [ext_resource type="Script" uid="uid://di1t5k43yhkbv" path="res://scenes/Playable/Menu.gd" id="1_ymwdn"]
-[ext_resource type="FontFile" uid="uid://dah8llpnex5du" path="res://Assets/fonts/barcode/BarcadeExpanded-2aq8.otf" id="2_occ5i"]
 [ext_resource type="Texture2D" uid="uid://dfylm5k3i3mwj" path="res://tileSet&sprites/crook.png" id="3_8flyo"]
 [ext_resource type="Texture2D" uid="uid://cx3pte28vgxt5" path="res://tileSet&sprites/cloud.png" id="4_7qsr1"]
+[ext_resource type="FontFile" uid="uid://d03g104qx8eun" path="res://Assets/fonts/Ithaca-LVB75.ttf" id="5_5n4u1"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_11rlk"]
 particle_flag_disable_z = true
@@ -346,10 +346,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -338.0
-offset_top = 147.0
-offset_right = -170.0
-offset_bottom = 295.0
+offset_left = -354.0
+offset_top = 119.0
+offset_right = -154.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.28, 3.28)
@@ -365,7 +365,7 @@ size_flags_vertical = 8
 focus_neighbor_top = NodePath("../scoreBoard")
 focus_neighbor_right = NodePath("../../../../CheckButton")
 focus_neighbor_bottom = NodePath("../Quit")
-theme_override_fonts/font = ExtResource("2_occ5i")
+theme_override_fonts/font = ExtResource("5_5n4u1")
 theme_override_font_sizes/font_size = 35
 text = "Play"
 
@@ -382,7 +382,7 @@ size_flags_horizontal = 0
 focus_neighbor_top = NodePath("../Play")
 focus_neighbor_right = NodePath("../../../../CheckButton")
 focus_neighbor_bottom = NodePath("../scoreBoard")
-theme_override_fonts/font = ExtResource("2_occ5i")
+theme_override_fonts/font = ExtResource("5_5n4u1")
 theme_override_font_sizes/font_size = 35
 text = "Quit"
 
@@ -399,8 +399,8 @@ size_flags_horizontal = 0
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_right = NodePath("../../../../CheckButton")
 focus_neighbor_bottom = NodePath(".")
-theme_override_fonts/font = ExtResource("2_occ5i")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("5_5n4u1")
+theme_override_font_sizes/font_size = 26
 text = "High scores"
 
 [node name="scoreBoard" type="TouchScreenButton" parent="images/buttons/buttons/scoreBoard"]
@@ -428,6 +428,7 @@ wait_time = 15.0
 autostart = true
 
 [node name="loading" type="Control" parent="images"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -468,6 +469,7 @@ offset_right = 597.0
 offset_bottom = 1182.0
 scale = Vector2(1.51764, 1.44)
 focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
+theme_override_fonts/font = ExtResource("5_5n4u1")
 text = "mute
 "
 
@@ -484,6 +486,7 @@ offset_right = 597.0
 offset_bottom = 1121.0
 scale = Vector2(1.51764, 1.44)
 focus_neighbor_left = NodePath("../images/buttons/buttons/Play")
+theme_override_fonts/font = ExtResource("5_5n4u1")
 button_mask = 0
 text = "wifi
 "

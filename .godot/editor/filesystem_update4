@@ -1,11 +1,10 @@
-res://scenes/Playable/world.tscn
-res://LootLockerScores.gd
+res://scenes/Player.tscn
+res://scenes/Player.gd
 res://scenes/Exit.tscn
 res://scenes/PowerUps/InvisPowerUp.tscn
 res://scenes/PowerUps/switch.tscn
 res://scenes/PowerUps/PowerUp.tscn
 res://scenes/guard.tscn
-res://scenes/Player.tscn
 res://scenes/interactable.tscn
 res://scenes/Playable/menu.tscn
 res://scenes/BG music.tscn
@@ -14,4 +13,9 @@ res://scenes/Playable/tutorial.tscn
 res://scenes/Score.tscn
 res://scenes/dog.tscn
 res://TGuard/t_guard.tscn
+res://scenes/Playable/world.tscn
 res://scenes/mobile/joystick.tscn
+res://scenes/loading_screen.tscn
+res://interactableScripts/Safe.gd
+res://scenes/Playable/world.gd
+res://scenes/scoreEffect.gd

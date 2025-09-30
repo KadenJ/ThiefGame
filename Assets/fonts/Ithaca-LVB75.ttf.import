@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ddwoa0qaek8ok"
-path="res://.godot/imported/BarcadeCondensedItalic-Km2o.otf-d33b1df3b13e3a9ddad4e78f707aea65.fontdata"
+uid="uid://d03g104qx8eun"
+path="res://.godot/imported/Ithaca-LVB75.ttf-83c12b8eea44bae311c7b740f2399968.fontdata"
 
 [deps]
 
-source_file="res://Assets/fonts/barcode/BarcadeCondensedItalic-Km2o.otf"
-dest_files=["res://.godot/imported/BarcadeCondensedItalic-Km2o.otf-d33b1df3b13e3a9ddad4e78f707aea65.fontdata"]
+source_file="res://Assets/fonts/Ithaca-LVB75.ttf"
+dest_files=["res://.godot/imported/Ithaca-LVB75.ttf-83c12b8eea44bae311c7b740f2399968.fontdata"]
 
 [params]
 
@@ -22,7 +22,7 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null

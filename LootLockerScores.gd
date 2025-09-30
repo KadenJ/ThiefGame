@@ -167,7 +167,7 @@ func loadScores():
 
 func saveScores():
 	#if score > offlineTopScores[i]: drop lowest, append score
-	#FFFFFAHHHHHHHHHHHHHHHHJHHHHH Zack was right
+	#FFFFFAHHHHHHHHHHHHHHHHJHHHHH Zack was right 
 	var file = FileAccess.open("user://offlineScores.json",FileAccess.WRITE)
 	if file == null:
 		printerr("FNF")

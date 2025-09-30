@@ -1,4 +1,7 @@
 Label
+AnimationTree
+Marker2D
+CPUParticles2D
 ColorRect
 Node2D
 Node
@@ -9,6 +12,3 @@ Timer
 TouchScreenButton
 CheckButton
 HSlider
-Sprite2D
-Area2D
-PointLight2D

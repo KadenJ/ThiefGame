@@ -37,6 +37,7 @@ func movement(delta):
 	
 	if joystickStrength == 0:
 		applyFriction(friction*delta)
+		state = Idle
 	elif joystickStrength > .5:
 		if $Camera2D.zoomed == false:
 			state = Walk

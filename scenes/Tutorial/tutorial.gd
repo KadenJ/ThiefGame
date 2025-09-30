@@ -10,6 +10,7 @@ func _ready() -> void:
 func addScore():
 	score += 100
 	$CanvasLayer/Score/Label.set_text(str(score).pad_zeros(5))
+	$CanvasLayer/Score.get_child(1).addScoreEffect(100)
 
 func nextLevel():
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Playable/world.tscn")
