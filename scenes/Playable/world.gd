@@ -41,6 +41,7 @@ func _ready():
 	generateLevel()
 var exitSwitch = load("res://scenes/PowerUps/switch.tscn")
 var powerUp = load("res://scenes/PowerUps/InvisPowerUp.tscn")
+var interactable = load("res://scenes/interactable.tscn")
 func generateLevel():
 	randi_range(250, 500)
 	level += 1
@@ -56,17 +57,20 @@ func generateLevel():
 	powerUpT.position = walker.rooms[randi() % len(walker.rooms)].position*32
 	call_deferred("add_child", powerUpT)
 	
+	var interact = interactable.instantiate()
+	interact.position = walker.rooms[randi() % len(walker.rooms)].position*32
+	call_deferred("add_child", interact)
+	
 	var exit = Exit.instantiate()
 	call_deferred("add_child", exit)
 	exit.position = walker.getEndRoom().position*32
 	
 	await exit.doneLocking
 	if exit.isLocked == true:
-		print("sounds locked")
 		var es = exitSwitch.instantiate()
 		exit.add_child(es)
 		es.global_position = walker.rooms[2].position*32
-	
+		player.soundsLocked()
 	
 	exit.leavingLevel.connect(reloadLevel)
 	
@@ -85,10 +89,10 @@ func generateLevel():
 				treasureList.append(treasure.position)
 	
 	#spawns enemies
-	var maxGuardCount = 0#2 + floorNumber #max guards per floor
-	var maxDogSquadCount = 0
+	
+	var maxGuardCount = level + 2
 	for room in walker.rooms:
-		if guardList.size() <= maxGuardCount:
+		if guardList.size() < maxGuardCount:
 			var roomEval = randi()% 12
 			if roomEval == 3:
 				var guard = Guard.instantiate()
@@ -96,7 +100,7 @@ func generateLevel():
 				#if guard in room pass
 				if guardList.count(room.position*32) < 1:
 					guard.position = room.position*32
-					if guard.position.distance_to(player.position) > abs(20):
+					if guard.position.distance_to(player.position) > abs(40):
 						call_deferred("add_child", guard)
 						guardList.append(guard.position)
 						
@@ -104,7 +108,6 @@ func generateLevel():
 				var dog = Dog.instantiate()
 				var guard = Guard.instantiate()
 				if guardList.count(room.position*32) < 1:
-					maxDogSquadCount += 1
 					dog.position = room.position*32
 					guard.position = room.position*32
 					if dog.position.distance_to(player.position) > abs(10):
@@ -125,6 +128,7 @@ func reloadLevel(): #level complete
 	var children = get_children()
 	giveScore(200)
 	#floorNumber += 1
+	
 	if level % 5 == 0:
 		h += 1
 		w += 1
@@ -151,7 +155,6 @@ func reloadLevel(): #level complete
 	for row in w + 3:
 		for i in h + 3:
 			tileMap.set_cell(Vector2i(i,row), 1, Vector2i(0,0))
-			tileMap.get_neighbor_cell()
 		
 
 func showTreasurePrompt():
@@ -187,8 +190,11 @@ func GameOver():
 	uploadPlayerScore()
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
+	if Scores.online:
+		$CanvasLayer/Admob.initialize()
 	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
+
 func uploadPlayerScore():
 	print(Scores.OnlineTopScores.back())
 	if Scores.online == true:
@@ -226,7 +232,24 @@ func uploadPlayerScore():
 		
 		$CanvasLayer/GameOverScreen/ScoreLoadingPanel.hide()
 		print(offlineScores)
+	Scores.offlineTopScores.sort()
+	Scores.offlineTopScores.reverse()
 	Scores.saveScores()
 
 func _on_timer_timeout():
 	treasure_prompt.hide()
+
+
+var _is_banner_loaded: bool = false
+var _is_interstitial_loaded: bool = false
+var _is_rewarded_video_loaded: bool = false
+
+func _on_admob_initialization_completed(status_data: InitializationStatus) -> void:
+	$CanvasLayer/Admob.load_banner_ad()
+	
+	$CanvasLayer/GameOverScreen/DebugLabel.text = "Admob initialzation completed"
+
+func _on_admob_banner_ad_loaded(ad_id: String) -> void:
+	print("load banner ad not working")
+	$CanvasLayer/GameOverScreen/DebugLabel.text = "banner loaded"
+	$CanvasLayer/Admob.show_banner_ad()

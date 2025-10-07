@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2rrjr61vxthf"]
+[gd_scene load_steps=31 format=3 uid="uid://d2rrjr61vxthf"]
 
 [ext_resource type="Script" uid="uid://01hda84xr08x" path="res://scenes/Player.gd" id="1_a5fjl"]
 [ext_resource type="Script" uid="uid://d3efotiqwmbm" path="res://scenes/CameraDevControl.gd" id="3_kx537"]
 [ext_resource type="Texture2D" uid="uid://cedkt5prw1piy" path="res://Assets/spriteSheets/baseSprite-removebg-preview.png" id="3_qu4a1"]
 [ext_resource type="Texture2D" uid="uid://cdts2jlbaa7tc" path="res://Assets/light.png" id="4_ngeu0"]
+[ext_resource type="Texture2D" uid="uid://byv0m7uwh2mse" path="res://Assets/spriteSheets/pixilart-sprite (1).png" id="5_qu4a1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mdl7e"]
 atlas = ExtResource("3_qu4a1")
@@ -117,6 +118,76 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_leitt"]
 radius = 9.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfpux"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61ith"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebwui"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfy4j"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv3ic"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8lor"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e537"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p07f3"]
+atlas = ExtResource("5_qu4a1")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_viqgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfpux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61ith")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebwui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfy4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv3ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8lor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e537")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p07f3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mdl7e"]
 radius = 16.29
 
@@ -174,6 +245,14 @@ offset_top = 557.0
 offset_right = 418.0
 offset_bottom = 573.0
 scrollable = false
+
+[node name="Pixilart-sprite2" type="AnimatedSprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(360, 572)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_viqgg")
+frame = 9
+frame_progress = 1.0
 
 [node name="PowerUpTimer" type="Timer" parent="."]
 one_shot = true

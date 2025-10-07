@@ -25,7 +25,11 @@ func lightningHide():
 
 #######################Buttons
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/Playable/tutorial.tscn")
+	if Scores.offlineTopScores[0] < 100:
+		get_tree().change_scene_to_file("res://scenes/Playable/tutorial.tscn")
+		print("noScores")
+		return
+	get_tree().change_scene_to_file("res://scenes/Playable/world.tscn")
 
 func _on_score_board_pressed():
 	get_tree().change_scene_to_file("res://scenes/Playable/scoreboard.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://s8y7p0ka7i6u"]
 
 [ext_resource type="Script" uid="uid://ucysx1psljav" path="res://scenes/Playable/scoreboard.gd" id="1_pldmj"]
-[ext_resource type="FontFile" uid="uid://bgrv4dc4yuvbe" path="res://Assets/fonts/barcode/Barcade-R4LM.otf" id="2_nbx2f"]
+[ext_resource type="FontFile" uid="uid://d03g104qx8eun" path="res://Assets/fonts/Ithaca-LVB75.ttf" id="2_nbx2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lugp7"]
 

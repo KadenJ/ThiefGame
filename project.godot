@@ -33,7 +33,7 @@ window/layer_2="exit"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/LootLockerSDK/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg")
 
 [input]
 

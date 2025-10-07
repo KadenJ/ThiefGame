@@ -866,6 +866,52 @@ tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAA
 tile_set = SubResource("TileSet_7ae4w")
 rendering_quadrant_size = 32
 
+[node name="1" type="Label" parent="Layer0"]
+offset_left = 38.0
+offset_top = 331.0
+offset_right = 217.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Double tap to 
+check your surroundings"
+
+[node name="2" type="Label" parent="Layer0"]
+offset_left = 447.0
+offset_top = 326.0
+offset_right = 639.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "stand still to unlock
+with safes"
+
+[node name="3" type="Label" parent="Layer0"]
+offset_left = 677.0
+offset_top = 453.0
+offset_right = 869.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "watch for guards, don't 
+worry, this ones ours"
+
+[node name="4" type="Label" parent="Layer0"]
+offset_left = 814.0
+offset_top = 238.0
+offset_right = 1006.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Seems the door's still 
+locked. We gotta find
+the key"
+
+[node name="5" type="Label" parent="Layer0"]
+offset_left = 253.0
+offset_top = 39.0
+offset_right = 445.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "There's the key, now we 
+can unlock the door"
+
 [node name="Safe" parent="Layer0" instance=ExtResource("3_apx5e")]
 position = Vector2(412, 327)
 
@@ -1040,7 +1086,7 @@ horizontal_alignment = 1
 [node name="treasureAudio" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("11_6hli3")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="darkness" type="CanvasModulate" parent="."]
 scale = Vector2(1, 0.997739)
 color = Color(0.105882, 0.105882, 0.105882, 1)
 
@@ -1090,5 +1136,6 @@ position = Vector2(-464, -145)
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/retry/retry" to="CanvasLayer/GameOverScreen" method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu/mainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]
+[connection signal="collected" from="interactables/Exit/switch" to="." method="_on_switch_collected"]
 
 [editable path="TGuard"]

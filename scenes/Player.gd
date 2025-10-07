@@ -101,6 +101,13 @@ func interact():
 		$Area2D/interactingTImer.start(interactable.timeToCollect)
 		if !$CanvasLayer/interactableTimer.visible: $CanvasLayer/interactableTimer.show()
 
+func soundsLocked():
+	print("door locked")
+	$"CanvasLayer/Pixilart-sprite2".show()
+	$"CanvasLayer/Pixilart-sprite2".play()
+	$"CanvasLayer/Pixilart-sprite2".animation_finished.connect($"CanvasLayer/Pixilart-sprite2".queue_free)
+	
+
 func _on_interacting_t_imer_timeout() -> void:
 	
 	interactable.complete.emit()

@@ -6,6 +6,7 @@ func _ready() -> void:
 	Events.treasureStolen.connect(addScore)
 	Events.TreasureGathered.connect(allTresGathered)
 	$interactables/Exit.leavingLevel.connect(nextLevel)
+	$interactables/Exit.isLocked = true
 
 func addScore():
 	score += 100
@@ -14,8 +15,12 @@ func addScore():
 
 func nextLevel():
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Playable/world.tscn")
-	print("tutorial Complete")
 
 func allTresGathered():
 	$CanvasLayer/treasurePrompt.show()
 	get_tree().create_timer(3).timeout.connect($CanvasLayer/treasurePrompt.hide)
+
+
+func _on_switch_collected() -> void:
+	$"Layer0/5".hide()
+	$"Layer0/4".hide()

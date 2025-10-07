@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ctlixvnndd3io" path="res://scenes/Playable/world.gd" id="1_j4w5f"]
 [ext_resource type="Texture2D" uid="uid://njlmawtm5tf1" path="res://tileSet&sprites/tilemap(floor design) (1).png" id="2_t0r5h"]
-[ext_resource type="PackedScene" uid="uid://dydinvaabji54" path="res://scenes/interactable.tscn" id="3_7ucjt"]
 [ext_resource type="PackedScene" uid="uid://8ntnrcx56uqm" path="res://scenes/treasure_prompt.tscn" id="3_anvvu"]
 [ext_resource type="PackedScene" uid="uid://c8baw35oy0sg" path="res://scenes/mobile/joystick.tscn" id="3_hk8a2"]
 [ext_resource type="PackedScene" uid="uid://bf4bk21kjmucx" path="res://scenes/Score.tscn" id="4_3ssa1"]
@@ -10,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dvke8uigufut0" path="res://sounds/undertale-flee.mp3" id="6_i6y2s"]
 [ext_resource type="Script" uid="uid://dst46h4nxl5cq" path="res://scenes/Playable/GO_buttonControl.gd" id="6_jj60r"]
 [ext_resource type="AudioStream" uid="uid://b7oo0vrn8iamh" path="res://sounds/collectcoin-6075.mp3" id="8_dmxm8"]
+[ext_resource type="Script" uid="uid://di3gj2fgh8cy0" path="res://addons/AdmobPlugin/Admob.gd" id="11_0ve4q"]
 [ext_resource type="FontFile" uid="uid://d03g104qx8eun" path="res://Assets/fonts/Ithaca-LVB75.ttf" id="11_vrg2g"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rrmd8"]
@@ -357,9 +357,6 @@ tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAA
 tile_set = SubResource("TileSet_7ae4w")
 rendering_quadrant_size = 32
 
-[node name="Area2D" parent="Layer0" instance=ExtResource("3_7ucjt")]
-position = Vector2(412, 327)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="joystick" parent="CanvasLayer" instance=ExtResource("3_hk8a2")]
@@ -554,6 +551,24 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("11_vrg2g")
 text = "Loading Online Scores"
 
+[node name="DebugLabel" type="Label" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 1101.0
+offset_right = 340.0
+offset_bottom = 1124.0
+text = "Debug Label"
+
+[node name="Admob" type="Node" parent="CanvasLayer"]
+script = ExtResource("11_0ve4q")
+banner_position = 1
+debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+debug_banner_id = "ca-app-pub-3940256099942544/6300978111"
+debug_interstitial_id = "ca-app-pub-3940256099942544/1033173712"
+debug_rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+debug_rewarded_interstitial_id = "ca-app-pub-3940256099942544/5354046379"
+metadata/_custom_type_script = "uid://di3gj2fgh8cy0"
+
 [node name="treasureAudio" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("8_dmxm8")
 
@@ -566,3 +581,5 @@ color = Color(0.105882, 0.105882, 0.105882, 1)
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/retry/retry" to="CanvasLayer/GameOverScreen" method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/GameOverScreen/MainMenu/mainMenu" to="CanvasLayer/GameOverScreen" method="_on_main_menu_pressed"]
+[connection signal="banner_ad_loaded" from="CanvasLayer/Admob" to="." method="_on_admob_banner_ad_loaded"]
+[connection signal="initialization_completed" from="CanvasLayer/Admob" to="." method="_on_admob_initialization_completed"]

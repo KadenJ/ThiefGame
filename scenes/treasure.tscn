@@ -1,9 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://3bnajsqitpw8"]
+[gd_scene load_steps=7 format=3 uid="uid://3bnajsqitpw8"]
 
 [ext_resource type="Script" uid="uid://c35asvnaptefq" path="res://scenes/treasure.gd" id="1_cmg33"]
 [ext_resource type="Texture2D" uid="uid://hm4ijkkjm3pc" path="res://tileSet&sprites/gold.png" id="2_cv8qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g16ms"]
+
+[sub_resource type="Curve" id="Curve_it12x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0g4qu"]
+curve = SubResource("Curve_it12x")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wqbho"]
+particle_flag_disable_z = true
+radial_velocity_min = 66.66
+radial_velocity_max = 66.66
+gravity = Vector3(0, 50, 0)
+linear_accel_min = -50.0
+linear_accel_max = -50.0
+radial_accel_min = -20.0
+radial_accel_max = -20.0
+damping_min = 73.333
+damping_max = 73.333
+scale_min = 0.0
+scale_max = 7.42
+scale_curve = SubResource("CurveTexture_0g4qu")
+color = Color(1, 0.886275, 0.290196, 1)
+anim_speed_min = 9.07
+anim_speed_max = 9.07
+turbulence_noise_strength = 0.41
+turbulence_noise_scale = 0.941
 
 [node name="treasure" type="Area2D" groups=["Treasures"]]
 collision_layer = 0
@@ -16,5 +43,14 @@ shape = SubResource("RectangleShape2D_g16ms")
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 scale = Vector2(0.77, 0.77)
 texture = ExtResource("2_cv8qq")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 4
+lifetime = 0.57
+one_shot = true
+explosiveness = 0.89
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wqbho")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
