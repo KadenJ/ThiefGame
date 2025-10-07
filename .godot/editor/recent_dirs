@@ -1,3 +1,4 @@
+res://Assets/spriteSheets
 res://Assets/fonts
 res://scenes
 C:/Program Files/Eclipse Adoptium/jdk-21.0.8.9-hotspot/bin
@@ -5,7 +6,6 @@ res://TGuard
 res://scenes/Tutorial
 res://Dog
 res://scenes/PowerUps
-res://Assets/spriteSheets
 C:/Users/Owner/Desktop/GameDev/ThiefGame
 res://scenes/mobile
 C:/Program Files/Eclipse Adoptium
