@@ -13,7 +13,7 @@ var borders = Rect2(1,1,35,19) #(space from edge,space from edge,width,height)
 
 
 var score = 0
-var floorNumber = 0
+var adLoaded = false
 
 @onready var tileMap = $Layer0#$TileMap
 @onready var treasure_prompt = $CanvasLayer/treasurePrompt
@@ -26,8 +26,8 @@ var floorNumber = 0
 
 var treasureList = []
 var guardList = []
-
 var level = Events.level
+
 
 func _ready():
 	level = 0
@@ -39,6 +39,10 @@ func _ready():
 	#game_over_screen.get_child(3).set_text(str(SaveLoad.highestRecord).pad_zeros(5))
 	
 	generateLevel()
+	
+	if Scores.online:
+		$CanvasLayer/Admob.initialize()
+
 var exitSwitch = load("res://scenes/PowerUps/switch.tscn")
 var powerUp = load("res://scenes/PowerUps/InvisPowerUp.tscn")
 var interactable = load("res://scenes/interactable.tscn")
@@ -190,8 +194,9 @@ func GameOver():
 	uploadPlayerScore()
 	game_over_screen.get_child(3).set_text(str(score).pad_zeros(5))
 	game_over_screen.show()
-	if Scores.online:
-		$CanvasLayer/Admob.initialize()
+	if adLoaded == true:
+		$CanvasLayer/Admob.show_banner_ad()
+
 	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
 
@@ -246,10 +251,11 @@ var _is_rewarded_video_loaded: bool = false
 
 func _on_admob_initialization_completed(status_data: InitializationStatus) -> void:
 	$CanvasLayer/Admob.load_banner_ad()
-	
+	print("init")
 	$CanvasLayer/GameOverScreen/DebugLabel.text = "Admob initialzation completed"
 
 func _on_admob_banner_ad_loaded(ad_id: String) -> void:
-	print("load banner ad not working")
+	#print("load banner ad not working")
+	print("loaded")
 	$CanvasLayer/GameOverScreen/DebugLabel.text = "banner loaded"
-	$CanvasLayer/Admob.show_banner_ad()
+	adLoaded = true

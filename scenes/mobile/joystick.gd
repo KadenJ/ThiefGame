@@ -21,7 +21,6 @@ func _input(event: InputEvent) -> void:
 			if event.position.distance_to(global_position+knobCenter)<maxRadius:
 				touched = true
 				
-				knob.global_position
 		else:
 			touched = false
 	elif event is InputEventScreenDrag:
@@ -29,7 +28,6 @@ func _input(event: InputEvent) -> void:
 			knob.global_position = event.position
 		
 	
-	released
 
 func getJsDir():
 	var dir = knob.position - knobCenter

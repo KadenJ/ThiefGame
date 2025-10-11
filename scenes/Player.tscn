@@ -248,8 +248,8 @@ scrollable = false
 
 [node name="Pixilart-sprite2" type="AnimatedSprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(360, 572)
-scale = Vector2(5, 5)
+position = Vector2(94, 1114)
+scale = Vector2(6.035, 6.035)
 sprite_frames = SubResource("SpriteFrames_viqgg")
 frame = 9
 frame_progress = 1.0

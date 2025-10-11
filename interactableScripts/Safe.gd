@@ -8,6 +8,8 @@ var treasureSpread = 7
 func action():
 	print("safe cracked")
 	get_parent().get_child(0).disabled = true
+	$"../Sprite2D".frame = 1
+	$"../GPUParticles2D".emitting = true
 			
 	var tileMap : TileMapLayer = get_tree().get_first_node_in_group("TileMap")
 	var start = tileMap.local_to_map(get_parent().global_position)

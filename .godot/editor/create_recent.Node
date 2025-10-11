@@ -1,8 +1,8 @@
+AnimatedSprite2D
 GPUParticles2D
 CPUParticles2D
 RemoteTransform2D
 AnimationPlayer
-AnimatedSprite2D
 Label
 Node
 Interactable
@@ -12,4 +12,3 @@ AnimationTree
 Marker2D
 ColorRect
 Node2D
-State

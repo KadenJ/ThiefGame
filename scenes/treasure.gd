@@ -18,11 +18,11 @@ func _on_body_entered(_body):
 	if treasures.size() == 1: #if gathered at same time, doesn't emit
 		Events.TreasureGathered.emit()
 		#print("all treasures collected")
+	set_deferred("monitoring", false)
+	$CollisionShape2D/Sprite2D.hide()
 	$GPUParticles2D.emitting = true
 	delete()
 
 func delete():
-	$CollisionShape2D.disabled
-	$CollisionShape2D/Sprite2D.hide()
 	await $GPUParticles2D.finished
 	queue_free()

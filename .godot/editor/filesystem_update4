@@ -1,5 +1,3 @@
-res://scenes/treasure.tscn
-res://scenes/treasure.gd
 res://scenes/interactable.tscn
 res://scenes/Playable/tutorial.tscn
 res://scenes/Playable/world.tscn
@@ -7,4 +5,7 @@ res://scenes/Playable/menu.tscn
 res://scenes/Playable/scoreboard.tscn
 res://scenes/Player.tscn
 res://scenes/Exit.tscn
-res://scenes/Playable/world.gd
+res://scenes/treasure.tscn
+res://scenes/mobile/joystick.tscn
+res://scenes/guard.tscn
+res://scenes/PowerUps/switch.tscn

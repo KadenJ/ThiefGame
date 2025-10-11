@@ -10,7 +10,7 @@ extends CharacterBody2D
 
 enum{Idle, Run, Walk}
 var state = Idle
-var clockPos : String = "1"
+var clockPos : String = "1" #unused
 
 var canInteract = false
 var interactable : Area2D = null
@@ -66,7 +66,7 @@ func getMovementVector(angle):
 	var radian = deg_to_rad(angle)
 	return Vector2(cos(radian), sin(radian))
 
-func getClockPos(angle):
+func getClockPos(angle): #unused
 	if angle >= 337.5 or angle < 22.5:
 		return "3"
 	elif angle >= 22.5 and angle < 67.5:
@@ -103,10 +103,14 @@ func interact():
 
 func soundsLocked():
 	print("door locked")
+	connect("unlocked", unlocked)
 	$"CanvasLayer/Pixilart-sprite2".show()
 	$"CanvasLayer/Pixilart-sprite2".play()
-	$"CanvasLayer/Pixilart-sprite2".animation_finished.connect($"CanvasLayer/Pixilart-sprite2".queue_free)
-	
+func unlocked():
+	print("unlocked")
+	$"CanvasLayer/Pixilart-sprite2".play_backwards()
+	await $"CanvasLayer/Pixilart-sprite2".animation_finished
+	$"CanvasLayer/Pixilart-sprite2".queue_free()
 
 func _on_interacting_t_imer_timeout() -> void:
 	

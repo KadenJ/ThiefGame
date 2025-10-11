@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="ThiefGame"
-run/main_scene="res://scenes/Playable/menu.tscn"
+run/main_scene="uid://t4tnwe8g1ykc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://tileSet&sprites/crook.png"
+config/icon="uid://dfylm5k3i3mwj"
+run/icon=""
 
 [autoload]
 
@@ -33,7 +34,7 @@ window/layer_2="exit"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/vision_cone_2d/plugin.cfg")
 
 [input]
 

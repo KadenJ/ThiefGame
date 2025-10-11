@@ -1,9 +1,61 @@
-[gd_scene load_steps=4 format=3 uid="uid://dydinvaabji54"]
+[gd_scene load_steps=11 format=3 uid="uid://dydinvaabji54"]
 
-[ext_resource type="Texture2D" uid="uid://dfylm5k3i3mwj" path="res://tileSet&sprites/crook.png" id="1_56v82"]
 [ext_resource type="Script" uid="uid://bdcom6gjvh63" path="res://scenes/interactable.gd" id="1_ij5l6"]
+[ext_resource type="Texture2D" uid="uid://c5mn3l7iiswie" path="res://Assets/spriteSheets/Safe.png" id="2_8o6w2"]
+[ext_resource type="Script" uid="uid://bdwo13c26rjmp" path="res://interactableScripts/Safe.gd" id="3_8o6w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrg2g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4xns"]
+atlas = ExtResource("2_8o6w2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0ci7"]
+atlas = ExtResource("2_8o6w2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lo7ue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4xns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0ci7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_8o6w2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0g4qu"]
+curve = SubResource("Curve_8o6w2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w4xns"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+radial_velocity_min = 66.66
+radial_velocity_max = 66.66
+gravity = Vector3(0, 50, 0)
+linear_accel_min = -50.0
+linear_accel_max = -50.0
+radial_accel_min = -20.0
+radial_accel_max = -20.0
+damping_min = 73.333
+damping_max = 73.333
+scale_min = 0.0
+scale_max = 7.42
+scale_curve = SubResource("CurveTexture_0g4qu")
+color = Color(1, 0.886275, 0.290196, 1)
+anim_speed_min = 9.07
+anim_speed_max = 9.07
+turbulence_noise_strength = 0.41
+turbulence_noise_scale = 0.941
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 16
@@ -14,9 +66,19 @@ timeToCollect = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vrg2g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_56v82")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lo7ue")
 
 [node name="Node" type="Node" parent="."]
+script = ExtResource("3_8o6w2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 11
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.89
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_w4xns")
 
 [connection signal="complete" from="." to="Node" method="_on_area_2d_complete"]

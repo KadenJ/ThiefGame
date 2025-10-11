@@ -12,7 +12,7 @@ signal wornOff
 #add onsignalemit to powerup child node script to do effect
 func _enter_tree() -> void:
 	$AnimatedSprite2D.frame = sprite
-	get_tree().get_first_node_in_group("Player").soundsLocked()
+	
 
 func _on_body_entered(body):
 	if player == null:
