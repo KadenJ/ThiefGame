@@ -103,9 +103,10 @@ func interact():
 
 func soundsLocked():
 	print("door locked")
-	connect("unlocked", unlocked)
+	#connect("unlocked", unlocked)
 	$"CanvasLayer/Pixilart-sprite2".show()
 	$"CanvasLayer/Pixilart-sprite2".play()
+
 func unlocked():
 	print("unlocked")
 	$"CanvasLayer/Pixilart-sprite2".play_backwards()

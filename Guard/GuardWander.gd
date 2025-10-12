@@ -30,6 +30,9 @@ func Update(delta: float):
 func Physics_Update(_delta:float):
 	if guard:
 		guard.velocity = moveDirection* moveSpeed
+		if guard.velocity.length() > 0:
+			$"../../Cop".speed_scale = 1
+			$"../../Cop".play("default")
 	#guard.rotate(guard.velocity.angle())
 	#var direction = guard.global_position - Player.global_position 
 	

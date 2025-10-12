@@ -31,6 +31,8 @@ func Enter():
 func Physics_Update(_delta: float):
 	var direction = Player.global_position - Guard.global_position
 	
+	$"../../Cop".speed_scale = 2
+	$"../../Cop".play("default")
 	#on area enter
 	if direction.length() < 250 && direction.length() > 100: #pathfinding window
 		#new pathfinding

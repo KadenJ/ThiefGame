@@ -12,33 +12,36 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibkmc"]
 radius = 14.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4sgu"]
+atlas = ExtResource("2_c4sgu")
+region = Rect2(0, 0, 54, 52)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rmy4q"]
 atlas = ExtResource("2_c4sgu")
-region = Rect2(0, 0, 54, 65)
+region = Rect2(108, 0, 54, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vd6r2"]
 atlas = ExtResource("2_c4sgu")
-region = Rect2(54, 0, 54, 65)
+region = Rect2(54, 0, 54, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lpkwa"]
 atlas = ExtResource("2_c4sgu")
-region = Rect2(108, 0, 54, 65)
+region = Rect2(0, 52, 54, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17ufb"]
 atlas = ExtResource("2_c4sgu")
-region = Rect2(0, 65, 54, 65)
+region = Rect2(108, 52, 54, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nflhy"]
 atlas = ExtResource("2_c4sgu")
-region = Rect2(54, 65, 54, 65)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybvlj"]
-atlas = ExtResource("2_c4sgu")
-region = Rect2(108, 65, 54, 65)
+region = Rect2(54, 52, 54, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vuaq3"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4sgu")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rmy4q")
 }, {
@@ -49,16 +52,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_lpkwa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rmy4q")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_17ufb")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nflhy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ybvlj")
 }],
 "loop": true,
 "name": &"default",
@@ -83,7 +80,7 @@ shape = SubResource("CircleShape2D_ibkmc")
 position = Vector2(-1, -1)
 scale = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_vuaq3")
-frame_progress = 0.441678
+frame_progress = 0.124857
 flip_h = true
 
 [node name="VisionCone2D" parent="." instance=ExtResource("3_c4sgu")]

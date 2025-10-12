@@ -9,3 +9,10 @@ res://scenes/treasure.tscn
 res://scenes/mobile/joystick.tscn
 res://scenes/guard.tscn
 res://scenes/PowerUps/switch.tscn
+res://scenes/exitSwitch.gd
+res://scenes/Tutorial/tutorial.gd
+res://scenes/Player.gd
+res://scenes/Playable/world.gd
+res://scenes/Exit.gd
+res://Guard/GuardWander.gd
+res://Guard/GuardChase.gd

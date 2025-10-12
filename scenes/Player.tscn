@@ -201,8 +201,7 @@ texture_filter = 1
 position = Vector2(-1, 0)
 scale = Vector2(0.49, 0.49)
 sprite_frames = SubResource("SpriteFrames_ff0cr")
-animation = &"run"
-frame_progress = 0.0422581
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

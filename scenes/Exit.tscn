@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://irdfhydba2a8"]
+[gd_scene load_steps=7 format=3 uid="uid://irdfhydba2a8"]
 
 [ext_resource type="Script" uid="uid://duafcamr45cg4" path="res://scenes/Exit.gd" id="1_poyur"]
 [ext_resource type="Texture2D" uid="uid://co17if0mnut5s" path="res://tileSet&sprites/stairewell (1).png" id="2_nxbeg"]
 [ext_resource type="Texture2D" uid="uid://cr0f2e16n0q37" path="res://tileSet&sprites/stairewell (3).png" id="4_ktlyt"]
+[ext_resource type="AudioStream" uid="uid://dy4jvmj63i8ex" path="res://sounds/lock.wav" id="4_pnhnx"]
+[ext_resource type="AudioStream" uid="uid://ca5beokht2ykt" path="res://sounds/unlock.wav" id="5_hgopr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isipn"]
 size = Vector2(28, 28)
@@ -32,5 +34,11 @@ texture = ExtResource("2_nxbeg")
 position = Vector2(16, 16)
 scale = Vector2(0.0403768, 0.0499168)
 texture = ExtResource("4_ktlyt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pnhnx")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hgopr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

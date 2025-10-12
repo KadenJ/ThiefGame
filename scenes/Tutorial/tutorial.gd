@@ -7,6 +7,10 @@ func _ready() -> void:
 	Events.TreasureGathered.connect(allTresGathered)
 	$interactables/Exit.leavingLevel.connect(nextLevel)
 	$interactables/Exit.isLocked = true
+	$interactables/Exit.lockAudio.play()
+	var player = get_tree().get_first_node_in_group("Player")
+	player.soundsLocked()
+	
 
 func addScore():
 	score += 100
@@ -23,4 +27,4 @@ func allTresGathered():
 
 func _on_switch_collected() -> void:
 	$"Layer0/5".hide()
-	$"Layer0/4".hide()
+	$"Layer0/4".text = "There's the stairs,\nlets get moving"

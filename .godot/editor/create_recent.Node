@@ -1,3 +1,7 @@
+AudioStreamPlayer
+PointLight2D
+DirectionalLight2D
+LightOccluder2D
 AnimatedSprite2D
 GPUParticles2D
 CPUParticles2D
@@ -9,6 +13,3 @@ Interactable
 Admob
 EditorPlugin
 AnimationTree
-Marker2D
-ColorRect
-Node2D

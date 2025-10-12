@@ -196,7 +196,6 @@ func GameOver():
 	game_over_screen.show()
 	if adLoaded == true:
 		$CanvasLayer/Admob.show_banner_ad()
-
 	$CanvasLayer/GameOverScreen/retry.grab_focus()
 	
 
